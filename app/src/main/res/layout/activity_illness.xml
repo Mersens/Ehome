@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lljzhen"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="就诊日期"
+                    android:textColor="#0f2536"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:id="@+id/edt_time"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:background="@mipmap/bg_input_dangan"
+                    android:hint="请选择"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="4dp"
+                    android:textColor="#767c85"
+                    android:textColorHint="#767c85"
+                    android:textSize="@dimen/text_size_medium" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="就诊医院"
+                    android:textColor="#0f2536"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:id="@+id/edt_jzdw"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:background="@mipmap/bg_input_dangan"
+                    android:hint="请选择"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="4dp"
+                    android:textColor="#767c85"
+                    android:textColorHint="#767c85"
+                    android:textSize="@dimen/text_size_medium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="诊断结果"
+                    android:textColor="#0f2536"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.zzu.ehome.view.ContainsEmojiEditText
+                    android:id="@+id/edt_jzjg"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:background="@mipmap/bg_input_dangan"
+                    android:hint="手动输入"
+                    android:paddingLeft="4dp"
+                    android:textColor="#767c85"
+                    android:textColorHint="#767c85"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:textSize="@dimen/text_size_medium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="用药建议"
+                    android:textColor="#0f2536"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.zzu.ehome.view.ContainsEmojiEditText
+                    android:id="@+id/edt_yyjy"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:background="@mipmap/bg_input_dangan"
+                    android:hint="手动输入"
+                    android:paddingLeft="4dp"
+                    android:textColor="#767c85"
+                    android:textColorHint="#767c85"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:textSize="@dimen/text_size_medium" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请上传检查报告（最多9张）"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/text_size_normal"
+                />
+
+
+            <!--<com.zzu.ehome.view.GridViewForScrollView
+
+                android:layout_marginTop="12dp"
+                android:id="@+id/noScrollgridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="columnWidth"
+                android:numColumns="3"
+                android:scrollbars="none"
+                android:verticalSpacing="12dp"
+
+
+                >
+            </com.zzu.ehome.view.GridViewForScrollView>-->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/result_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+            <RelativeLayout
+                android:id="@+id/rl_pic"
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="24dp"
+                android:background="@mipmap/bg_camera_gray">
+
+                <ImageView
+                    android:id="@+id/pic_camera"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/pic_camera" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="48dp"
+                android:layout_marginTop="64dp"
+
+                android:background="@drawable/register_btn_bg"
+                android:text="保存"
+                android:textColor="@color/base_color_text_white"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

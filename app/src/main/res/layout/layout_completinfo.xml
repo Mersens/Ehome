@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/layout_toolbar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <com.zzu.ehome.view.CircleImageView
+            android:id="@+id/iv_head"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@mipmap/icon_add_tx" />
+        <TextView
+            android:id="@+id/tv_add_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/actionbar_color"
+            android:textSize="20sp"
+            android:text="@string/tv_add_head"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dip"
+            android:layout_marginLeft="27dip"
+            android:layout_marginRight="27dip"
+            android:layout_marginTop="8dp"
+            android:background="@mipmap/bg_ze_input"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dip"
+                android:layout_height="22dp"
+                android:layout_marginLeft="7dp"
+                android:background="@mipmap/icon_xm" />
+            <EditText
+
+                android:id="@+id/edt_name"
+                android:shadowDx="0.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:textSize="14sp"
+
+                android:background="@null"
+                android:singleLine="true"
+
+                android:hint="请输入真实姓名"
+
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_complate"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/register_btn_bg"
+            android:text="@string/tv_complate"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

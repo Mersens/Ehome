@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:id="@+id/rl_up"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="gone">
+    <ImageView
+        android:id="@+id/iv_upload"
+        android:layout_marginTop="70dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:clickable="true"
+       android:layout_centerHorizontal="true"
+        android:background="@mipmap/pic_upload"/>
+        <TextView
+            android:id="@+id/tv_nodate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:gravity="center"
+            android:text="暂无您的健康档案数据"
+            android:textSize="@dimen/text_size_medium"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/iv_upload"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_below="@+id/tv_nodate"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/actionbar_color"
+            android:text="我要上传"/>
+        <TextView
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+            android:layout_alignParentBottom="true"
+            android:text="©郑州大学互联网医疗与健康服务河南省协同创新中心"
+
+            android:layout_marginBottom="10dp"
+            android:gravity="bottom|center"
+            android:textColor="@color/actionbar_color"
+            android:textSize="10sp"
+            />
+
+    </RelativeLayout>
+
+    <com.emilsjolander.components.stickylistheaders.StickyListHeadersListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:divider="@null" 
+        android:visibility="gone"/>
+
+</LinearLayout>

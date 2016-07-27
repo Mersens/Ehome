@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:layout_centerInParent="true"
+    android:background="@drawable/white_all_corner">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="25dp"
+        android:layout_height="wrap_content" >
+
+
+            <TextView
+                android:id="@+id/dialog_default_click_text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="温馨提示"
+                android:textColor="@color/base_color_text_black"
+                android:textSize="@dimen/text_size_medium" />
+   
+    </RelativeLayout>
+    <TextView
+        android:layout_marginTop="25dp" 
+        android:id="@+id/dialog_default_click_text_msg"
+         android:layout_width="match_parent"
+         android:layout_marginLeft="25dp"
+         android:layout_marginRight="25dp"
+         android:text="11313113"
+	     android:layout_height="wrap_content"/>
+    	<View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:layout_marginTop="15dp"
+         android:background="@color/colorline" />
+    	<LinearLayout
+    	 android:layout_width="match_parent"
+        android:layout_height="wrap_content"  >
+            <TextView 
+	    android:id="@+id/dialog_default_click_cancel"
+	    android:layout_width="0dp"
+	    android:layout_height="48dp"
+	    android:layout_weight="1"
+	 android:layout_gravity="center_vertical"
+	    android:gravity="center"
+	    android:textColor="@color/actionbar_color"
+	    android:text="取消"
+	    />
+<View
+         android:layout_width="1dp"
+         android:layout_height="fill_parent"
+         android:background="@color/actionbar_color" />
+<TextView 
+	    android:id="@+id/dialog_default_click_ensure"
+	    android:layout_width="0dp"
+	    android:layout_height="48dp"
+	    android:layout_weight="1"
+	   android:layout_gravity="center_vertical"
+	    android:gravity="center"
+	    android:textColor="@color/actionbar_color"
+	    android:text="确定"/>
+    	    
+    	</LinearLayout>
+
+</LinearLayout>

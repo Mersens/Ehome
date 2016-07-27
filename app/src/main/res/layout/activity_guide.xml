@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.zzu.ehome.activity.GuideActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/base_color_text_white" />
+
+    <RadioGroup
+        android:id="@+id/advertise_point_group"
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <RadioButton
+            android:id="@+id/dot01"
+            style="@style/dot_style"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/dot02"
+            style="@style/dot_style"
+            android:layout_marginLeft="10dip"
+            android:checked="false" />
+        <RadioButton
+            android:id="@+id/dot03"
+            style="@style/dot_style"
+            android:layout_marginLeft="10dip"
+            android:checked="false" />
+        <RadioButton
+            android:id="@+id/dot04"
+            style="@style/dot_style"
+            android:layout_marginLeft="10dip"
+            android:checked="false" />
+    </RadioGroup>
+    <LinearLayout
+        android:id="@+id/layout_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="151dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="8dp"
+            android:background="@mipmap/btn_login_home"
+            android:text="登录"
+            android:gravity="center"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/actionbar_color"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="151dp"
+            android:layout_height="46dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@mipmap/btn_zhuce_home"
+            android:text="注册"
+            android:textColor="@color/base_color_text_white"
+            android:gravity="center"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>

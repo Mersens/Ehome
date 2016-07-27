@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:orientation="horizontal"
+        >
+
+    <ImageView
+        android:layout_width="78dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:src="@drawable/pic_info1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="8dp"
+        />
+
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="冬病夏治避免3大误区"
+            android:textSize="14sp"
+            android:textColor="#272031"
+            android:layout_marginTop="2dp"
+            android:singleLine="true"
+
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="艾草是什么？教你正确选艾草。"
+            android:textSize="12sp"
+            android:textColor="#81868c"
+            android:singleLine="true"
+            android:layout_marginTop="4dp"
+
+            />
+        </LinearLayout>>
+
+</LinearLayout>
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#e1e1e2"
+        />
+
+</LinearLayout>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/blood_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="7.0"
+                        android:textColor="#23bbc2"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tvmg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="126.0"
+                        android:textColor="#23bbc2"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvmol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="mmol/L"
+                        android:textColor="#767c85"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvmgdl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="mg/dl"
+                        android:textColor="#767c85"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <com.zzu.ehome.view.ScaleMarkView
+                    android:id="@+id/scale_mark1"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="4dp"
+                        android:button="@drawable/bloodsugar_radio_check"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_xuetangcheck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="4dp"
+                        android:layout_toRightOf="@+id/checkBox"
+                        android:text="使用单位为mg/dl的血糖仪"
+                        android:textColor="#767c85"
+                        android:textSize="14sp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_blood_sugar_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/actionBarHeight"
+                    android:layout_marginTop="36dp"
+                    android:background="@mipmap/bg_time">
+
+                    <ImageView
+                        android:id="@+id/img_time"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="4dp"
+                        android:src="@mipmap/icon_time" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/img_time"
+                        android:text="测量时间"
+                        android:textColor="#0f2536"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/img_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@mipmap/icon_arr_gr" />
+
+                    <TextView
+                        android:id="@+id/tv_cl_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_toLeftOf="@+id/img_right"
+                        android:text="19:00"
+                        android:textColor="#0f2536"
+                        android:textSize="16sp" />
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_times"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/actionBarHeight"
+                    android:layout_marginTop="12dp"
+                    android:clickable="true"
+                    android:background="@mipmap/bg_time">
+
+                    <ImageView
+                        android:id="@+id/img_part"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="4dp"
+                        android:src="@mipmap/icon_time_part" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/img_part"
+                        android:text="测量时段"
+                        android:textColor="#0f2536"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/img_part_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@mipmap/icon_arr_gr" />
+
+                    <TextView
+                        android:id="@+id/tv_cl_time_part"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_toLeftOf="@+id/img_part_right"
+                        android:text="早餐后"
+                        android:textColor="#0f2536"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp">
+
+                    <ImageView
+                        android:id="@+id/iv_bloodsuggar"
+                        android:layout_width="106dp"
+                        android:layout_height="106dp"
+                        android:src="@mipmap/pic_circle_green" />
+
+                    <TextView
+                        android:id="@+id/tv_bloodlv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="请滑动刻度尺"
+                        android:textColor="#2ec2cc"
+                        android:textSize="14sp" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_savesuggar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/actionbar_color"
+            android:text="保存"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</LinearLayout>

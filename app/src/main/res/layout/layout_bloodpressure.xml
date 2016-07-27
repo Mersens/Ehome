@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:uview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f2f2f2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#f2f2f2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_ssy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:text="收缩压"
+                            android:textColor="#0f2536"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_ssy_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="2dp"
+                            android:layout_toLeftOf="@+id/tv_ssy_unit"
+                            android:text="120"
+                            android:textColor="#53bbb3"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_ssy_unit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="mmHg"
+
+                            android:textColor="#0f2536"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+
+
+                    <com.zzu.ehome.view.TuneWheel
+                        android:id="@+id/scale_mark1"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="12dp"
+                        uview:DefaltValue="120"
+                        uview:MaxValue="300"
+                        uview:Model="10"
+                        android:layout_marginTop="5dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_szy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:text="舒张压"
+                            android:textColor="#0f2536"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_szy_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="2dp"
+                            android:layout_toLeftOf="@+id/tv_szy_unit"
+                            android:text="80"
+                            android:textColor="#53bbb3"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_szy_unit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="mmHg"
+
+                            android:textColor="#0f2536"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <com.zzu.ehome.view.TuneWheel
+                        android:id="@+id/scale_mark2"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        uview:DefaltValue="80"
+                        uview:MaxValue="300"
+                        uview:Model="10"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="5dp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_mb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:text="脉搏"
+                            android:textColor="#0f2536"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_mb_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="2dp"
+                            android:layout_toLeftOf="@+id/tv_mb_unit"
+                            android:text="75"
+                            android:textColor="#ef1c49"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_mb_unit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="Beats/min"
+
+                            android:textColor="#0f2536"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <com.zzu.ehome.view.TuneWheel
+                        android:id="@+id/scale_mark3"
+                        android:layout_width="match_parent"
+                        uview:DefaltValue="75"
+                        uview:MaxValue="300"
+                        uview:Model="10"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="5dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="8dp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:gravity="center"
+                            android:text="  收缩压"
+                            />
+                    <com.zzu.ehome.view.VerticalProgressBar
+                        android:id="@+id/progressBar1"
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="44dp"
+                        android:layout_height="256dp"
+                        android:background="@drawable/xueyan_empty"
+                        android:indeterminateOnly="false"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/progressbar1" >
+                    </com.zzu.ehome.view.VerticalProgressBar>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:gravity="center"
+                            android:text="  舒张压"
+                            />
+                    <com.zzu.ehome.view.VerticalProgressBar
+                        android:id="@+id/progressBar2"
+                        android:layout_width="44dp"
+                        android:layout_marginLeft="8dp"
+
+                        android:layout_height="256dp"
+                        android:background="@drawable/xueyan_empty"
+                        android:indeterminateOnly="false"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/progressbar2" >
+                    </com.zzu.ehome.view.VerticalProgressBar>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageview1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="4dp"
+                            android:src="@mipmap/icon_circle_g" />
+
+                        <TextView
+                            android:id="@+id/tv_xueya"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/imageview1"
+                            android:text="正常血压"
+                            android:textColor="#0f2536"
+                            android:textSize="14sp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/imageview2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="4dp"
+                            android:src="@mipmap/icon_circle_o" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/imageview2"
+                            android:text="高血压二期"
+                            android:textColor="#0f2536"
+                            android:textSize="14sp" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/imageview3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="4dp"
+                            android:src="@mipmap/icon_circle_y" />
+
+                        <TextView
+                            android:id="@+id/tv_xuetang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/imageview3"
+                            android:text="高血压一期"
+                            android:textColor="#0f2536"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageview4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="4dp"
+                            android:src="@mipmap/icon_circle_r" />
+
+                        <TextView
+                            android:id="@+id/tv_xuezhi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/imageview4"
+                            android:text="高血压三期"
+                            android:textColor="#0f2536"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_blood_time"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionBarHeight"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="12dp"
+                android:background="@mipmap/bg_time">
+
+                <ImageView
+                    android:id="@+id/img_time"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:src="@mipmap/icon_time" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/img_time"
+                    android:text="测量时间"
+                    android:textColor="#0f2536"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/img_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:src="@mipmap/icon_arr_gr" />
+
+                <TextView
+                    android:id="@+id/tv_cl_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@+id/img_right"
+                    android:text="19:00"
+                    android:textColor="#0f2536"
+                    android:textSize="16sp" />
+
+
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/imagepress"
+                    android:layout_width="106dp"
+                    android:layout_height="106dp"
+
+                    android:src="@drawable/pic_circle_g_b" />
+
+                <TextView
+                    android:id="@+id/tv_lv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="血压正常"
+                    android:textColor="#FA4A00"
+                    android:textSize="14sp" />
+            </FrameLayout>
+            <View
+                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+    <Button
+        android:id="@+id/btn_savepress"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/actionbar_color"
+        android:text="保存"
+        android:textColor="@color/base_color_text_white"
+        android:textSize="20sp" />
+    </RelativeLayout>
+
+</LinearLayout>

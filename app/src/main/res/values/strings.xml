@@ -1,0 +1,62 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">名医网·健康E家</string>
+    <string name="reg_xingmingsubject">输入手机号</string>
+    <string name="user_name">姓名</string>
+    <string name="phone_error">请输入正确的手机号码!</string>
+    <string name="msgUninternet">数据获取失败，请检查网络</string>
+    <string name="mobile_register">请输入手机号！</string>
+    <string name="pass_register">请输入密码！</string>
+    <string name="pass_length_register">密码长度不能小于6位！</string>
+    <string name="code_register">请输入验证码！</string>
+    <string name="erro_code_register">验证码错误！</string>
+    <string name="checkmobile_register">请输入正确的手机号码!</string>
+    <string name="crop__cancel" translatable="false" tools:ignore="ButtonCase">取消</string>
+    <string name="crop__saving" translatable="false">正在裁剪…</string>
+    <string name="crop__wait" translatable="false">请等待…</string>
+    <string name="crop__pick_error" translatable="false">裁剪错误</string>
+    <string name="no_agree">请同意健康E家用户协议！</string>
+    <string name="str002_findpass">验证码输入错误或者手机号不匹配！</string>
+    <string name="crop__done" translatable="false">确认</string>
+    <string name="crop__cancle" translatable="false">取消</string>
+
+
+    <string name="reg_code">短信验证码</string>
+    <string name="get_code">获取验证码</string>
+    <string name="set_pass">设置密码(6位以上)</string>
+    <string name="set_pass_again">重新设置密码(6位以上)</string>
+    <string name="input_pass">输入密码</string>
+    <string name="tv_home">首页</string>
+    <string name="tv_health">健康</string>
+    <string name="tv_doctor">问医</string>
+    <string name="tv_msg">消息</string>
+
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="more">更多</string>
+    <string name="loading">正在加载...</string>
+    <string name="tv_info">我的</string>
+    <string name="tv_add_head">添加头像</string>
+    <string name="tv_update_ok">确定修改</string>
+    <string name="tv_complate">完成</string>
+    <string name="tv_tips">Android是一种基于Linux的自由及开放源代码的操作系统，主要使用于移动设备，如智能手机和平板电脑，由Google公司和开放手机联盟领导及开发。尚未有统一中文名称，中国大陆地区较多人使用“安卓”或“安致”。Android操作系统最初由Andy Rubin开发，主要支持手机。2005年8月由Google收购注资。2007年11月，Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良Android系统。</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="all_image">所有图片</string>
+    <string name="picture">图片</string>
+    <string name="take_picture">拍摄照片</string>
+    <string name="preview">预览</string>
+    <string name="preview_num">预览(%1$s)</string>
+    <string name="choose">选择</string>
+    <string name="done">完成</string>
+    <string name="use">使用</string>
+    <string name="done_num">完成(%1$s/%2$s)</string>
+    <string name="num_postfix">%1$s张</string>
+    <string name="message_max_num">你最多可以选择%1$s张图片</string>
+    <string name="save_ing">保存图片中…</string>
+    <string name="no_photo">没有照片</string>
+    <string name="record_desc"> 通过上方"拍报告"功能手动上传。&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</string>
+
+</resources>

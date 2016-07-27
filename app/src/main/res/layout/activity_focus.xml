@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    >
+    <include layout="@layout/layout_toolbar" />
+        <RelativeLayout
+            android:id="@+id/rl_guan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/iv_upload"
+                android:layout_marginTop="70dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:layout_centerHorizontal="true"
+                android:background="@mipmap/icon_guanzhu_nodata"/>
+            <TextView
+                android:id="@+id/tv_nodate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:gravity="center"
+                android:text="暂无关注医生"
+                android:textSize="@dimen/text_size_normal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_upload"/>
+        </RelativeLayout>
+    <ListView
+        android:id="@+id/listView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
+</LinearLayout>

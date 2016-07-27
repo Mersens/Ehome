@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:uview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textColor="#23bbc2"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="kg"
+                android:textColor="#767c85"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <com.zzu.ehome.view.ScaleMarkView
+            android:id="@+id/weight_mark1"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textColor="#23bbc2"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="cm"
+                android:textColor="#767c85"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <com.zzu.ehome.view.ScaleMarkView
+            android:id="@+id/weight_mark2"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:visibility="gone"
+
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_weight_time"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarHeight"
+            android:layout_marginTop="42dp"
+            android:background="@mipmap/bg_time">
+
+            <ImageView
+                android:id="@+id/img_time"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
+                android:src="@mipmap/icon_time" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/img_time"
+                android:text="测量时间"
+                android:textColor="#0f2536"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/img_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@mipmap/icon_arr_gr" />
+
+            <TextView
+                android:id="@+id/tv_cl_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/img_right"
+                android:text="19:00"
+                android:textColor="#0f2536"
+                android:textSize="16sp" />
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+        <Button
+            android:id="@+id/btn_saveweight"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/actionbar_color"
+            android:text="保存"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="20sp" />
+</RelativeLayout>
+</LinearLayout>

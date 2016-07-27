@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    
+    <!-- 刷新的界面 -->
+
+	<integer name="refresh_manager_data">1</integer>
+	<integer name="refresh_manager_file">2</integer>
+	<integer name="refresh_info">3</integer>
+	<integer name="change_date">4</integer>
+	<integer name="refresh_focus">5</integer>
+	<integer name="change_file">6</integer>
+	<integer name="change_sex1">7</integer>
+	<integer name="change_sex2">8</integer>
+	<integer name="refresh_manager">9</integer>
+	<integer name="back_detail">10</integer>
+	<integer name="refresh_report">11</integer>
+	<integer name="refresh_temp">12</integer>
+	<integer name="refresh_weight">13</integer>
+	<integer name="refresh_press">14</integer>
+	<integer name="refresh_suggar">15</integer>
+
+
+</resources>
+

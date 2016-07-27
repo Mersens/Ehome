@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/base_dialog_bg"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="添加身高"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:textColor="@color/actionbar_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/bg_ze_input"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="46dp"
+        android:orientation="horizontal"
+        >
+    <EditText
+        android:id="@+id/edt_height"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="46dp"
+        android:layout_marginTop="46dp"
+        android:inputType="numberDecimal"
+        android:background="@null"
+        android:hint="请输入身高"
+        android:textColorHint="#979BA0"
+        android:paddingLeft="12dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="cm"
+            android:layout_marginRight="16dp"
+            android:layout_gravity="center"
+            android:textColor="@color/actionbar_color"
+            />
+</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="53dp"
+        android:layout_height="@dimen/actionBarHeight">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:text="取消"
+            android:textColor="@color/actionbar_color"
+            android:textSize="@dimen/text_size_large" />
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:text="确定"
+            android:textColor="@color/actionbar_color"
+            android:textSize="@dimen/text_size_large" />
+    </RelativeLayout>
+</LinearLayout>
+

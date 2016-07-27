@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/back_color"
+    >
+    <include layout="@layout/layout_toolbar" />
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+
+        android:layout_marginTop="12dp"
+        android:src="@mipmap/icon_add_tx" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加头像"
+        android:textSize="14sp"
+        android:textColor="@color/text_blue_color"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:background="@mipmap/bg_ze_input">
+        <ImageView
+            android:layout_marginLeft="7dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/icon_xm"/>
+        <EditText
+            android:id="@+id/eduser"
+            android:hint="@string/user_name"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
+            android:background="@null"/>
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/register_btn_bg"
+        android:text="完成"
+        android:textColor="@color/base_color_text_white"
+        android:textSize="20sp" />
+
+
+
+
+</LinearLayout>

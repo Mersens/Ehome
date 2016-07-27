@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="base_color_text_white">#FFFFFF</color>
+    <color name="base_color_text_black">#3e3e39</color>
+    <color name="gray_line_color">#cccccc</color>
+    <color name="text_color">#888c97</color>
+    <color name="actionbar_color">#30C0CB</color>
+    <color name="text_blue_color">#2ec2cc</color>
+    <color name="back_color">#f2f2f2</color>
+    <color name="bottom_text_color_pressed">#00c07d</color>
+    <color name="bottom_text_color_normal">#c8c8c8</color>
+    <color name="colorline">#d9d9d9</color>
+
+    <color name="bottom_tv_color_normal">#8E8F87</color>
+    <color name="bottom_tv_color_pressed">#2DC2C9</color>
+    <color name="crop__button_bar">#f3f3f3</color>
+    <color name="crop__button_text">#666666</color>
+    <color name="crop__selector_pressed">#1a000000</color>
+    <color name="crop__selector_focused">#77000000</color>
+    <color name="blue_color">#2ec2cc</color>
+    <color name="green_color">#7dc855</color>
+    <color name="province_line_border">#f2f2f2</color>
+
+    <color name="gray_line">#767d85</color>
+
+    <color name="none_color">#00000000</color>
+    <color name="plugin_camera_black">#000000</color>
+    <color name="albumback">#E1E0DE</color>
+    <color name="white_70">#ADFFFFFF</color>
+
+    <color name="item_color">#bdbdbd</color>
+    <color name="select_day_gray">#d0d0d0</color>
+
+    <color name="select_dark_gray">#54626B</color>
+    <color name="record_color">#757C86</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#eeeeee</color>
+    <color name="light_blue">#6593cb</color>
+    <color name="refresh_load_view_bg">#f2f2f2</color>
+</resources>
