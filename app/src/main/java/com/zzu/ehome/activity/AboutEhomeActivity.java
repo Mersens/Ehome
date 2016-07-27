@@ -27,7 +27,7 @@ import org.json.JSONObject;
 import java.util.Map;
 
 /**
- * Created by zzu on 2016/4/15.
+ * Created by zzu on 2016/7/15.
  */
 public class AboutEhomeActivity extends BaseActivity {
     private final String mPageName = "AboutEhomeActivity";
