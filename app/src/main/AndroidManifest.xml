@@ -94,6 +94,7 @@
         <activity android:name=".activity.XuetangDataActivity" />
         <activity android:name=".activity.XueyaDataActivity" />
         <activity android:name=".activity.HealthFilesActivity" />
+        <activity android:name=".activity.HealthFilesActivity1" />
         <activity android:name=".activity.YYJLActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".activity.YYJLDataActivity" />

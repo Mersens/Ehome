@@ -8,46 +8,41 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zzu.ehome.R;
-import com.zzu.ehome.view.HeadView;
 
 /**
  * Created by Mersens on 2016/7/27.
  */
-public class HealthFilesFragment1 extends BaseFragment {
+public class HealthFilesFragment2 extends BaseFragment {
     private View mView;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.layout_healthfiles2, null);
+        return inflater.inflate(R.layout.layout_healthfiles1,null);
     }
 
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mView = view;
+        mView=view;
         initViews();
         initEvent();
         initDatas();
     }
 
 
-    public void initViews() {
+    public void initViews(){
 
 
     }
-
-    public void initEvent() {
-    }
-
-    public void initDatas() {
+    public void initEvent(){}
+    public void initDatas(){
 
     }
 
 
-    public static Fragment getInstance() {
-        return new HealthFilesFragment1();
+    public static Fragment getInstance(){
+        return new HealthFilesFragment2();
     }
 
 

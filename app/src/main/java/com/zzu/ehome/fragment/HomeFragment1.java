@@ -18,6 +18,7 @@ import android.widget.ListView;
 
 import com.zzu.ehome.R;
 import com.zzu.ehome.activity.HealthFilesActivity;
+import com.zzu.ehome.activity.HealthFilesActivity1;
 import com.zzu.ehome.view.HeadView;
 import com.zzu.ehome.view.PullToRefreshLayout;
 import com.zzu.ehome.view.PullableListView;
@@ -147,7 +148,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.layout_health_files:
-                startIntent(getActivity(),HealthFilesActivity.class);
+                startIntent(getActivity(),HealthFilesActivity1.class);
                 break;
         }
 
