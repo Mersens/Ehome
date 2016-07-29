@@ -120,8 +120,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:visibility="visible">
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -302,8 +301,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:visibility="gone"
 
-                android:visibility="visible">
+                >
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -445,7 +445,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="脑卒中"
                                 android:textColor="#272031"
@@ -481,7 +480,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="肝炎"
                                 android:textColor="#272031"
@@ -522,7 +520,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="慢性阻塞性肺疾病"
                                     android:textColor="#272031"
@@ -540,7 +537,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="青霉素"
                                 android:textColor="#272031"
@@ -576,7 +572,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -707,7 +704,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
+
                                 android:paddingLeft="4dp"
                                 android:text="肝炎"
                                 android:textColor="#272031"
@@ -749,7 +746,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="先天畸形"
                                     android:textColor="#272031"
@@ -760,7 +756,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="先天性阻塞性肺疾病"
                                     android:textColor="#272031"
@@ -778,7 +773,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="其他"
                                 android:textColor="#272031"
@@ -922,7 +916,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="肝炎"
                                 android:textColor="#272031"
@@ -964,7 +957,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="先天畸形"
                                     android:textColor="#272031"
@@ -975,7 +967,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="先天性阻塞性肺疾病"
                                     android:textColor="#272031"
@@ -993,7 +984,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="其他"
                                 android:textColor="#272031"
@@ -1136,7 +1126,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="肝炎"
                                 android:textColor="#272031"
@@ -1178,7 +1167,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="先天畸形"
                                     android:textColor="#272031"
@@ -1189,7 +1177,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="先天性阻塞性肺疾病"
                                     android:textColor="#272031"
@@ -1207,7 +1194,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="其他"
                                 android:textColor="#272031"
@@ -1351,7 +1337,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="肝炎"
                                 android:textColor="#272031"
@@ -1393,7 +1378,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="先天畸形"
                                     android:textColor="#272031"
@@ -1404,7 +1388,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="先天性阻塞性肺疾病"
                                     android:textColor="#272031"
@@ -1422,7 +1405,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="其他"
                                 android:textColor="#272031"
@@ -1447,15 +1429,6 @@
                                 />
                         </TableRow>
 
-                        <TableRow android:layout_marginBottom="5dp">
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="1dp"
-                                android:layout_weight="1"
-                                android:background="#e1e1e2" />
-
-                        </TableRow>
                     </TableLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -1609,7 +1582,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="脑卒中"
                                 android:textColor="#272031"
@@ -1645,7 +1617,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="肝炎"
                                 android:textColor="#272031"
@@ -1704,7 +1675,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="青霉素"
                                 android:textColor="#272031"
@@ -1805,7 +1775,7 @@
                                 android:textSize="14sp" />
 
                             <RadioButton
-
+                                android:id="@+id/radioButton17"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1819,7 +1789,7 @@
                                 android:visibility="invisible" />
 
                             <RadioButton
-
+                                android:id="@+id/radioButton18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1834,100 +1804,133 @@
                         </RadioGroup>
                     </RelativeLayout>
 
-                    <TableLayout
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="visible">
+                        android:orientation="vertical"
 
-                        <TableRow android:layout_marginBottom="5dp">
+                        >
 
-                            <CheckBox
+                        <RadioGroup
+                            android:id="@+id/rdg1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_x="3px"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rdb1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
+                                android:background="@null"
+                                android:button="@null"
                                 android:checked="true"
-                                android:paddingLeft="4dp"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
                                 android:text="从不"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
-                            <CheckBox
+                            <RadioButton
+                                android:id="@+id/rdb2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="false"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
+
                                 android:text="偶尔"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
-                            <CheckBox
+                            <RadioButton
+                                android:id="@+id/rdb3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="false"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
+
                                 android:text="经常"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
-                        </TableRow>
 
-                        <TableRow android:layout_marginBottom="5dp">
+                        </RadioGroup>
 
-                            <CheckBox
+                        <RadioGroup
+                            android:id="@+id/rdg2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_x="3px"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rdb4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="true"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
                                 android:text="每天"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
-                            <CheckBox
+                            <RadioButton
+                                android:id="@+id/rdb5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="false"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
+                                android:paddingLeft="6dp"
                                 android:text="已戒烟"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
-                            <CheckBox
+                            <RadioButton
+                                android:id="@+id/rdb6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="false"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
                                 android:text="经常"
                                 android:textColor="#272031"
                                 android:textSize="12sp"
                                 android:visibility="invisible" />
-                        </TableRow>
 
-                        <TableRow android:layout_marginBottom="8dp">
+                        </RadioGroup>
 
-                            <EditText
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@null"
-                                android:hint="点此填写其他过敏物"
-                                android:text=""
-                                android:textColor="#272031"
-                                android:textColorHint="#272031"
-                                android:textSize="12sp"
 
-                                />
-                        </TableRow>
-                    </TableLayout>
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@null"
+                            android:hint="点此填写其他过敏物"
+                            android:text=""
+                            android:textColor="#272031"
+                            android:textColorHint="#272031"
+                            android:textSize="12sp"
+
+                            />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -2004,7 +2007,7 @@
                                 android:textSize="14sp" />
 
                             <RadioButton
-
+                                android:id="@+id/radioButton181"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -2018,7 +2021,7 @@
                                 android:visibility="invisible" />
 
                             <RadioButton
-
+                                android:id="@+id/radioButton19"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -2033,98 +2036,132 @@
                         </RadioGroup>
                     </RelativeLayout>
 
-                    <TableLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="visible">
+                        android:orientation="vertical"
 
-                        <TableRow android:layout_marginBottom="5dp">
+                        >
 
-                            <CheckBox
+                        <RadioGroup
+                            android:id="@+id/rdg21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_x="3px"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rdb61"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
+                                android:background="@null"
+                                android:button="@null"
                                 android:checked="true"
-                                android:paddingLeft="4dp"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
                                 android:text="从不"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
-                            <CheckBox
+                            <RadioButton
+                                android:id="@+id/rdb7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="false"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
+
                                 android:text="偶尔"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
-                            <CheckBox
+                            <RadioButton
+                                android:id="@+id/rdb8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="false"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
+
                                 android:text="经常"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
-                        </TableRow>
 
-                        <TableRow android:layout_marginBottom="5dp">
+                        </RadioGroup>
 
-                            <CheckBox
+                        <RadioGroup
+                            android:id="@+id/rdg22"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_x="3px"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rdb43"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="true"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
                                 android:text="每天"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
-                            <CheckBox
+                            <RadioButton
+                                android:id="@+id/rdb51"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="false"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
+                                android:paddingLeft="6dp"
                                 android:text="已戒酒"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
-                            <CheckBox
+                            <RadioButton
+                                android:id="@+id/rdb63"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:button="@drawable/checkbox_selector"
-                                android:checked="false"
-                                android:paddingLeft="4dp"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/checkbox_selector"
+                                android:drawablePadding="2dp"
                                 android:text="经常"
+
                                 android:textColor="#272031"
                                 android:textSize="12sp"
                                 android:visibility="invisible" />
-                        </TableRow>
 
-                        <TableRow android:layout_marginBottom="8dp">
+                        </RadioGroup>
 
-                            <EditText
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@null"
-                                android:hint="点此填写其他过敏物"
-                                android:text=""
-                                android:textColor="#272031"
-                                android:textColorHint="#272031"
-                                android:textSize="12sp" />
-                        </TableRow>
-                    </TableLayout>
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@null"
+                            android:hint="点此填写其他过敏物"
+                            android:text=""
+                            android:textColor="#272031"
+                            android:textColorHint="#272031"
+                            android:textSize="12sp"
+
+                            />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -2132,6 +2169,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#e1e1e2" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/actionbar_color"
+                android:text="保存"
+                android:textColor="@color/base_color_text_white"
+                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

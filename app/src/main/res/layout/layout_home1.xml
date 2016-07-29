@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zzu.ehome.view.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/refresh_view"
     android:background="@color/back_color">
+
     <include layout="@layout/refresh_head" />
+
     <com.zzu.ehome.view.MyScrollView
         android:id="@+id/scrollView4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="false"
         android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -19,7 +22,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
-                android:background="@drawable/bg_header">
+                android:background="@drawable/bg_header"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -227,20 +231,20 @@
                         android:layout_width="46dp"
                         android:layout_height="46dp"
                         android:layout_marginBottom="8dp"
-                        android:src="@drawable/icon_family" />
+                        android:src="@drawable/icon_yuyue" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
-                        android:text="我的亲友"
+                        android:text="预约挂号"
                         android:textColor="#272031"
                         android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="管理亲友健康"
+                        android:text="普通挂号 预约视频问诊"
                         android:textColor="#BEB7C7"
                         android:textSize="14sp" />
 
@@ -273,24 +277,24 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="预约挂号"
+                                android:text="免费咨询"
                                 android:textColor="#272031"
                                 android:textSize="14sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="普通挂号、预约视频问诊"
+                                android:text="轻松问诊 营养建议"
                                 android:textColor="#BEB7C7"
                                 android:textSize="12sp" />
 
                         </LinearLayout>
 
                         <ImageView
-                            android:layout_width="31dp"
-                            android:layout_height="31dp"
-                            android:layout_marginLeft="4dp"
-                            android:src="@drawable/icon_order" />
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginLeft="8dp"
+                            android:src="@drawable/icon_zixun" />
 
 
                     </LinearLayout>
@@ -318,20 +322,20 @@
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:layout_marginBottom="4dp"
-                                android:src="@drawable/icon_report_tj" />
+                                android:src="@drawable/icon_yaodian" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="2dp"
-                                android:text="体检报告"
+                                android:text="附近药店"
                                 android:textColor="#272031"
                                 android:textSize="14sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="体检报告查询管理"
+                                android:text="查看身边药店"
                                 android:textColor="#BEB7C7"
                                 android:textSize="12sp" />
 
@@ -355,23 +359,152 @@
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:layout_marginBottom="4dp"
-                                android:src="@drawable/icon_report_xd" />
+                                android:src="@drawable/icon_doctor" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="2dp"
-                                android:text="心电报告"
+                                android:text="私人医生"
                                 android:textColor="#272031"
                                 android:textSize="14sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="心电报告查询管理"
+                                android:text="VIP专属服务"
                                 android:textColor="#BEB7C7"
                                 android:textSize="12sp" />
                         </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/base_color_text_white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/icon_report_jc" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="检查报告"
+                        android:textColor="#272031"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="血液 尿液检查化验"
+                        android:textColor="#BEB7C7"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#e1e1e2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="体检报告"
+                                android:textColor="#272031"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="体检报告查询管理"
+                                android:textColor="#BEB7C7"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginLeft="8dp"
+                            android:src="@drawable/icon_report_tj" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="#e1e1e2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="体检报告"
+                                android:textColor="#272031"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="体检报告查询管理"
+                                android:textColor="#BEB7C7"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginLeft="8dp"
+                            android:src="@drawable/icon_report_xd" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -581,5 +714,6 @@
 
         </LinearLayout>
     </com.zzu.ehome.view.MyScrollView>
+
     <include layout="@layout/load_more" />
 </com.zzu.ehome.view.PullToRefreshLayout>

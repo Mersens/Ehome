@@ -12,12 +12,6 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/actionbar_color"
-        android:text="保存"
-        android:textSize="18sp"
-        android:textColor="@color/base_color_text_white" />
+
 </LinearLayout>
 
