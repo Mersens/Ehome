@@ -43,7 +43,7 @@
                     android:layout_weight="3">
 
                     <RadioGroup
-                        android:id="@+id/radiogroup1"
+                        android:id="@+id/maritalStatus_group"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -51,7 +51,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:id="@+id/radioButton1"
+                            android:id="@+id/weiHunCheck"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -65,7 +65,7 @@
                             android:textSize="14sp" />
 
                         <RadioButton
-                            android:id="@+id/radioButton2"
+                            android:id="@+id/jieHunCheck"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -79,7 +79,7 @@
                             android:textSize="14sp" />
 
                         <RadioButton
-                            android:id="@+id/radioButton3"
+                            android:id="@+id/liHunCheck"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -87,13 +87,12 @@
                             android:button="@null"
                             android:drawableLeft="@drawable/radio_check"
                             android:drawablePadding="2dp"
-
                             android:text="离婚"
                             android:textColor="#272031"
                             android:textSize="14sp" />
 
                         <RadioButton
-                            android:id="@+id/radioButton4"
+                            android:id="@+id/sangOuCheck"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -149,7 +148,7 @@
                         android:layout_height="52dp">
 
                         <RadioGroup
-                            android:id="@+id/radiogroup2"
+                            android:id="@+id/medicineAllergy_group"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -157,7 +156,21 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/radioButton5"
+                                android:id="@+id/medicineAllergy_noCheck"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:button="@null"
+
+                                android:drawableLeft="@drawable/radio_check"
+                                android:drawablePadding="2dp"
+                                android:text="无"
+                                android:textColor="#272031"
+                                android:textSize="14sp" />
+
+                            <RadioButton
+                                android:id="@+id/medicineAllergy_yesCheck"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -166,20 +179,6 @@
                                 android:checked="true"
                                 android:drawableLeft="@drawable/radio_check"
                                 android:drawablePadding="2dp"
-                                android:text="无"
-                                android:textColor="#272031"
-                                android:textSize="14sp" />
-
-                            <RadioButton
-                                android:id="@+id/radioButton6"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@null"
-                                android:button="@null"
-                                android:drawableLeft="@drawable/radio_check"
-                                android:drawablePadding="2dp"
-
                                 android:text="有"
                                 android:textColor="#272031"
                                 android:textSize="14sp" />
@@ -215,23 +214,27 @@
                     </RelativeLayout>
 
                     <TableLayout
+                        android:id="@+id/medicineAllergy_type"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+
+                        >
 
                         <TableRow>
 
                             <CheckBox
+                                android:id="@+id/medicineAllergy_checkbox_qingmeisu"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="青霉素"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/medicineAllergy_checkbox_huangan"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -243,6 +246,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/medicineAllergy_checkbox_lianmeisu"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -259,6 +263,7 @@
                             android:layout_marginTop="8dp">
 
                             <CheckBox
+                                android:id="@+id/medicineAllergy_checkbox_qita"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -301,7 +306,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:visibility="gone"
+
 
                 >
 
@@ -332,7 +337,7 @@
                         android:layout_height="52dp">
 
                         <RadioGroup
-                            android:id="@+id/radiogroup3"
+                            android:id="@+id/pastMedicalHistory_group"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -340,7 +345,20 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/radioButton7"
+                                android:id="@+id/pastMedicalHistory_noCheck"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:button="@null"
+                                android:drawableLeft="@drawable/radio_check"
+                                android:drawablePadding="2dp"
+                                android:text="无"
+                                android:textColor="#272031"
+                                android:textSize="14sp" />
+
+                            <RadioButton
+                                android:id="@+id/pastMedicalHistory_yesCheck"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -349,20 +367,6 @@
                                 android:checked="true"
                                 android:drawableLeft="@drawable/radio_check"
                                 android:drawablePadding="2dp"
-                                android:text="无"
-                                android:textColor="#272031"
-                                android:textSize="14sp" />
-
-                            <RadioButton
-                                android:id="@+id/radioButton8"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@null"
-                                android:button="@null"
-                                android:drawableLeft="@drawable/radio_check"
-                                android:drawablePadding="2dp"
-
                                 android:text="有"
                                 android:textColor="#272031"
                                 android:textSize="14sp" />
@@ -398,6 +402,7 @@
                     </RelativeLayout>
 
                     <TableLayout
+                        android:id="@+id/pastMedicalHistory_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="visible">
@@ -405,17 +410,18 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_gaoxueya"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
-                                android:checked="true"
                                 android:paddingLeft="4dp"
                                 android:text="高血压"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_tangniaobing"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -427,6 +433,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_guanxinbing"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -441,6 +448,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_naozuzhong"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -451,6 +459,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_jiehebing"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -462,6 +471,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_exingzhongliu"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -476,6 +486,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_ganyan"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -486,6 +497,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_chuanranbing"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -497,6 +509,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_zzjb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -516,6 +529,7 @@
                             <TableRow>
 
                                 <CheckBox
+                                    android:id="@+id/pastMedicalHistory_checkbox_mxfjb"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -533,12 +547,13 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/pastMedicalHistory_checkbox_qita"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
                                 android:paddingLeft="4dp"
-                                android:text="青霉素"
+                                android:text="其他"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
@@ -572,8 +587,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -618,7 +632,7 @@
                             android:layout_weight="1">
 
                             <RadioGroup
-                                android:id="@+id/radiogroup4"
+                                android:id="@+id/familyMedicalhistory_father_group"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
@@ -626,13 +640,11 @@
                                 android:orientation="horizontal">
 
                                 <RadioButton
-                                    android:id="@+id/radioButton9"
+                                    android:id="@+id/familyMedicalhistory_father_noCheck"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-
                                     android:background="@null"
                                     android:button="@null"
-                                    android:checked="true"
                                     android:drawableLeft="@drawable/radio_check"
                                     android:drawablePadding="2dp"
                                     android:text="无"
@@ -640,11 +652,12 @@
                                     android:textSize="14sp" />
 
                                 <RadioButton
-                                    android:id="@+id/radioButton10"
+                                    android:id="@+id/familyMedicalhistory_father_yesCheck"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@null"
                                     android:button="@null"
+                                    android:checked="true"
                                     android:drawableLeft="@drawable/radio_check"
                                     android:drawablePadding="2dp"
                                     android:paddingLeft="10dp"
@@ -657,6 +670,7 @@
                     </LinearLayout>
 
                     <TableLayout
+                        android:id="@+id/familyMedicalhistory_father_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="visible">
@@ -664,6 +678,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_father_checkbox_gxy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -675,6 +690,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_father_checkbox_tnb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -686,6 +702,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_father_checkbox_gxb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -700,6 +717,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_father_checkbox_gy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -711,6 +729,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_father_checkbox_jhb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -722,6 +741,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_father_checkbox_exzl"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -742,6 +762,7 @@
                             <TableRow>
 
                                 <CheckBox
+                                    android:id="@+id/fmh_father_checkbox_xtjx"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -752,6 +773,7 @@
                                     android:textSize="12sp" />
 
                                 <CheckBox
+                                    android:id="@+id/fmh_father_checkbox_zsxfjb"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -769,6 +791,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_father_checkbox_qt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -830,7 +853,7 @@
                             android:layout_weight="1">
 
                             <RadioGroup
-                                android:id="@+id/radio4"
+                                android:id="@+id/familyMedicalhistory_mother_group"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
@@ -838,13 +861,13 @@
                                 android:orientation="horizontal">
 
                                 <RadioButton
-                                    android:id="@+id/radio9"
+                                    android:id="@+id/familyMedicalhistory_mother_noCheck"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
 
                                     android:background="@null"
                                     android:button="@null"
-                                    android:checked="true"
+
                                     android:drawableLeft="@drawable/radio_check"
                                     android:drawablePadding="2dp"
                                     android:text="无"
@@ -852,11 +875,12 @@
                                     android:textSize="14sp" />
 
                                 <RadioButton
-                                    android:id="@+id/radio10"
+                                    android:id="@+id/familyMedicalhistory_mother_yesCheck"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@null"
                                     android:button="@null"
+                                    android:checked="true"
                                     android:drawableLeft="@drawable/radio_check"
                                     android:drawablePadding="2dp"
                                     android:paddingLeft="10dp"
@@ -869,6 +893,7 @@
                     </LinearLayout>
 
                     <TableLayout
+                        android:id="@+id/familyMedicalhistory_mother_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="visible">
@@ -876,6 +901,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_mother_checkbox_gxy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -887,6 +913,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_mother_checkbox_tnb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -898,6 +925,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_mother_checkbox_gxb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -912,6 +940,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_mother_checkbox_gy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -922,6 +951,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_mother_checkbox_jhb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -933,6 +963,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_mother_checkbox_exzl"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -953,6 +984,7 @@
                             <TableRow>
 
                                 <CheckBox
+                                    android:id="@+id/fmh_mother_checkbox_xtjx"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -963,6 +995,7 @@
                                     android:textSize="12sp" />
 
                                 <CheckBox
+                                    android:id="@+id/fmh_mother_checkbox_zsxfjb"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -980,6 +1013,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_mother_checkbox_qt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1041,7 +1075,7 @@
                             android:layout_weight="1">
 
                             <RadioGroup
-                                android:id="@+id/radio5"
+                                android:id="@+id/familyMedicalhistory_sister_group"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
@@ -1049,12 +1083,11 @@
                                 android:orientation="horizontal">
 
                                 <RadioButton
-                                    android:id="@+id/radio6"
+                                    android:id="@+id/familyMedicalhistory_sister_noCheck"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@null"
                                     android:button="@null"
-                                    android:checked="true"
                                     android:drawableLeft="@drawable/radio_check"
                                     android:drawablePadding="2dp"
                                     android:text="无"
@@ -1062,11 +1095,12 @@
                                     android:textSize="14sp" />
 
                                 <RadioButton
-                                    android:id="@+id/radio7"
+                                    android:id="@+id/familyMedicalhistory_sister_yesCheck"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@null"
                                     android:button="@null"
+                                    android:checked="true"
                                     android:drawableLeft="@drawable/radio_check"
                                     android:drawablePadding="2dp"
                                     android:paddingLeft="10dp"
@@ -1079,6 +1113,7 @@
                     </LinearLayout>
 
                     <TableLayout
+                        android:id="@+id/familyMedicalhistory_sister_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="visible">
@@ -1086,6 +1121,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_sister_checkbox_gxy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1097,6 +1133,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_sister_checkbox_tnb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1108,6 +1145,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_sister_checkbox_gxb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1122,6 +1160,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_sister_checkbox_gy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1132,6 +1171,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_sister_checkbox_jhb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1143,6 +1183,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_sister_checkbox_exzl"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1163,6 +1204,7 @@
                             <TableRow>
 
                                 <CheckBox
+                                    android:id="@+id/fmh_sister_checkbox_xtjx"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -1173,6 +1215,7 @@
                                     android:textSize="12sp" />
 
                                 <CheckBox
+                                    android:id="@+id/fmh_sister_checkbox_zsxfjb"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -1190,6 +1233,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_sister_checkbox_qt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1252,7 +1296,7 @@
                             android:layout_weight="1">
 
                             <RadioGroup
-                                android:id="@+id/radiogroup9"
+                                android:id="@+id/familyMedicalhistory_children_group"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
@@ -1260,12 +1304,12 @@
                                 android:orientation="horizontal">
 
                                 <RadioButton
-                                    android:id="@+id/radio8"
+                                    android:id="@+id/familyMedicalhistory_children_noCheck"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@null"
                                     android:button="@null"
-                                    android:checked="true"
+
                                     android:drawableLeft="@drawable/radio_check"
                                     android:drawablePadding="2dp"
                                     android:text="无"
@@ -1273,11 +1317,12 @@
                                     android:textSize="14sp" />
 
                                 <RadioButton
-                                    android:id="@+id/radio11"
+                                    android:id="@+id/familyMedicalhistory_children_yesCheck"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@null"
                                     android:button="@null"
+                                    android:checked="true"
                                     android:drawableLeft="@drawable/radio_check"
                                     android:drawablePadding="2dp"
                                     android:paddingLeft="10dp"
@@ -1290,6 +1335,7 @@
                     </LinearLayout>
 
                     <TableLayout
+                        android:id="@+id/familyMedicalhistory_children_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="visible">
@@ -1297,6 +1343,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_children_checkbox_gxy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1308,6 +1355,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_children_checkbox_tnb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1319,6 +1367,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_children_checkbox_gxb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1333,6 +1382,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_children_checkbox_gy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1343,6 +1393,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_children_checkbox_jhb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1354,6 +1405,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/fmh_children_checkbox_exzl"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1374,6 +1426,7 @@
                             <TableRow>
 
                                 <CheckBox
+                                    android:id="@+id/fmh_children_checkbox_xtjx"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -1384,6 +1437,7 @@
                                     android:textSize="12sp" />
 
                                 <CheckBox
+                                    android:id="@+id/fmh_children_checkbox_zsxfjb"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -1401,6 +1455,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/fmh_children_checkbox_qt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1470,7 +1525,7 @@
                         android:layout_height="52dp">
 
                         <RadioGroup
-                            android:id="@+id/radiogroup5"
+                            android:id="@+id/geneticHistory_group"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -1478,13 +1533,13 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/radioButton11"
+                                android:id="@+id/geneticHistory_noCheck"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:background="@null"
                                 android:button="@null"
-                                android:checked="true"
+                                android:checked="false"
                                 android:drawableLeft="@drawable/radio_check"
                                 android:drawablePadding="2dp"
                                 android:text="无"
@@ -1492,12 +1547,13 @@
                                 android:textSize="14sp" />
 
                             <RadioButton
-                                android:id="@+id/radioButton12"
+                                android:id="@+id/geneticHistory_yesCheck"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:background="@null"
                                 android:button="@null"
+                                android:checked="true"
                                 android:drawableLeft="@drawable/radio_check"
                                 android:drawablePadding="2dp"
                                 android:text="有"
@@ -1535,6 +1591,7 @@
                     </RelativeLayout>
 
                     <TableLayout
+                        android:id="@+id/geneticHistory_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="visible">
@@ -1542,6 +1599,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_gxy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1553,6 +1611,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_tnb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1564,6 +1623,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_gxb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1578,6 +1638,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_nzu"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1588,6 +1649,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_jhb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1599,6 +1661,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_exzl"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1613,6 +1676,7 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_gy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1623,6 +1687,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_crb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1634,6 +1699,7 @@
                                 android:textSize="12sp" />
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_zzjsjb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1653,11 +1719,11 @@
                             <TableRow>
 
                                 <CheckBox
+                                    android:id="@+id/gh_checkbox_zsxfjb"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:button="@drawable/checkbox_selector"
-                                    android:checked="true"
                                     android:paddingLeft="4dp"
                                     android:text="慢性阻塞性肺疾病"
                                     android:textColor="#272031"
@@ -1671,12 +1737,13 @@
                         <TableRow android:layout_marginBottom="5dp">
 
                             <CheckBox
+                                android:id="@+id/gh_checkbox_qt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:button="@drawable/checkbox_selector"
                                 android:paddingLeft="4dp"
-                                android:text="青霉素"
+                                android:text="其他"
                                 android:textColor="#272031"
                                 android:textSize="12sp" />
 
@@ -1739,7 +1806,7 @@
                         android:layout_height="52dp">
 
                         <RadioGroup
-                            android:id="@+id/radiogroup6"
+                            android:id="@+id/smokeState_group"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -1747,13 +1814,13 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/radioButton13"
+                                android:id="@+id/smokeState_noCheck"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:background="@null"
                                 android:button="@null"
-                                android:checked="true"
+                                android:checked="false"
                                 android:drawableLeft="@drawable/radio_check"
                                 android:drawablePadding="2dp"
                                 android:text="无"
@@ -1761,12 +1828,13 @@
                                 android:textSize="14sp" />
 
                             <RadioButton
-                                android:id="@+id/radioButton14"
+                                android:id="@+id/smokeState_yesCheck"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:background="@null"
                                 android:button="@null"
+                                android:checked="true"
                                 android:drawableLeft="@drawable/radio_check"
                                 android:drawablePadding="2dp"
 
@@ -1806,11 +1874,10 @@
 
 
                     <LinearLayout
+                        android:id="@+id/smokeState_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-
-                        >
+                        android:orientation="vertical">
 
                         <RadioGroup
                             android:id="@+id/rdg1"
@@ -1971,7 +2038,7 @@
                         android:layout_height="52dp">
 
                         <RadioGroup
-                            android:id="@+id/radiogroup7"
+                            android:id="@+id/drinkState_group"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -1979,13 +2046,13 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/radioButton15"
+                                android:id="@+id/drinkState_noCheck"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:background="@null"
                                 android:button="@null"
-                                android:checked="true"
+                                android:checked="false"
                                 android:drawableLeft="@drawable/radio_check"
                                 android:drawablePadding="2dp"
                                 android:text="无"
@@ -1993,12 +2060,13 @@
                                 android:textSize="14sp" />
 
                             <RadioButton
-                                android:id="@+id/radioButton16"
+                                android:id="@+id/drinkState_yesCheck"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:background="@null"
                                 android:button="@null"
+                                android:checked="true"
                                 android:drawableLeft="@drawable/radio_check"
                                 android:drawablePadding="2dp"
 
@@ -2037,6 +2105,7 @@
                     </RelativeLayout>
 
                     <LinearLayout
+                        android:id="@+id/drinkState_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -2171,6 +2240,7 @@
                 android:background="#e1e1e2" />
 
             <Button
+                android:id="@+id/btn_save"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
