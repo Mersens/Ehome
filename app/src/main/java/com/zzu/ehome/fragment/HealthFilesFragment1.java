@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import com.zzu.ehome.R;
 import com.zzu.ehome.view.HeadView;
@@ -26,38 +27,69 @@ import java.util.Map;
  */
 public class HealthFilesFragment1 extends BaseFragment {
     private View mView;
+
     private Button btn_save;
+
     private RadioButton weiHunCheck, jieHunCheck, liHunCheck, sangOuCheck;
-    private RadioGroup maritalStatus_group, medicineAllergy_group, pastMedicalHistory_group, familyMedicalhistory_father_group,
-            familyMedicalhistory_mother_group, familyMedicalhistory_sister_group, familyMedicalhistory_children_group, geneticHistory_group,
-            smokeState_group, drink_group;
-    private RadioButton medicineAllergy_yesCheck, medicineAllergy_noCheck, pastMedicalHistory_yesCheck, pastMedicalHistory_noCheck,
-            familyMedicalhistory_father_yesCheck, familyMedicalhistory_father_noCheck, familyMedicalhistory_mother_yesCheck,
-            familyMedicalhistory_mother_noCheck, familyMedicalhistory_sister_yesCheck, familyMedicalhistory_sister_noCheck,
-            familyMedicalhistory_children_yesCheck, familyMedicalhistory_children_noCheck,
-            geneticHistory_yesCheck, geneticHistory_noCheck, smokeState_yesCheck, smokeState_noCheck, drinkState_yesCheck, drinkState_noCheck;
-    private TableLayout medicineAllergy_type, pastMedicalHistory_type, familyMedicalhistory_father_type, familyMedicalhistory_mother_type,
-            familyMedicalhistory_sister_type, familyMedicalhistory_children_type, geneticHistory_type;
+
+    private RadioGroup maritalStatus_group, medicineAllergy_group, pastMedicalHistory_group,
+            familyMedicalhistory_father_group, familyMedicalhistory_mother_group,
+            familyMedicalhistory_sister_group, familyMedicalhistory_children_group,
+            geneticHistory_group, smokeState_group, drink_group;
+
+    private RadioButton medicineAllergy_yesCheck, medicineAllergy_noCheck, pastMedicalHistory_yesCheck,
+            pastMedicalHistory_noCheck, familyMedicalhistory_father_yesCheck,
+            familyMedicalhistory_father_noCheck, familyMedicalhistory_mother_yesCheck,
+            familyMedicalhistory_mother_noCheck, familyMedicalhistory_sister_yesCheck,
+            familyMedicalhistory_sister_noCheck, familyMedicalhistory_children_yesCheck,
+            familyMedicalhistory_children_noCheck, geneticHistory_yesCheck,
+            geneticHistory_noCheck, smokeState_yesCheck, smokeState_noCheck,
+            drinkState_yesCheck, drinkState_noCheck;
+
+    private TableLayout medicineAllergy_type, pastMedicalHistory_type, familyMedicalhistory_father_type,
+            familyMedicalhistory_mother_type, familyMedicalhistory_sister_type,
+            familyMedicalhistory_children_type, geneticHistory_type;
+
     private LinearLayout smokeState_type, drinkState_type;
-    private CheckBox medicineAllergy_checkbox_qingmeisu, medicineAllergy_checkbox_huangan, medicineAllergy_checkbox_lianmeisu, medicineAllergy_checkbox_qita;
-    private CheckBox pastMedicalHistory_checkbox_gaoxueya, pastMedicalHistory_checkbox_tangniaobing, pastMedicalHistory_checkbox_guanxinbing,
-            pastMedicalHistory_checkbox_naozuzhong, pastMedicalHistory_checkbox_jiehebing, pastMedicalHistory_checkbox_exingzhongliu,
-            pastMedicalHistory_checkbox_ganyan, pastMedicalHistory_checkbox_chuanranbing, pastMedicalHistory_checkbox_zzjb,
-            pastMedicalHistory_checkbox_mxfjb, pastMedicalHistory_checkbox_qita;
-    private CheckBox fmh_father_checkbox_gxy, fmh_father_checkbox_tnb, fmh_father_checkbox_gxb, fmh_father_checkbox_gy,
-            fmh_father_checkbox_jhb, fmh_father_checkbox_exzl, fmh_father_checkbox_xtjx, fmh_father_checkbox_zsxfjb, fmh_father_checkbox_qt;
 
-    private CheckBox fmh_mother_checkbox_gxy, fmh_mother_checkbox_tnb, fmh_mother_checkbox_gxb, fmh_mother_checkbox_gy,
-            fmh_mother_checkbox_jhb, fmh_mother_checkbox_exzl, fmh_mother_checkbox_xtjx, fmh_mother_checkbox_zsxfjb, fmh_mother_checkbox_qt;
+    private CheckBox medicineAllergy_checkbox_qingmeisu, medicineAllergy_checkbox_huangan,
+            medicineAllergy_checkbox_lianmeisu,
+            medicineAllergy_checkbox_qita;
 
-    private CheckBox fmh_children_checkbox_gxy, fmh_children_checkbox_tnb, fmh_children_checkbox_gxb, fmh_children_checkbox_gy,
-            fmh_children_checkbox_jhb, fmh_children_checkbox_exzl, fmh_children_checkbox_xtjx, fmh_children_checkbox_zsxfjb, fmh_children_checkbox_qt;
+    private CheckBox pastMedicalHistory_checkbox_gaoxueya, pastMedicalHistory_checkbox_tangniaobing,
+            pastMedicalHistory_checkbox_guanxinbing, pastMedicalHistory_checkbox_naozuzhong,
+            pastMedicalHistory_checkbox_jiehebing, pastMedicalHistory_checkbox_exingzhongliu,
+            pastMedicalHistory_checkbox_ganyan, pastMedicalHistory_checkbox_chuanranbing,
+            pastMedicalHistory_checkbox_zzjb, pastMedicalHistory_checkbox_mxfjb,
+            pastMedicalHistory_checkbox_qita;
 
-    private CheckBox fmh_sister_checkbox_gxy, fmh_sister_checkbox_tnb, fmh_sister_checkbox_gxb, fmh_sister_checkbox_gy,
-            fmh_sister_checkbox_jhb, fmh_sister_checkbox_exzl, fmh_sister_checkbox_xtjx, fmh_sister_checkbox_zsxfjb, fmh_sister_checkbox_qt;
+    private CheckBox fmh_father_checkbox_gxy, fmh_father_checkbox_tnb, fmh_father_checkbox_gxb,
+            fmh_father_checkbox_gy, fmh_father_checkbox_jhb, fmh_father_checkbox_exzl,
+            fmh_father_checkbox_xtjx, fmh_father_checkbox_zsxfjb, fmh_father_checkbox_qt;
 
-    private CheckBox gh_checkbox_gxy, gh_checkbox_tnb, gh_checkbox_gxb, gh_checkbox_nzu, gh_checkbox_jhb, gh_checkbox_exzl, gh_checkbox_gy, gh_checkbox_crb,
+    private CheckBox fmh_mother_checkbox_gxy, fmh_mother_checkbox_tnb, fmh_mother_checkbox_gxb,
+            fmh_mother_checkbox_gy, fmh_mother_checkbox_jhb, fmh_mother_checkbox_exzl,
+            fmh_mother_checkbox_xtjx, fmh_mother_checkbox_zsxfjb, fmh_mother_checkbox_qt;
+
+    private CheckBox fmh_children_checkbox_gxy, fmh_children_checkbox_tnb, fmh_children_checkbox_gxb,
+            fmh_children_checkbox_gy, fmh_children_checkbox_jhb, fmh_children_checkbox_exzl,
+            fmh_children_checkbox_xtjx, fmh_children_checkbox_zsxfjb, fmh_children_checkbox_qt;
+
+    private CheckBox fmh_sister_checkbox_gxy, fmh_sister_checkbox_tnb, fmh_sister_checkbox_gxb,
+            fmh_sister_checkbox_gy, fmh_sister_checkbox_jhb, fmh_sister_checkbox_exzl,
+            fmh_sister_checkbox_xtjx, fmh_sister_checkbox_zsxfjb, fmh_sister_checkbox_qt;
+
+    private CheckBox gh_checkbox_gxy, gh_checkbox_tnb, gh_checkbox_gxb, gh_checkbox_nzu,
+            gh_checkbox_jhb, gh_checkbox_exzl, gh_checkbox_gy, gh_checkbox_crb,
             gh_checkbox_zzjsjb, gh_checkbox_zsxfjb, gh_checkbox_qt;
+
+
+    private CheckBox smokeState_checkbox_cb, smokeState_checkbox_oer, smokeState_checkbox_jc,
+            smokeState_checkbox_mt, smokeState_checkbox_yjy;
+
+    private CheckBox drinkState_checkbox_cb, drinkState_checkbox_oer, drinkState_checkbox_jc,
+            drinkState_checkbox_mt, drinkState_checkbox_yjj;
+
     private Map<String, String> map = null;
     public static final Integer MEDICINEALLERGY_CODE = 1;
     public static final Integer PASTMEDICALHISTORY_CODE = 2;
@@ -66,6 +98,11 @@ public class HealthFilesFragment1 extends BaseFragment {
     public static final Integer FAMILYMEDICALHISTORY_SISTER_CODE = 5;
     public static final Integer FAMILYMEDICALHISTORY_CHILDREN_CODE = 6;
     public static final Integer GENETICHISTORY_CODE = 7;
+    public static final Integer SMOKESTATE_CODE = 8;
+    public static final Integer DRINKSTATE_CODE = 9;
+    public static final Integer MARITALSTATUS = 10;
+
+    private boolean isCheck=false;
 
 
     @Nullable
@@ -195,11 +232,22 @@ public class HealthFilesFragment1 extends BaseFragment {
         smokeState_yesCheck = (RadioButton) mView.findViewById(R.id.smokeState_yesCheck);
         smokeState_noCheck = (RadioButton) mView.findViewById(R.id.smokeState_noCheck);
         smokeState_type = (LinearLayout) mView.findViewById(R.id.smokeState_type);
+        smokeState_checkbox_cb = (CheckBox) mView.findViewById(R.id.smokeState_checkbox_cb);
+        smokeState_checkbox_oer = (CheckBox) mView.findViewById(R.id.smokeState_checkbox_oer);
+        smokeState_checkbox_jc = (CheckBox) mView.findViewById(R.id.smokeState_checkbox_jc);
+        smokeState_checkbox_mt = (CheckBox) mView.findViewById(R.id.smokeState_checkbox_mt);
+        smokeState_checkbox_yjy = (CheckBox) mView.findViewById(R.id.smokeState_checkbox_yjy);
+
         //喝酒状况
         drink_group = (RadioGroup) mView.findViewById(R.id.drinkState_group);
         drinkState_yesCheck = (RadioButton) mView.findViewById(R.id.drinkState_yesCheck);
         drinkState_noCheck = (RadioButton) mView.findViewById(R.id.drinkState_noCheck);
         drinkState_type = (LinearLayout) mView.findViewById(R.id.drinkState_type);
+        drinkState_checkbox_cb = (CheckBox) mView.findViewById(R.id.drinkState_checkbox_cb);
+        drinkState_checkbox_oer = (CheckBox) mView.findViewById(R.id.drinkState_checkbox_oer);
+        drinkState_checkbox_jc = (CheckBox) mView.findViewById(R.id.drinkState_checkbox_jc);
+        drinkState_checkbox_mt = (CheckBox) mView.findViewById(R.id.drinkState_checkbox_mt);
+        drinkState_checkbox_yjj = (CheckBox) mView.findViewById(R.id.drinkState_checkbox_yjj);
 
 
     }
@@ -209,18 +257,18 @@ public class HealthFilesFragment1 extends BaseFragment {
         maritalStatus_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                isCheck=true;
                 if (checkedId == weiHunCheck.getId()) {
-
+                    map.put(MARITALSTATUS+"", weiHunCheck.getText().toString());
                 } else if (checkedId == jieHunCheck.getId()) {
-
+                    map.put(MARITALSTATUS + "", jieHunCheck.getText().toString());
                 } else if (checkedId == liHunCheck.getId()) {
-
+                    map.put(MARITALSTATUS + "" , liHunCheck.getText().toString());
                 } else if (checkedId == sangOuCheck.getId()) {
-
+                    map.put(MARITALSTATUS + "" , sangOuCheck.getText().toString());
                 }
             }
         });
-
         medicineAllergy_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -312,6 +360,7 @@ public class HealthFilesFragment1 extends BaseFragment {
             }
         });
 
+
         medicineAllergy_checkbox_qingmeisu.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.MEDICINEALLERGY));
         medicineAllergy_checkbox_huangan.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.MEDICINEALLERGY));
         medicineAllergy_checkbox_lianmeisu.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.MEDICINEALLERGY));
@@ -359,7 +408,6 @@ public class HealthFilesFragment1 extends BaseFragment {
         fmh_sister_checkbox_zsxfjb.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.FAMILYMEDICALHISTORY_SISTER));
         fmh_sister_checkbox_qt.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.FAMILYMEDICALHISTORY_SISTER));
 
-
         fmh_children_checkbox_gxy.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.FAMILYMEDICALHISTORY_CHILDREN));
         fmh_children_checkbox_tnb.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.FAMILYMEDICALHISTORY_CHILDREN));
         fmh_children_checkbox_gxb.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.FAMILYMEDICALHISTORY_CHILDREN));
@@ -381,6 +429,19 @@ public class HealthFilesFragment1 extends BaseFragment {
         gh_checkbox_zzjsjb.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.GENETICHISTORY));
         gh_checkbox_zsxfjb.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.GENETICHISTORY));
         gh_checkbox_qt.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.GENETICHISTORY));
+
+        smokeState_checkbox_cb.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.SMOKESTATE));
+        smokeState_checkbox_oer.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.SMOKESTATE));
+        smokeState_checkbox_jc.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.SMOKESTATE));
+        smokeState_checkbox_mt.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.SMOKESTATE));
+        smokeState_checkbox_yjy.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.SMOKESTATE));
+
+        drinkState_checkbox_cb.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.DRINKSTATE));
+        drinkState_checkbox_oer.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.DRINKSTATE));
+        drinkState_checkbox_jc.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.DRINKSTATE));
+        drinkState_checkbox_mt.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.DRINKSTATE));
+        drinkState_checkbox_yjj.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.DRINKSTATE));
+
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -395,7 +456,6 @@ public class HealthFilesFragment1 extends BaseFragment {
     public void initDatas() {
 
     }
-
 
     public class MyCheckedChangeListener implements CompoundButton.OnCheckedChangeListener {
         private Type type = null;
@@ -431,17 +491,24 @@ public class HealthFilesFragment1 extends BaseFragment {
                 case GENETICHISTORY:
                     addData(GENETICHISTORY_CODE, buttonView, isChecked);
                     break;
+                case DRINKSTATE:
+                    resetCheck(Type.DRINKSTATE, buttonView, isChecked);
+                    addData(DRINKSTATE_CODE, buttonView, isChecked);
+                    break;
+                case SMOKESTATE:
+                    resetCheck(Type.SMOKESTATE, buttonView, isChecked);
+                    addData(SMOKESTATE_CODE, buttonView, isChecked);
+                    break;
             }
 
         }
     }
 
-
     public enum Type {
         MARITALSTATUS, MEDICINEALLERGY, PASTMEDICALHISTORY,
         FAMILYMEDICALHISTORY_FATHER, FAMILYMEDICALHISTORY_MOTHER,
         FAMILYMEDICALHISTORY_SISTER, FAMILYMEDICALHISTORY_CHILDREN,
-        GENETICHISTORY;
+        GENETICHISTORY, SMOKESTATE, DRINKSTATE;
     }
 
 
@@ -456,11 +523,82 @@ public class HealthFilesFragment1 extends BaseFragment {
         }
     }
 
+    public void resetCheck(Type type, CompoundButton buttonView, boolean isChecked) {
+        CheckBox box = (CheckBox) buttonView;
+        int id = box.getId();
+
+        switch (type) {
+            case SMOKESTATE:
+                if (isChecked) {
+                    if (id == smokeState_checkbox_cb.getId()) {
+                        smokeState_checkbox_cb.setChecked(true);
+                    } else {
+                        smokeState_checkbox_cb.setChecked(false);
+                    }
+                    if (id == smokeState_checkbox_oer.getId()) {
+                        smokeState_checkbox_oer.setChecked(true);
+                    } else {
+                        smokeState_checkbox_oer.setChecked(false);
+                    }
+                    if (id == smokeState_checkbox_jc.getId()) {
+                        smokeState_checkbox_jc.setChecked(true);
+                    } else {
+                        smokeState_checkbox_jc.setChecked(false);
+                    }
+                    if (id == smokeState_checkbox_mt.getId()) {
+                        smokeState_checkbox_mt.setChecked(true);
+                    } else {
+                        smokeState_checkbox_mt.setChecked(false);
+                    }
+                    if (id == smokeState_checkbox_yjy.getId()) {
+                        smokeState_checkbox_yjy.setChecked(true);
+                    } else {
+                        smokeState_checkbox_yjy.setChecked(false);
+                    }
+                } else {
+                    id = 0;
+                }
+                break;
+            case DRINKSTATE:
+                if (isChecked) {
+                    if (id == drinkState_checkbox_cb.getId()) {
+                        drinkState_checkbox_cb.setChecked(true);
+                    } else {
+                        drinkState_checkbox_cb.setChecked(false);
+                    }
+                    if (id == drinkState_checkbox_oer.getId()) {
+                        drinkState_checkbox_oer.setChecked(true);
+                    } else {
+                        drinkState_checkbox_oer.setChecked(false);
+                    }
+                    if (id == drinkState_checkbox_jc.getId()) {
+                        drinkState_checkbox_jc.setChecked(true);
+                    } else {
+                        drinkState_checkbox_jc.setChecked(false);
+                    }
+                    if (id == drinkState_checkbox_mt.getId()) {
+                        drinkState_checkbox_mt.setChecked(true);
+                    } else {
+                        drinkState_checkbox_mt.setChecked(false);
+                    }
+                    if (id == drinkState_checkbox_yjj.getId()) {
+                        drinkState_checkbox_yjj.setChecked(true);
+                    } else {
+                        drinkState_checkbox_yjj.setChecked(false);
+                    }
+
+                } else {
+                    id = 0;
+                }
+                break;
+        }
+
+    }
+
 
     public static Fragment getInstance() {
         return new HealthFilesFragment1();
     }
-
 
     @Override
     protected void lazyLoad() {
