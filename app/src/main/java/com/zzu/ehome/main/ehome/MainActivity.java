@@ -69,8 +69,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private EHomeDao dao;
     private String userid;
     private Intent intent;
-
-
     private int selectColor;
     private int unSelectColor;
     private String file="";

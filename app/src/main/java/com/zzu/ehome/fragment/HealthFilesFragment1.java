@@ -3,6 +3,7 @@ package com.zzu.ehome.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +18,20 @@ import android.widget.TableLayout;
 import android.widget.Toast;
 
 import com.zzu.ehome.R;
+import com.zzu.ehome.utils.JsonAsyncTaskOnComplete;
+import com.zzu.ehome.utils.JsonAsyncTask_Info;
+import com.zzu.ehome.utils.RequestMaker;
+import com.zzu.ehome.utils.SharePreferenceUtil;
+import com.zzu.ehome.utils.ToastUtils;
 import com.zzu.ehome.view.HeadView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -91,18 +103,28 @@ public class HealthFilesFragment1 extends BaseFragment {
             drinkState_checkbox_mt, drinkState_checkbox_yjj;
 
     private Map<String, String> map = null;
-    public static final Integer MEDICINEALLERGY_CODE = 1;
-    public static final Integer PASTMEDICALHISTORY_CODE = 2;
-    public static final Integer FAMILYMEDICALHISTORY_FATHER_CODE = 3;
-    public static final Integer FAMILYMEDICALHISTORY_MOTHER_CODE = 4;
-    public static final Integer FAMILYMEDICALHISTORY_SISTER_CODE = 5;
-    public static final Integer FAMILYMEDICALHISTORY_CHILDREN_CODE = 6;
-    public static final Integer GENETICHISTORY_CODE = 7;
-    public static final Integer SMOKESTATE_CODE = 8;
-    public static final Integer DRINKSTATE_CODE = 9;
-    public static final Integer MARITALSTATUS = 10;
-
-    private boolean isCheck=false;
+    public static final int MEDICINEALLERGY_CODE = 1;
+    public static final int PASTMEDICALHISTORY_CODE = 2;
+    public static final int FAMILYMEDICALHISTORY_FATHER_CODE = 3;
+    public static final int FAMILYMEDICALHISTORY_MOTHER_CODE = 4;
+    public static final int FAMILYMEDICALHISTORY_SISTER_CODE = 5;
+    public static final int FAMILYMEDICALHISTORY_CHILDREN_CODE = 6;
+    public static final int GENETICHISTORY_CODE = 7;
+    public static final int SMOKESTATE_CODE = 8;
+    public static final int DRINKSTATE_CODE = 9;
+    public static final int MARITALSTATUS = 10;
+    private String maritalStatusNames = "";//婚姻状况
+    private String medicineAllergyNames = "";//药物过敏
+    private String pastMedicalHistoryNames = "";//既往病史
+    private String familyMedicalhistory_fatherNames = "";//家族病史（父亲）
+    private String familyMedicalhistory_motherNames = "";//家族病史（母亲）
+    private String familyMedicalhistory_sisterNames = "";//家族病史（兄弟姐妹）
+    private String familyMedicalhistory_childrenNames = "";//家族病史（子女）
+    private String geneticHistoryNmaes = "";//遗传病史
+    private String drinkStateNames = "";//喝酒状况
+    private String smokeStateNames = "";//吸烟状况
+    private String userid;
+    private RequestMaker requestMaker;
 
 
     @Nullable
@@ -254,18 +276,19 @@ public class HealthFilesFragment1 extends BaseFragment {
 
     public void initEvent() {
         map = new HashMap<String, String>();
+        map.put(MARITALSTATUS + ":", weiHunCheck.getText().toString());
         maritalStatus_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                isCheck=true;
+
                 if (checkedId == weiHunCheck.getId()) {
-                    map.put(MARITALSTATUS+"", weiHunCheck.getText().toString());
+                    map.put(MARITALSTATUS + ":", weiHunCheck.getText().toString());
                 } else if (checkedId == jieHunCheck.getId()) {
-                    map.put(MARITALSTATUS + "", jieHunCheck.getText().toString());
+                    map.put(MARITALSTATUS + ":", jieHunCheck.getText().toString());
                 } else if (checkedId == liHunCheck.getId()) {
-                    map.put(MARITALSTATUS + "" , liHunCheck.getText().toString());
+                    map.put(MARITALSTATUS + ":", liHunCheck.getText().toString());
                 } else if (checkedId == sangOuCheck.getId()) {
-                    map.put(MARITALSTATUS + "" , sangOuCheck.getText().toString());
+                    map.put(MARITALSTATUS + ":", sangOuCheck.getText().toString());
                 }
             }
         });
@@ -360,7 +383,6 @@ public class HealthFilesFragment1 extends BaseFragment {
             }
         });
 
-
         medicineAllergy_checkbox_qingmeisu.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.MEDICINEALLERGY));
         medicineAllergy_checkbox_huangan.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.MEDICINEALLERGY));
         medicineAllergy_checkbox_lianmeisu.setOnCheckedChangeListener(new MyCheckedChangeListener(Type.MEDICINEALLERGY));
@@ -445,16 +467,105 @@ public class HealthFilesFragment1 extends BaseFragment {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("Size", map.size() + "-------------------");
+                maritalStatusNames = "";//婚姻状况
+                medicineAllergyNames = "";//药物过敏
+                pastMedicalHistoryNames = "";//既往病史
+                familyMedicalhistory_fatherNames = "";//家族病史（父亲）
+                familyMedicalhistory_motherNames = "";//家族病史（母亲）
+                familyMedicalhistory_sisterNames = "";//家族病史（兄弟姐妹）
+                familyMedicalhistory_childrenNames = "";//家族病史（子女）
+                geneticHistoryNmaes = "";//遗传病史
+                drinkStateNames = "";//喝酒状况
+                smokeStateNames = "";//吸烟状况
                 for (Map.Entry<String, String> entry : map.entrySet()) {
-                    Log.e("TAG", entry.getKey() + "==============" + entry.getValue());
+                    String key = entry.getKey();
+                    if (!TextUtils.isEmpty(key)) {
+                        setDatas(key);
+                    }
                 }
+                upload();
+
             }
         });
     }
 
-    public void initDatas() {
+    public void upload() {
+        String familyNames = familyMedicalhistory_fatherNames + familyMedicalhistory_motherNames + familyMedicalhistory_sisterNames + familyMedicalhistory_childrenNames;
+        if (TextUtils.isEmpty(familyNames)) {
+            familyNames = " " + ":" + " " + "," + " " + ":" + " ";
+        }
+        String names[] = familyNames.split(",");
+        List<String> list = Arrays.asList(names);
+        startProgressDialog();
+        if (TextUtils.isEmpty(smokeStateNames)) {
+            smokeStateNames = "从不";
+        }
+        if (TextUtils.isEmpty(drinkStateNames)) {
+            drinkStateNames = "从不";
+        }
+        requestMaker.BaseDataUpdate(userid, maritalStatusNames, medicineAllergyNames, geneticHistoryNmaes, pastMedicalHistoryNames, list, smokeStateNames, drinkStateNames, new JsonAsyncTask_Info(getActivity(), true, new JsonAsyncTaskOnComplete() {
+            @Override
+            public void processJsonObject(Object result) {
+                stopProgressDialog();
+                String value = result.toString();
+                try {
+                    JSONObject mySO = (JSONObject) result;
+                    JSONArray array = mySO.getJSONArray("BaseDataUpdate");
+                    if (array.getJSONObject(0).getString("MessageCode")
+                            .equals("0")) {
+                        ToastUtils.showMessage(getActivity(), array.getJSONObject(0).getString("MessageContent"));
+                    } else
+                        ToastUtils.showMessage(getActivity(), array.getJSONObject(0).getString("MessageContent"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
 
+    public void setDatas(String key) {
+        String str[] = key.split(":");
+        int code = Integer.parseInt(str[0]);
+        switch (code) {
+            case MEDICINEALLERGY_CODE:
+                medicineAllergyNames = medicineAllergyNames + str[1] + ",";
+                break;
+            case PASTMEDICALHISTORY_CODE:
+                pastMedicalHistoryNames = pastMedicalHistoryNames + str[1] + ",";
+                break;
+            case FAMILYMEDICALHISTORY_FATHER_CODE:
+                familyMedicalhistory_fatherNames = familyMedicalhistory_fatherNames + "父亲:" + str[1] + ",";
+                break;
+            case FAMILYMEDICALHISTORY_MOTHER_CODE:
+                familyMedicalhistory_motherNames = familyMedicalhistory_motherNames + "母亲:" + str[1] + ",";
+                break;
+            case FAMILYMEDICALHISTORY_SISTER_CODE:
+                familyMedicalhistory_sisterNames = familyMedicalhistory_sisterNames + "兄弟姐妹:" + str[1] + ",";
+                break;
+            case FAMILYMEDICALHISTORY_CHILDREN_CODE:
+                familyMedicalhistory_childrenNames = familyMedicalhistory_childrenNames + "子女:" + str[1] + ",";
+                break;
+            case GENETICHISTORY_CODE:
+                geneticHistoryNmaes = geneticHistoryNmaes + str[1] + ",";
+                break;
+            case SMOKESTATE_CODE:
+                smokeStateNames = str[1];
+                break;
+            case DRINKSTATE_CODE:
+                drinkStateNames = str[1];
+                break;
+            case MARITALSTATUS:
+                maritalStatusNames = map.get(key);
+                break;
+
+        }
+
+    }
+
+
+    public void initDatas() {
+        userid = SharePreferenceUtil.getInstance(getActivity()).getUserId();
+        requestMaker = RequestMaker.getInstance();
     }
 
     public class MyCheckedChangeListener implements CompoundButton.OnCheckedChangeListener {

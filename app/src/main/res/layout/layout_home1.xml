@@ -3,10 +3,9 @@
     android:id="@+id/refresh_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/back_color">
-
     <include layout="@layout/refresh_head" />
-
     <com.zzu.ehome.view.MyScrollView
         android:id="@+id/scrollView4"
         android:layout_width="match_parent"
@@ -17,8 +16,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
 
+            android:orientation="vertical">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
