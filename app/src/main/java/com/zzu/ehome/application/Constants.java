@@ -19,7 +19,7 @@ public class Constants {
  public  static final String TMP_IMAGE_FILE_NAME = "tmp_faceImage.jpeg";
 
  //服务器地址
- public static String EhomeURL = "http://ehome.topmd.cn";
+ public static String EhomeURL = "http://ehome.staging.topmd.cn";
  public static final String	URLIMAGE	= EhomeURL+"/WebServices/News.aspx?id=";
 
 
@@ -46,17 +46,17 @@ public class Constants {
  public static final String UserRegister ="UserRegister";
  public static final String SendAuthCode ="SendAuthCode";
 
- public static final String	URL002Topmd	= "http://www.topmd.cn/android/TopMD.asmx";
+ public static final String	URL002Topmd	= "http://staging.topmd.cn/android/TopMD.asmx";
 
 
 
  //头像地址 永远不换
  public static final String	URL001Topmd	= "http://www.topmd.cn/WebServices/";
  //public static final String	JE_BASE_URL3	= "http://staging.topmd.cn";
- public static final String	JE_BASE_URL3	= "http://www.topmd.cn";
+ public static final String	JE_BASE_URL3	= "http://staging.topmd.cn";
  //心电报告
 
- public static final String	JE_BASE_URL	= "http://www.topmd.cn/";
+ public static final String	JE_BASE_URL	= "http://staging.topmd.cn/";
  public static final String	URL003	= JE_BASE_URL3+"/TopmdWeiXin.asmx";
 
  public static final String	UserInfoChange	= "UserInfoChange";
@@ -65,9 +65,8 @@ public class Constants {
  public static final String TemperatureInsert ="TemperatureInsert";
  public static final String WeightInsert ="WeightInsert";
  public static final String BloodPressureInsert ="BloodPressureInsert";
- public static final String Download="http://file.topmd.cn/upload/";
+ public static final String Download="http://file.staging.topmd.cn/upload/";
  public static final String BloodSugarInsert ="BloodSugarInsert";
-
 
  public static  final String HOSPITALINQUIRY="HospitalInquiry";
  public static  final String DEPARTMENTINQUIRY="DepartmentInquiry";
@@ -115,6 +114,7 @@ public class Constants {
  public static  final String MedicationRecordInsert="MedicationRecordInsert";
  public static  final String StepCounterInsert="StepCounterInsert";
  public static  final String StepCounterInquiry="StepCounterInquiry";
+ public static  final String WeatherInquiry="WeatherInquiry";
 
 
 }

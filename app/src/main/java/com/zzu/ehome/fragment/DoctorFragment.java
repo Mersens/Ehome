@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,6 +26,7 @@ import com.zzu.ehome.activity.SelectOfficeActivity;
 import com.zzu.ehome.bean.RefreshEvent;
 import com.zzu.ehome.db.EHomeDao;
 import com.zzu.ehome.db.EHomeDaoImpl;
+import com.zzu.ehome.utils.CommonUtils;
 import com.zzu.ehome.utils.JsonAsyncTaskOnComplete;
 import com.zzu.ehome.utils.JsonAsyncTask_Info;
 import com.zzu.ehome.utils.RequestMaker;
@@ -69,6 +71,7 @@ public class DoctorFragment extends BaseFragment implements View.OnClickListener
     private EHomeDao dao;
     String userid,PatientId;
     private boolean isPrepared;
+    private View vTop;
 
 
     @Nullable
@@ -81,7 +84,17 @@ public class DoctorFragment extends BaseFragment implements View.OnClickListener
         dao= new EHomeDaoImpl(getActivity());
         PatientId=dao.findUserInfoById(userid).getPatientId();
 
+
         initViews();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            int h= CommonUtils.getStatusHeight(getActivity());
+            ViewGroup.LayoutParams params=vTop.getLayoutParams();
+            params.height=h;
+            params.width= ViewGroup.LayoutParams.FILL_PARENT;
+            vTop.setLayoutParams(params);
+        }else{
+            vTop.setVisibility(View.GONE);
+        }
         initEvent();
         isPrepared = true;
         lazyLoad();
@@ -100,6 +113,7 @@ public class DoctorFragment extends BaseFragment implements View.OnClickListener
         tv_doctor = (TextView) view.findViewById(R.id.tv_doctor);
         tv_time = (TextView) view.findViewById(R.id.tv_time);
         btn_ok = (Button) view.findViewById(R.id.btn_ok);
+   vTop=(View) view.findViewById(R.id.v_top);
     }
 
 

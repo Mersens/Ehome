@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -24,6 +25,7 @@ import com.zzu.ehome.activity.BaseFilesActivity;
 import com.zzu.ehome.activity.CreateillnessActivity;
 import com.zzu.ehome.activity.DataChatActivity;
 import com.zzu.ehome.bean.RefreshEvent;
+import com.zzu.ehome.utils.CommonUtils;
 
 import de.greenrobot.event.EventBus;
 
@@ -46,6 +48,7 @@ public class HealthFragment extends BaseFragment implements View.OnClickListener
     private ImageView ivnewbace;
     private Boolean isFile;
     private boolean isPrepared;
+    private View vTop;
     private BroadcastReceiver mDateOrFileBroadcastReceiver=new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -75,6 +78,15 @@ public class HealthFragment extends BaseFragment implements View.OnClickListener
 
         EventBus.getDefault().register(this);
         initViews();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            int h= CommonUtils.getStatusHeight(getActivity());
+            ViewGroup.LayoutParams params=vTop.getLayoutParams();
+            params.height=h;
+            params.width= ViewGroup.LayoutParams.FILL_PARENT;
+            vTop.setLayoutParams(params);
+        }else{
+            vTop.setVisibility(View.GONE);
+        }
         initEvent();
 
         IntentFilter intentFilter = new IntentFilter();
@@ -105,7 +117,7 @@ public class HealthFragment extends BaseFragment implements View.OnClickListener
         lv_new=(LinearLayout)view.findViewById(R.id.lv_new);
         if(tag==-1)
         addFragment(Style.DATA);
-
+        vTop=(View) view.findViewById(R.id.v_top);
 
     }
 

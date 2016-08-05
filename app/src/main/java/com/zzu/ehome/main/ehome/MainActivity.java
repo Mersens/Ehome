@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +18,7 @@ import android.widget.TextView;
 import com.igexin.sdk.PushManager;
 import com.umeng.analytics.MobclickAgent;
 import com.zzu.ehome.R;
-import com.zzu.ehome.activity.BaseActivity;
+import com.zzu.ehome.activity.BaseSimpleActivity;
 import com.zzu.ehome.application.CustomApplcation;
 import com.zzu.ehome.bean.RefreshEvent;
 import com.zzu.ehome.bean.StepBean;
@@ -28,22 +26,19 @@ import com.zzu.ehome.db.EHomeDao;
 import com.zzu.ehome.db.EHomeDaoImpl;
 import com.zzu.ehome.fragment.DoctorFragment;
 import com.zzu.ehome.fragment.HealthFragment;
-import com.zzu.ehome.fragment.HomeFragment;
 import com.zzu.ehome.fragment.HomeFragment1;
-import com.zzu.ehome.fragment.MyInfoFragment;
-
+import com.zzu.ehome.fragment.UserCenterFragment;
 import com.zzu.ehome.service.StepDetector;
 import com.zzu.ehome.service.StepService;
 import com.zzu.ehome.utils.DateUtils;
 import com.zzu.ehome.utils.SharePreferenceUtil;
-
 import com.zzu.ehome.view.DialogTips;
 
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener{
+public class MainActivity extends BaseSimpleActivity implements View.OnClickListener{
     private final String mPageName = "MainActivity";
 
     private Fragment[] fragments;
@@ -199,13 +194,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         index=savedInstanceState.getInt("index",0);
         List<Fragment> fragmentList = getSupportFragmentManager().getFragments();
         for(Fragment ft:fragmentList){
-            if(ft instanceof HomeFragment){
+            if(ft instanceof HomeFragment1){
                 mHomeFragment=ft;
             }else if(ft instanceof HealthFragment){
                 mHealthFragment=ft;
             }else if(ft instanceof DoctorFragment){
                 mDoctorFragment=ft;
-            }else if(ft instanceof MyInfoFragment ){
+            }else if(ft instanceof UserCenterFragment ){
                 mInfoFragment=ft;
             }
         }
@@ -243,11 +238,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         mTabs[2] = layout_doctor;
         mTabs[3] = layout_info;
 
-       // mHomeFragment = HomeFragment.getInstance();
-        mHomeFragment = new HomeFragment1();
+//       mHomeFragment = HomeFragment.getInstance();
+       mHomeFragment = new HomeFragment1();
         mHealthFragment = HealthFragment.getInstance();
         mDoctorFragment= DoctorFragment.getInstance();
-        mInfoFragment = MyInfoFragment.getInstance();
+        mInfoFragment = UserCenterFragment.getInstance();
         fragments = new Fragment[]{mHomeFragment, mHealthFragment, mDoctorFragment,mInfoFragment};
     }
 

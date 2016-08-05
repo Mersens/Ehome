@@ -820,4 +820,13 @@ public class RequestMaker {
         task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.StepCounterInquiry, Constants.StepCounterInquiry,
                 SOAP_URL, paramMap);
     }
+    public void WeatherInquiry(String city,JsonAsyncTask_Info task){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request><currentCity>%s</currentCity></Request>";
+        str = String.format(str, new Object[]
+                {city});
+        paramMap.put("str", str);
+        task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.WeatherInquiry, Constants.WeatherInquiry,
+                SOAP_URL, paramMap);
+    }
 }
