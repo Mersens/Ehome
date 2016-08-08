@@ -10,16 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        >
-    <ImageView
-        android:layout_width="125dp"
-        android:layout_height="109dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-
-        android:src="@mipmap/pic_logo_r" />
-</LinearLayout>
+        ></LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -35,7 +26,7 @@
         android:layout_marginLeft="27dip"
         android:layout_marginRight="27dip"
 
-        android:background="@mipmap/bg_ze_input"
+
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -43,7 +34,7 @@
             android:layout_width="22dip"
             android:layout_height="22dp"
             android:layout_marginLeft="7dp"
-            android:background="@mipmap/icon_mob" />
+            android:background="@mipmap/icon_user" />
 
         <EditText
             android:id="@+id/editPhone"
@@ -63,14 +54,19 @@
             android:textColorHint="@color/text_color"
             android:textSize="14sp" />
     </LinearLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/gray_line"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="1dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dip"
         android:layout_marginLeft="27dip"
         android:layout_marginRight="27dip"
         android:layout_marginTop="8dp"
-        android:background="@mipmap/bg_ze_input"
+
         >
 
         <ImageView
@@ -80,7 +76,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="7dp"
-            android:background="@mipmap/icon_inf" />
+            android:background="@mipmap/icon_yanzheng" />
 
         <EditText
             android:id="@+id/edCode"
@@ -109,17 +105,22 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="7dp"
             android:text="@string/get_code"
-            android:textColor="@color/actionbar_color"
+            android:textColor="#00c07d"
             android:textSize="14sp" />
     </RelativeLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/gray_line"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="1dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dip"
         android:layout_marginLeft="27dip"
         android:layout_marginRight="27dip"
         android:layout_marginTop="8dp"
-        android:background="@mipmap/bg_ze_input"
+
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -127,7 +128,7 @@
             android:layout_width="22dip"
             android:layout_height="22dp"
             android:layout_marginLeft="7dp"
-            android:background="@mipmap/icon_lock" />
+            android:background="@mipmap/icon_key" />
 
         <EditText
             android:id="@+id/editPass"
@@ -147,7 +148,12 @@
             android:inputType="textPassword"
             android:textSize="14sp" />
     </LinearLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/gray_line"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="1dp"/>
 
     <Button
         android:id="@+id/btn_register"
@@ -160,7 +166,7 @@
         android:text="注册"
         android:textColor="@color/base_color_text_white"
         android:textSize="20sp" />
-
+<!--
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -201,6 +207,6 @@
 
 
 
-    </RelativeLayout>
+    </RelativeLayout>-->
         </LinearLayout>
 </LinearLayout>

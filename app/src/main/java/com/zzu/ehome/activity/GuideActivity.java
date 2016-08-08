@@ -1,6 +1,7 @@
 package com.zzu.ehome.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,6 +18,8 @@ import android.widget.TextView;
 import com.umeng.analytics.MobclickAgent;
 import com.zzu.ehome.R;
 import com.zzu.ehome.fragment.GuideFragment;
+import com.zzu.ehome.main.ehome.MainActivity;
+import com.zzu.ehome.main.ehome.WelcomeActivity;
 import com.zzu.ehome.utils.GuidedUtil;
 
 import java.util.Timer;
@@ -116,8 +119,8 @@ public class GuideActivity extends BaseSimpleActivity{
 		tv_login.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
-				intentAction(GuideActivity.this, LoginActivity.class);
+				startActivity(new Intent(GuideActivity.this, MainActivity.class));
+//				intentAction(GuideActivity.this, .class);
 
 			}
 		});

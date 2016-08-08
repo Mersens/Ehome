@@ -81,17 +81,17 @@ public class WelcomeActivity extends BaseSimpleActivity {
             switch (msg.what) {
                 case GO_HOME:
 
-                    if(userid.equals("")){
-                        goLogin();
-                    }else {
-                        User user = dao.findUserInfoById(userid);
-                        if(user!=null) {
-                            login(user.getMobile(), user.getPassword());
-                        }else{
-                            goLogin();
-                        }
-                    }
-
+//                    if(userid.equals("")){
+//                        goLogin();
+//                    }else {
+//                        User user = dao.findUserInfoById(userid);
+//                        if(user!=null) {
+//                            login(user.getMobile(), user.getPassword());
+//                        }else{
+//                            goLogin();
+//                        }
+//                    }
+                    goHome();
 
                     break;
                 case GO_GUIDE:

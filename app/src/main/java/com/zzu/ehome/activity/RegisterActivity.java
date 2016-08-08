@@ -42,7 +42,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private EditText editPass;
     private Button btn_register;
     private CheckBox checkbox;
-    private TextView tv_ehome_tips;
+//    private TextView tv_ehome_tips;
     private Intent mIntent;
     private RequestMaker requestMaker;
     String usermobile="",chkcode="",pwd,mCode,ClientID;
@@ -56,7 +56,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         setContentView(R.layout.activity_register);
         initViews();
         initEvents();
-        checkbox.setChecked(true);
+//        checkbox.setChecked(true);
         dao = new EHomeDaoImpl(this);
         RegisterCodeTimerService.setHandler(mCodeHandler);
         mIntent = new Intent(RegisterActivity.this,
@@ -82,20 +82,12 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         editPass = (EditText) findViewById(R.id.editPass);
         btn_register = (Button) findViewById(R.id.btn_register);
         checkbox = (CheckBox) findViewById(R.id.checkBox);
-        tv_ehome_tips = (TextView) findViewById(R.id.tv_ehome_tips);
+//        tv_ehome_tips = (TextView) findViewById(R.id.tv_ehome_tips);
 
-        setDefaultTXViewMethod(R.mipmap.icon_arrow_left, "", "登录", new HeadView.OnLeftClickListener() {
+        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, "注册", new HeadView.OnLeftClickListener() {
             @Override
             public void onClick() {
                 finishActivity();
-
-            }
-        }, new HeadView.OnRightClickListener() {
-            @Override
-            public void onClick() {
-                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
-                finishActivity();
-
             }
         });
     }
@@ -103,7 +95,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     public void initEvents() {
         tv_getCode.setOnClickListener(this);
-        tv_ehome_tips.setOnClickListener(this);
+//        tv_ehome_tips.setOnClickListener(this);
         btn_register.setOnClickListener(this);
     }
     @Override
@@ -146,9 +138,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     ToastUtils.showMessage(RegisterActivity.this,R.string.msgUninternet);
                 }
                 break;
-            case R.id.tv_ehome_tips:
-                doEhomeTips();
-                break;
+//            case R.id.tv_ehome_tips:
+//                doEhomeTips();
+//                break;
             case R.id.btn_register:
                 if(CommonUtils.isFastClick()) {
                     return;
@@ -212,14 +204,14 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     /**
      * 健康E家用户协议
      */
-    public void doEhomeTips(){
-        if(checkbox.isChecked()){
-            checkbox.setChecked(false);
-        }else{
-            checkbox.setChecked(true);
-
-        }
-    }
+//    public void doEhomeTips(){
+//        if(checkbox.isChecked()){
+//            checkbox.setChecked(false);
+//        }else{
+//            checkbox.setChecked(true);
+//
+//        }
+//    }
 
     /**
      * 注册

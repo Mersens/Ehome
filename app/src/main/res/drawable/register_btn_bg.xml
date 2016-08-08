@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@mipmap/register_btn_pressed" android:state_pressed="true"></item>
-    <item android:drawable="@mipmap/register_btn_noamal" android:state_pressed="false"></item>
+    <item android:drawable="@color/press_button" android:state_pressed="true"></item>
+    <item android:drawable="@color/normal_button" android:state_pressed="false"></item>
 </selector>

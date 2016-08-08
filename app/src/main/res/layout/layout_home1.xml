@@ -3,7 +3,6 @@
     android:id="@+id/refresh_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/back_color">
     <include layout="@layout/refresh_head" />
     <com.zzu.ehome.view.MyScrollView
@@ -32,6 +31,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/llrecord"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -70,13 +70,13 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/icon_file" />
+                            android:src="@drawable/icon_file1" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text="健康档案"
+                            android:text="添加家人"
                             android:textColor="#272031"
                             android:textSize="@dimen/text_size_normal" />
                     </LinearLayout>

@@ -7,7 +7,7 @@
     <color name="base_color_text_black">#3e3e39</color>
     <color name="gray_line_color">#cccccc</color>
     <color name="text_color">#888c97</color>
-    <color name="actionbar_color">#30C0CB</color>
+    <color name="actionbar_color">#00c07d</color>
     <color name="text_blue_color">#2ec2cc</color>
     <color name="back_color">#f2f2f2</color>
     <color name="bottom_text_color_pressed">#00c07d</color>
@@ -25,7 +25,7 @@
     <color name="green_color">#7dc855</color>
     <color name="province_line_border">#f2f2f2</color>
 
-    <color name="gray_line">#767d85</color>
+    <color name="gray_line">#e1e1e2</color>
 
     <color name="none_color">#00000000</color>
     <color name="plugin_camera_black">#000000</color>
@@ -42,4 +42,7 @@
     <color name="gray">#eeeeee</color>
     <color name="light_blue">#6593cb</color>
     <color name="refresh_load_view_bg">#f2f2f2</color>
+    <color name="press_button">#00c07d</color>
+    <color name="normal_button">#00d389</color>
+    <color name="color_line_text">#e1e1e2</color>
 </resources>

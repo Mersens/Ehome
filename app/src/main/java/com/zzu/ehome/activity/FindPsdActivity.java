@@ -35,12 +35,12 @@ public class FindPsdActivity extends BaseActivity implements View.OnClickListene
 
     private EditText editPhone;
     private EditText edCode;
-    private EditText editPass;
+
     private EditText editPass_again;
     private Button btn_save;
     private TextView tv_getCode;
     private Intent mIntent;
-    private String usermobile,chkcode,usrpwd,usrconfirmpwd;
+    private String usermobile,chkcode,usrpwd;
     private RequestMaker requestMaker;
     @Override
     protected void onCreate(Bundle arg0) {
@@ -57,7 +57,7 @@ public class FindPsdActivity extends BaseActivity implements View.OnClickListene
     public void initViews() {
         editPhone = (EditText) findViewById(R.id.editPhone);
         edCode = (EditText) findViewById(R.id.edCode);
-        editPass = (EditText) findViewById(R.id.editPass);
+//        editPass = (EditText) findViewById(R.id.editPass);
         editPass_again = (EditText) findViewById(R.id.editPass_again);
         btn_save=(Button)findViewById(R.id.btn_save);
         tv_getCode=(TextView)findViewById(R.id.tv_getCode);
@@ -137,8 +137,8 @@ public class FindPsdActivity extends BaseActivity implements View.OnClickListene
                     return;
                 }
 //                usermobile=editPhone.getText().toString().trim();
-                usrpwd=editPass.getText().toString().trim();
-                usrconfirmpwd=editPass_again.getText().toString().trim();
+
+                usrpwd=editPass_again.getText().toString().trim();
                 if(TextUtils.isEmpty(usermobile))
                 {
                     ToastUtils.showMessage(FindPsdActivity.this,R.string.mobile_register);
@@ -156,15 +156,6 @@ public class FindPsdActivity extends BaseActivity implements View.OnClickListene
             }
                 else if(TextUtils.isEmpty(usrpwd)){
                     ToastUtils.showMessage(FindPsdActivity.this,R.string.pass_register);
-                    return;
-                }else if(TextUtils.isEmpty(usrconfirmpwd)){
-                    ToastUtils.showMessage(FindPsdActivity.this,"请输入确认密码");
-                    return;
-                }else if(usrpwd.length()<6||usrconfirmpwd.length()<6){
-                    ToastUtils.showMessage(FindPsdActivity.this,"密码长度必须大于6位");
-                    return;
-                }else if(!usrpwd.equals(usrconfirmpwd)){
-                    ToastUtils.showMessage(FindPsdActivity.this,"确认密码和密码必须相等");
                     return;
                 }else if(!chkcode.equals(edCode.getText().toString().trim())){
                     ToastUtils.showMessage(FindPsdActivity.this,"验证码不正确");

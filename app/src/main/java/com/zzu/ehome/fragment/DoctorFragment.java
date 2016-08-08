@@ -82,7 +82,7 @@ public class DoctorFragment extends BaseFragment implements View.OnClickListener
         requestMaker = RequestMaker.getInstance();
         userid= SharePreferenceUtil.getInstance(getActivity()).getUserId();
         dao= new EHomeDaoImpl(getActivity());
-        PatientId=dao.findUserInfoById(userid).getPatientId();
+//        PatientId=dao.findUserInfoById(userid).getPatientId();
 
 
         initViews();

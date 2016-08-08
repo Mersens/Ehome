@@ -829,4 +829,13 @@ public class RequestMaker {
         task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.WeatherInquiry, Constants.WeatherInquiry,
                 SOAP_URL, paramMap);
     }
+    public void UserRelationshipInsert(String userid,String Relationship,String RUserID,JsonAsyncTask_Info task){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request><UserID>%s</UserID><Relationship>%s</Relationship><RUserID>%s</RUserID></Request>";
+        str = String.format(str, new Object[]
+                {userid,Relationship,RUserID});
+        paramMap.put("str", str);
+        task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.UserRelationshipInsert, Constants.UserRelationshipInsert,
+                SOAP_URL, paramMap);
+    }
 }

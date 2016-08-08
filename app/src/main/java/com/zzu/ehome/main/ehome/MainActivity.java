@@ -304,8 +304,6 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
         mTabs[currentTabIndex].setSelected(false);
         mTabs[index].setSelected(true);
         currentTabIndex = index;
-
-
     }
     private void selectCommitItem(int index){
         if (currentTabIndex != index) {

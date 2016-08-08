@@ -8,6 +8,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.view.Window;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 import com.zzu.ehome.application.CustomApplcation;
 import com.zzu.ehome.R;
 import com.zzu.ehome.utils.SystemStatusManager;
+import com.zzu.ehome.view.CustomProgressDialog;
 import com.zzu.ehome.view.HeadView;
 
 /**
@@ -28,6 +31,19 @@ public class BaseSimpleActivity extends FragmentActivity {
     private Toast mToast;
     private Activity activity;
     private HeadView mHeadView;
+    private CustomProgressDialog progressDialog = null;
+    private Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 0:
+                    stopProgressDialog();
+                    break;
+            }
+            super.handleMessage(msg);
+        }
+    };
     @Override
     protected void onCreate(Bundle arg0) {
         // TODO Auto-generated method stub
@@ -98,6 +114,15 @@ public class BaseSimpleActivity extends FragmentActivity {
         mHeadView=(HeadView) findViewById(R.id.common_actionbar);
         mHeadView.init(HeadView.HeaderStyle.LEFTANDTITLE);
         mHeadView.setLeftWithTitleViewMethod( leftsrcid, title,  onleftclicklistener);
+    }
+    public void startProgressDialog(){
+        if (progressDialog == null){
+            progressDialog = CustomProgressDialog.createDialog(this);
+            //progressDialog.setMessage("正在加载中...");
+        }
+
+        progressDialog.show();
+        mHandler.sendEmptyMessageDelayed(0, 8000);
     }
 
     /**
@@ -245,6 +270,12 @@ public class BaseSimpleActivity extends FragmentActivity {
             e.printStackTrace();
         }
         return statusHeight;
+    }
+    public void stopProgressDialog(){
+        if (progressDialog != null){
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
     }
 
 }

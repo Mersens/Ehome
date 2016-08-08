@@ -17,6 +17,7 @@ public class SharePreferenceUtil {
 	private static final String IS_REMEBER="is_remeber";
 	private static final String IS_FIRST="is_first";
 	private static final String WEIGHT="WEIGHT";
+	private static final String PARENT_ID="parent_id";
 
 
 	public static Boolean getIsRemeber() {
@@ -51,6 +52,14 @@ public class SharePreferenceUtil {
 		return sp;
 	}
 
+	//用户亲友id
+	public String getPARENTID(){
+		return mSharedPreferences.getString(PARENT_ID, "");
+	}
+	public void setPARENTID(String parentid){
+		editor.putString(PARENT_ID, parentid);
+		editor.commit();
+	}
 	//用户id
 	public String getUserId(){
 		return mSharedPreferences.getString(USER_ID, "");

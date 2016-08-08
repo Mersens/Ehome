@@ -24,11 +24,13 @@
                     android:layout_height="67dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true">
-
-                    <ImageView
+                    <com.zzu.ehome.view.CircleImageView
+                        android:id="@+id/icon_user"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/icon_uesr_tx" />
+                        android:src="@drawable/icon_uesr_tx"
+                        />
+
                 </FrameLayout>
             </RelativeLayout>
 
@@ -39,15 +41,18 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="8dp"
                     android:text="王小明"
                     android:textColor="#00c07d"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    />
 
                 <RelativeLayout
+                    android:id="@+id/layout_msg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp">
@@ -91,6 +96,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tvGoMyFaimily"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@mipmap/btn_user"
@@ -133,6 +139,7 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/layout_wdda"
                         android:layout_width="match_parent"
                         android:layout_height="52dp">
 
@@ -171,6 +178,7 @@
                         android:background="#e1e1e2" />
 
                     <RelativeLayout
+                        android:id="@+id/layout_wdbg"
                         android:layout_width="match_parent"
                         android:layout_height="52dp">
 
@@ -180,7 +188,7 @@
                             android:layout_height="22dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:src="@mipmap/icon_user_c1" />
+                            android:src="@mipmap/icon_user_c2" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -209,6 +217,7 @@
                         android:background="#e1e1e2" />
 
                     <RelativeLayout
+                        android:id="@+id/layout_wdyy"
                         android:layout_width="match_parent"
                         android:layout_height="52dp">
 
@@ -218,7 +227,7 @@
                             android:layout_height="22dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:src="@mipmap/icon_user_c1" />
+                            android:src="@mipmap/icon_user_c3" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -247,6 +256,7 @@
                         android:background="#e1e1e2" />
 
                     <RelativeLayout
+                        android:id="@+id/layout_wdtx"
                         android:layout_width="match_parent"
                         android:layout_height="52dp">
 
@@ -256,7 +266,7 @@
                             android:layout_height="22dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:src="@mipmap/icon_user_c1" />
+                            android:src="@mipmap/icon_user_c4" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -285,6 +295,7 @@
                         android:background="#e1e1e2" />
 
                     <RelativeLayout
+                        android:id="@+id/layout_wdgz"
                         android:layout_width="match_parent"
                         android:layout_height="52dp">
 
@@ -294,7 +305,7 @@
                             android:layout_height="22dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:src="@mipmap/icon_user_c1" />
+                            android:src="@mipmap/icon_user_c5" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -337,6 +348,7 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/layout_yqhy"
                         android:layout_width="match_parent"
                         android:layout_height="52dp">
 
@@ -346,7 +358,7 @@
                             android:layout_height="22dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:src="@mipmap/icon_user_c1" />
+                            android:src="@mipmap/icon_user_c6" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -373,6 +385,7 @@
                         android:background="#e1e1e2" />
 
                     <RelativeLayout
+                        android:id="@+id/layout_yjfk"
                         android:layout_width="match_parent"
                         android:layout_height="52dp">
 
@@ -382,7 +395,7 @@
                             android:layout_height="22dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:src="@mipmap/icon_user_c1" />
+                            android:src="@mipmap/icon_user_c7" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -421,6 +434,7 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/layout_about"
                         android:layout_width="match_parent"
                         android:layout_height="52dp">
 
@@ -430,7 +444,7 @@
                             android:layout_height="22dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:src="@mipmap/icon_user_c1" />
+                            android:src="@mipmap/icon_user_c8" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -457,6 +471,7 @@
                         android:background="#e1e1e2" />
 
                     <RelativeLayout
+                        android:id="@+id/layout_setting"
                         android:layout_width="match_parent"
                         android:layout_height="52dp">
 
@@ -466,7 +481,7 @@
                             android:layout_height="22dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:src="@mipmap/icon_user_c1" />
+                            android:src="@mipmap/icon_user_c9" />
 
                         <TextView
                             android:layout_width="wrap_content"

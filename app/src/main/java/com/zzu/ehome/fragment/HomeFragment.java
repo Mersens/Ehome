@@ -44,6 +44,7 @@ import com.zzu.ehome.bean.HealteData;
 import com.zzu.ehome.bean.HealthData;
 import com.zzu.ehome.bean.HealthDataRes;
 import com.zzu.ehome.bean.HealthDes;
+import com.zzu.ehome.bean.NetEvent;
 import com.zzu.ehome.bean.RefreshEvent;
 import com.zzu.ehome.bean.StepBean;
 import com.zzu.ehome.bean.StepCounterBean;
@@ -166,6 +167,11 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
         isPrepared = true;
         lazyLoad();
         return view;
+    }
+
+    @Override
+    public void onEventMainThread(NetEvent event) {
+        super.onEventMainThread(event);
     }
 
     @Override
