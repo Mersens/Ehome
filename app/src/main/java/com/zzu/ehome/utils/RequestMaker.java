@@ -838,4 +838,19 @@ public class RequestMaker {
         task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.UserRelationshipInsert, Constants.UserRelationshipInsert,
                 SOAP_URL, paramMap);
     }
+    /*
+    *录入身高体重 weight
+     */
+    public void userInfoWeight(String userid, String height,String weight, JsonAsyncTask_Info task) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request><UserID>%s</UserID><UserHeight>%s</UserHeight><UserWeight>%s</UserWeight></Request>";
+        str = String.format(str, new Object[]
+                {userid, height,weight});
+        paramMap.put("str", str);
+
+        // 必须是这5个参数，而且得按照顺序
+        task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.UserInfoChange, Constants.UserInfoChange,
+                SOAP_URL, paramMap);
+
+    }
 }

@@ -21,7 +21,7 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
     /**
      * 上下文对象
      */
-    private Context mContext;
+    protected Context mContext;
     /**
      * 是否更新
      */

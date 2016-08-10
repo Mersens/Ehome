@@ -10,12 +10,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zzu.ehome.R;
@@ -45,10 +44,10 @@ import de.greenrobot.event.EventBus;
  */
 public class DoctorFragment extends BaseFragment implements View.OnClickListener {
     private View view;
-    private LinearLayout layout_add_hosptial;
-    private LinearLayout layout_add_office;
-    private LinearLayout layout_add_doctor;
-    private LinearLayout layout_add_time;
+    private RelativeLayout layout_add_hosptial;
+    private RelativeLayout layout_add_office;
+    private RelativeLayout layout_add_doctor;
+    private RelativeLayout layout_add_time;
     public static final int ADD_HOSPITAL = 0x00;
     public static final int ADD_OFFICE = 0x01;
     public static final int ADD_DOCTOR = 0x10;
@@ -102,12 +101,10 @@ public class DoctorFragment extends BaseFragment implements View.OnClickListener
     }
 
     public void initViews() {
-        setOnlyTileViewMethod(view, "预约挂号");
-        layout_add_hosptial = (LinearLayout) view.findViewById(R.id.layout_add_hosptial);
-        layout_add_office = (LinearLayout) view.findViewById(R.id.layout_add_office);
-        layout_add_doctor = (LinearLayout) view.findViewById(R.id.layout_add_doctor);
-        layout_add_time = (LinearLayout) view.findViewById(R.id.layout_add_time);
-
+        layout_add_hosptial = (RelativeLayout) view.findViewById(R.id.layout_add_hosptial);
+        layout_add_office = (RelativeLayout) view.findViewById(R.id.layout_add_office);
+        layout_add_doctor = (RelativeLayout) view.findViewById(R.id.layout_add_doctor);
+        layout_add_time = (RelativeLayout) view.findViewById(R.id.layout_add_time);
         tv_hosptial = (TextView) view.findViewById(R.id.tv_hosptial);
         tv_office = (TextView) view.findViewById(R.id.tv_office);
         tv_doctor = (TextView) view.findViewById(R.id.tv_doctor);

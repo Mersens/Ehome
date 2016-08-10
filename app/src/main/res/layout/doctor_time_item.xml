@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_color_text_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="#0f2536"
+                android:text="2016-08-04星期四 08:00--09:00"
+                android:layout_marginTop="4dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="#0f2536"
+                android:text="剩余号源 7"
+                android:layout_marginBottom="4dp"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_gh"
+                android:layout_height="35dp"
+                android:layout_width="58dp"
+                android:text="挂号"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="#2bb3f1"
+                android:textColor="#ffffff"
+
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e1e1e2"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        />
+    </LinearLayout>
+
+

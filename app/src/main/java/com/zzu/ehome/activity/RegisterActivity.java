@@ -44,6 +44,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private CheckBox checkbox;
 //    private TextView tv_ehome_tips;
     private Intent mIntent;
+    private String tag="";
+
     private RequestMaker requestMaker;
     String usermobile="",chkcode="",pwd,mCode,ClientID;
     private EHomeDao dao;
@@ -59,6 +61,11 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 //        checkbox.setChecked(true);
         dao = new EHomeDaoImpl(this);
         RegisterCodeTimerService.setHandler(mCodeHandler);
+        if(this.getIntent()!=null){
+            if(this.getIntent().getStringExtra("relation")!=null){
+                tag=this.getIntent().getStringExtra("relation");
+            }
+        }
         mIntent = new Intent(RegisterActivity.this,
                 RegisterCodeTimerService.class);
         ClientID = PushManager.getInstance().getClientid(RegisterActivity.this);
@@ -218,7 +225,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
      */
     public void doRegister(){
 
-//       usermobile=editPhone.getText().toString().trim();
+       usermobile=editPhone.getText().toString().trim();
         pwd=editPass.getText().toString().trim();
         mCode=edCode.getText().toString().trim();
 
@@ -249,9 +256,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         }else if(!mCode.equals(chkcode)){
             ToastUtils.showMessage(RegisterActivity.this,R.string.erro_code_register);
             return;
-        }else if(!checkbox.isChecked()){
-            ToastUtils.showMessage(RegisterActivity.this,R.string.no_agree);
-            return;
         }
         else{
 
@@ -268,12 +272,20 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         user.setMobile(array.getJSONObject(0).getString("Mobile"));
                         user.setPassword(pwd);
                         dao.addUserInfo(user);
-                        SharePreferenceUtil.getInstance(RegisterActivity.this).setUserId(array.getJSONObject(0).getString("UserID"));
-//                        GuideActivity guideActivity=new GuideActivity();
-//                        guideActivity.guidAct.finish();
-                        CustomApplcation.getInstance().finishSingleActivityByClass(GuideActivity.class);
-                       startActivity(new Intent(RegisterActivity.this,CompletInfoActivity.class));
+
+
                         SharePreferenceUtil.getInstance(RegisterActivity.this).setIsFirst(true);
+//                        CustomApplcation.getInstance().finishSingleActivityByClass(GuideActivity.class);
+                        if(TextUtils.isEmpty(tag)){
+                            SharePreferenceUtil.getInstance(RegisterActivity.this).setUserId(array.getJSONObject(0).getString("UserID"));
+                            CustomApplcation.getInstance().finishSingleActivityByClass(LoginActivity1.class);
+                           finish();
+                        }else{
+                            SharePreferenceUtil.getInstance(RegisterActivity.this).setPARENTID(array.getJSONObject(0).getString("UserID"));
+                            startActivity(new Intent(RegisterActivity.this,RelationActivity.class));
+                        }
+
+
 
                     }else{
                         ToastUtils.showMessage(RegisterActivity.this,array.getJSONObject(0).getString("MessageContent").toString());

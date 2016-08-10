@@ -226,6 +226,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/layout_yygh"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
                     android:gravity="center"

@@ -339,10 +339,24 @@
         <activity android:name=".activity.InternetMap" />
         <activity android:name=".activity.LoginActivity1" />
         <activity android:name=".activity.RelationActivity" />
-
+        <activity android:name=".activity.YuYueGuaHaoActivity" />
+        <activity android:name=".activity.OrdinaryYuYueActivity" />
         <activity android:name=".activity.MyHome" />
         <activity android:name=".activity.SecondActivity" />
         <activity android:name=".activity.SexActivity" />
+        <activity android:name=".activity.WeightAndHeightAct" />
+        <activity android:name=".activity.RegisterFinishAct" />
+        <activity android:name=".activity.OfficeListActivity" />
+        <activity android:name=".activity.DoctorListActivity" />
+        <activity android:name=".activity.DoctorTimeActivity" />
+        <activity android:name=".activity.AddSuccussAct" />
+        <activity android:name=".activity.SelectPatientActivity" />
+        <activity android:name=".activity.AddUserInfoActivity" />
+        <activity android:name=".activity.ComplateUserInfoActivity" />
+        <activity android:name=".activity.ConfirmMsgActivity" />
+        <activity android:name=".activity.YuYueSuccessActivity" />
+        <activity android:name=".activity.YuYueShiPinActivity" />
+
         <service android:name=".service.StepService"/>
         <service android:name=".service.AutoSaveService"/>
         <receiver android:name="com.zzu.ehome.reciver.AutoSaveReceiver">

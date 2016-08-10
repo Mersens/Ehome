@@ -29,6 +29,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zzu.ehome.R;
 import com.zzu.ehome.activity.HealthFilesActivity1;
 import com.zzu.ehome.activity.StaticWebView;
+import com.zzu.ehome.activity.YuYueGuaHaoActivity;
 import com.zzu.ehome.application.Constants;
 import com.zzu.ehome.utils.JsonAsyncTaskOnComplete;
 import com.zzu.ehome.utils.JsonAsyncTask_Info;
@@ -65,7 +66,13 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
     private ListView mListView;
     private PullToRefreshLayout pulltorefreshlayout;
     private RequestMaker requestMaker;
-   // private LinearLayout layout_health_files;
+
+    @Override
+    public void setTargetFragment(Fragment fragment, int requestCode) {
+        super.setTargetFragment(fragment, requestCode);
+    }
+
+    // private LinearLayout layout_health_files;
     public LocationClient mLocationClient;
     public MyLocationListener mMyLocationListener;
     private LocationClientOption.LocationMode tempMode = LocationClientOption.LocationMode.Hight_Accuracy;
@@ -79,6 +86,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
     //广告通用对象
     ArrayList<Map<String, Object>> mObject = new ArrayList<Map<String, Object>>();
     private LinearLayout llrecord;
+    private LinearLayout layout_yygh;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -112,6 +120,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
         ivweather=(ImageView)mView.findViewById(R.id.ivweather);
         tvcurrent=(TextView)mView.findViewById(R.id.tvcurrent);
         llrecord=(LinearLayout)mView.findViewById(R.id.llrecord);
+        layout_yygh=(LinearLayout)mView.findViewById(R.id.layout_yygh);
     }
 
     @Override
@@ -242,6 +251,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
     public void initEvent(){
        // layout_health_files.setOnClickListener(this);
         llrecord.setOnClickListener(this);
+        layout_yygh.setOnClickListener(this);
         pulltorefreshlayout.setOnRefreshListener(new PullToRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh(PullToRefreshLayout pullToRefreshLayout) {
@@ -330,6 +340,9 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
                 break;
             case R.id.llrecord:
 
+                break;
+            case R.id.layout_yygh:
+                startIntent(getActivity(),YuYueGuaHaoActivity.class);
                 break;
         }
 

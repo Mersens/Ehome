@@ -2,334 +2,173 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/back_color"
-
     android:orientation="vertical">
+
     <View
         android:id="@+id/v_top"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/actionbar_color"/>
+        android:background="@color/actionbar_color"
+        android:visibility="gone" />
 
-    <include layout="@layout/layout_toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
+        android:background="@color/base_color_text_white"
         android:orientation="vertical">
 
-        <LinearLayout
-android:id="@+id/layout_add_hosptial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/layout_add_hosptial"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/img_hospital"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_hospital" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="4dp"
-                    android:layout_toRightOf="@+id/img_hospital"
-                    android:text="选择医院"
-                    android:textColor="#0f2536"
-                    android:textSize="@dimen/text_size_normal" />
-            </RelativeLayout>
-
-            <RelativeLayout
+            <TextView
+                android:id="@+id/tv_hosptial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp">
-
-                <ImageView
-                    android:id="@+id/img_hospital1"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true" />
-
-                <TextView
-                    android:id="@+id/tv_hosptial"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="4dp"
-                    android:layout_toRightOf="@+id/img_hospital1"
-                    android:text=""
-                    android:textColor="#0f2536"
-                    android:textSize="@dimen/text_size_medium" />
-
-                <ImageView
-                    android:id="@+id/icon_add_hospital"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_add" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorline" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layout_add_office"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/img_office"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_office" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="4dp"
-                    android:layout_toRightOf="@+id/img_office"
-                    android:text="选择科室"
-                    android:textColor="#0f2536"
-                    android:textSize="@dimen/text_size_normal" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp">
-
-                <ImageView
-                    android:id="@+id/img_office1"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true" />
-
-                <TextView
-                    android:id="@+id/tv_office"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="4dp"
-
-                    android:layout_toRightOf="@+id/img_office1"
-                    android:textColor="#0f2536"
-                    android:textSize="@dimen/text_size_medium"
-                    android:visibility="invisible" />
-
-                <ImageView
-                    android:id="@+id/icon_add_office"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_add" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorline" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layout_add_doctor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/img_doctor"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_doctor" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="4dp"
-                    android:layout_toRightOf="@+id/img_doctor"
-                    android:text="选择医生"
-                    android:textColor="#0f2536"
-                    android:textSize="@dimen/text_size_normal" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp">
-
-                <ImageView
-                    android:id="@+id/img_doctor1"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true" />
-
-                <TextView
-                    android:id="@+id/tv_doctor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="4dp"
-
-                    android:layout_toRightOf="@+id/img_doctor1"
-                    android:textColor="#0f2536"
-                    android:textSize="@dimen/text_size_medium"
-                    android:visibility="invisible" />
-
-                <ImageView
-                    android:id="@+id/icon_add_doctor"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_add" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorline" />
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="郑州大学第一附属医院"
+                android:textColor="#0f2536"
+                android:textSize="16sp" />
 
 
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/icon_lift_cardid"
+                android:layout_width="10dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_arrow_r" />
 
-        <LinearLayout
-            android:id="@+id/layout_add_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/img_time_yy"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_time_yy" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="4dp"
-                    android:layout_toRightOf="@+id/img_time_yy"
-                    android:text="预约时间"
-                    android:textColor="#0f2536"
-                    android:textSize="@dimen/text_size_normal" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp">
-
-                <ImageView
-                    android:id="@+id/img_time_yy1"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true" />
-
-                <TextView
-                    android:id="@+id/tv_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="4dp"
-
-                    android:layout_toRightOf="@+id/img_time_yy1"
-                    android:textColor="#0f2536"
-                    android:textSize="@dimen/text_size_medium"
-                    />
-
-                <ImageView
-                    android:id="@+id/icon_add_time"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_add" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorline" />
-        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#e1e1e2" />
 
         <RelativeLayout
+            android:id="@+id/layout_add_office"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="65dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
 
-            <Button
-                android:id="@+id/btn_ok"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/actionBarHeight"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/actionBarHeight"
-                android:background="@drawable/register_btn_bg"
-                android:text="确定"
-                android:textColor="@color/base_color_text_white"
-                android:textSize="@dimen/button_size" />
             <TextView
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
+                android:id="@+id/tv_office"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="©郑州大学互联网医疗与健康服务河南省协同创新中心"
-                android:gravity="center"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/actionbar_color"
-                android:textSize="@dimen/text_size_tiny"/>
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="选择科室"
+                android:textColor="#0f2536"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:id="@+id/icon_lift_keshi"
+                android:layout_width="10dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_arrow_r" />
+
         </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#e1e1e2" />
+
+        <RelativeLayout
+            android:id="@+id/layout_add_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/tv_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="选择医生"
+                android:textColor="#0f2536"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:id="@+id/icon_lift_ys"
+                android:layout_width="10dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_arrow_r" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#e1e1e2" />
+
+        <RelativeLayout
+            android:id="@+id/layout_add_time"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="选择就诊时间"
+                android:textColor="#0f2536"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:id="@+id/icon_lift_sj"
+                android:layout_width="10dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_arrow_r" />
+
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarHeight"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/actionBarHeight"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/register_btn_bg"
+            android:text="确定"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="@dimen/button_size" />
 
     </LinearLayout>
 
+
 </LinearLayout>
+
+
