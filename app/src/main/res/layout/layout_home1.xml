@@ -15,7 +15,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:orientation="vertical">
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -60,7 +59,7 @@
                         android:background="#e1e1e2" />
 
                     <LinearLayout
-                        android:id="@+id/layout_health_files"
+                        android:id="@+id/layout_add"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -269,6 +268,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/layout_free_consultation"
                         android:layout_width="match_parent"
                         android:layout_height="64dp"
                         android:gravity="center"
@@ -317,6 +317,7 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
+                            android:id="@+id/layout_fjyd"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -354,6 +355,7 @@
                             android:background="#e1e1e2" />
 
                         <LinearLayout
+                            android:id="@+id/layout_srys"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -393,6 +395,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/layout_jcbg"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -435,6 +438,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/layout_tjbg"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
@@ -479,6 +483,7 @@
                         android:background="#e1e1e2" />
 
                     <LinearLayout
+                        android:id="@+id/layout_xdbg"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
@@ -493,14 +498,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="体检报告"
+                                android:text="心电报告"
                                 android:textColor="#272031"
                                 android:textSize="14sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="体检报告查询管理"
+                                android:text="心电报告查询管理"
                                 android:textColor="#BEB7C7"
                                 android:textSize="12sp" />
 
@@ -535,6 +540,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/layout_gxy"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -565,6 +571,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_xxg"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -594,6 +601,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_tnb"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -623,35 +631,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#272031"
-                        android:textSize="14sp"
-                        android:visibility="invisible" />
-
-                    <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/icon_cancer" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="癌症"
-                        android:textColor="#272031"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <LinearLayout
+                    android:id="@+id/layout_others"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

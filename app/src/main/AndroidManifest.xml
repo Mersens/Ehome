@@ -356,7 +356,12 @@
         <activity android:name=".activity.ConfirmMsgActivity" />
         <activity android:name=".activity.YuYueSuccessActivity" />
         <activity android:name=".activity.YuYueShiPinActivity" />
-
+        <activity android:name=".activity.FreeConsultationActivity" />
+        <activity android:name=".activity.PMDActivity" />
+        <activity android:name=".activity.DoctorDetialActivity" />
+        <activity android:name=".activity.NearPharmacyActivity" />
+        <activity android:name=".activity.NearPharmacyMapActivity" />
+        <activity android:name=".activity.CooperationPharmacyActivity" />
         <service android:name=".service.StepService"/>
         <service android:name=".service.AutoSaveService"/>
         <receiver android:name="com.zzu.ehome.reciver.AutoSaveReceiver">

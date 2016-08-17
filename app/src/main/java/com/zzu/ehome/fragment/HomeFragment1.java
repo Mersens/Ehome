@@ -27,7 +27,9 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zzu.ehome.R;
-import com.zzu.ehome.activity.HealthFilesActivity1;
+import com.zzu.ehome.activity.FreeConsultationActivity;
+import com.zzu.ehome.activity.NearPharmacyActivity;
+import com.zzu.ehome.activity.PMDActivity;
 import com.zzu.ehome.activity.StaticWebView;
 import com.zzu.ehome.activity.YuYueGuaHaoActivity;
 import com.zzu.ehome.application.Constants;
@@ -36,6 +38,7 @@ import com.zzu.ehome.utils.JsonAsyncTask_Info;
 import com.zzu.ehome.utils.PermissionsChecker;
 import com.zzu.ehome.utils.RequestMaker;
 import com.zzu.ehome.utils.ScreenUtils;
+import com.zzu.ehome.utils.ToastUtils;
 import com.zzu.ehome.view.DialogTips;
 import com.zzu.ehome.view.ImageCycleView;
 import com.zzu.ehome.view.PullToRefreshLayout;
@@ -53,13 +56,13 @@ import java.util.Map;
 /**
  * Created by Mersens on 2016/7/26.
  */
-public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
+public class HomeFragment1 extends BaseFragment implements View.OnClickListener {
     private static final String PACKAGE_URL_SCHEME = "package:";
     private PermissionsChecker mPermissionsChecker; // 权限检测器
     // 所需的全部权限
     static final String[] PERMISSIONS = new String[]{
 
-            Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION
+            Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION
     };
     private View mView;
     private ImageCycleView mViewPager;
@@ -78,49 +81,63 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
     private LocationClientOption.LocationMode tempMode = LocationClientOption.LocationMode.Hight_Accuracy;
     private String tempcoor = "gcj02";
     private BDLocation location;
-    private TextView tvcity,tvweather,tvpm,tvcurrent;
-    private String city="郑州";
+    private TextView tvcity, tvweather, tvpm, tvcurrent;
+    private String city = "郑州";
     private ImageView ivweather;
     //广告轮播 图片链接
     ArrayList<String> mImageUrl = new ArrayList<String>();
     //广告通用对象
     ArrayList<Map<String, Object>> mObject = new ArrayList<Map<String, Object>>();
     private LinearLayout llrecord;
-    private LinearLayout layout_yygh;
+    private LinearLayout layout_yygh, layout_free_consultation,
+            layout_add, layout_fjyd, layout_srys, layout_jcbg,
+            layout_tjbg, layout_xdbg;
+    private LinearLayout layout_gxy, layout_xxg, layout_tnb, layout_others;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.layout_home1,null);
+        return inflater.inflate(R.layout.layout_home1, null);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mView=view;
-        requestMaker=RequestMaker.getInstance();
+        mView = view;
+        requestMaker = RequestMaker.getInstance();
         mPermissionsChecker = new PermissionsChecker(getActivity());
         initViews();
         location();
         initEvent();
         initDatas();
 
-
-
     }
 
-    public void initViews(){
+    public void initViews() {
 
         //layout_health_files=(LinearLayout) mView.findViewById(R.id.layout_health_files);
-        mViewPager=(ImageCycleView) mView.findViewById(R.id.viewPager);
-        mListView=(ListView) mView.findViewById(R.id.listView);
-        tvcity=(TextView)mView.findViewById(R.id.tvcity);
-        tvweather=(TextView)mView.findViewById(R.id.tvweather);
-        pulltorefreshlayout=(PullToRefreshLayout)mView.findViewById(R.id.refresh_view);
-        tvpm=(TextView)mView.findViewById(R.id.tvpm);
-        ivweather=(ImageView)mView.findViewById(R.id.ivweather);
-        tvcurrent=(TextView)mView.findViewById(R.id.tvcurrent);
-        llrecord=(LinearLayout)mView.findViewById(R.id.llrecord);
-        layout_yygh=(LinearLayout)mView.findViewById(R.id.layout_yygh);
+        mViewPager = (ImageCycleView) mView.findViewById(R.id.viewPager);
+        mListView = (ListView) mView.findViewById(R.id.listView);
+        tvcity = (TextView) mView.findViewById(R.id.tvcity);
+        tvweather = (TextView) mView.findViewById(R.id.tvweather);
+        pulltorefreshlayout = (PullToRefreshLayout) mView.findViewById(R.id.refresh_view);
+        tvpm = (TextView) mView.findViewById(R.id.tvpm);
+        ivweather = (ImageView) mView.findViewById(R.id.ivweather);
+        tvcurrent = (TextView) mView.findViewById(R.id.tvcurrent);
+        llrecord = (LinearLayout) mView.findViewById(R.id.llrecord);
+        layout_yygh = (LinearLayout) mView.findViewById(R.id.layout_yygh);
+        layout_free_consultation = (LinearLayout) mView.findViewById(R.id.layout_free_consultation);
+        layout_add = (LinearLayout) mView.findViewById(R.id.layout_add);
+        layout_fjyd = (LinearLayout) mView.findViewById(R.id.layout_fjyd);
+        layout_srys = (LinearLayout) mView.findViewById(R.id.layout_srys);
+        layout_jcbg = (LinearLayout) mView.findViewById(R.id.layout_jcbg);
+        layout_tjbg = (LinearLayout) mView.findViewById(R.id.layout_tjbg);
+        layout_xdbg = (LinearLayout) mView.findViewById(R.id.layout_xdbg);
+        layout_gxy = (LinearLayout) mView.findViewById(R.id.layout_gxy);
+        layout_xxg = (LinearLayout) mView.findViewById(R.id.layout_xxg);
+        layout_tnb = (LinearLayout) mView.findViewById(R.id.layout_tnb);
+        layout_others = (LinearLayout) mView.findViewById(R.id.layout_others);
+
     }
 
     @Override
@@ -129,6 +146,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
         // 退出时销毁定位
 
     }
+
     private void showADs() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String date = df.format(new Date());// new Date()为获取当前系统时间
@@ -248,19 +266,29 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
         dialog = null;
 
     }
-    public void initEvent(){
-       // layout_health_files.setOnClickListener(this);
+
+    public void initEvent() {
+        // layout_health_files.setOnClickListener(this);
         llrecord.setOnClickListener(this);
         layout_yygh.setOnClickListener(this);
+        layout_add.setOnClickListener(this);
+        layout_fjyd.setOnClickListener(this);
+        layout_srys.setOnClickListener(this);
+        layout_jcbg.setOnClickListener(this);
+        layout_tjbg.setOnClickListener(this);
+        layout_xdbg.setOnClickListener(this);
+        layout_gxy.setOnClickListener(this);
+        layout_xxg.setOnClickListener(this);
+        layout_tnb.setOnClickListener(this);
+        layout_others.setOnClickListener(this);
+        layout_free_consultation.setOnClickListener(this);
         pulltorefreshlayout.setOnRefreshListener(new PullToRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh(PullToRefreshLayout pullToRefreshLayout) {
                 // 下拉刷新操作
-                new Handler()
-                {
+                new Handler() {
                     @Override
-                    public void handleMessage(Message msg)
-                    {
+                    public void handleMessage(Message msg) {
                         pulltorefreshlayout.refreshFinish(PullToRefreshLayout.SUCCEED);
                     }
                 }.sendEmptyMessageDelayed(0, 3000);
@@ -268,11 +296,9 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
 
             @Override
             public void onLoadMore(PullToRefreshLayout pullToRefreshLayout) {
-                new Handler()
-                {
+                new Handler() {
                     @Override
-                    public void handleMessage(Message msg)
-                    {
+                    public void handleMessage(Message msg) {
                         pulltorefreshlayout.loadmoreFinish(PullToRefreshLayout.SUCCEED);
                     }
                 }.sendEmptyMessageDelayed(0, 3000);
@@ -282,8 +308,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
     }
 
 
-
-    public void initDatas(){
+    public void initDatas() {
 //        mViewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
 //            @Override
 //            public Fragment getItem(int position) {
@@ -296,8 +321,8 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
 //            }
 //        });
         showADs();
-        final List<Integer> mList=new ArrayList<>();
-        for(int i=0;i<10;i++){
+        final List<Integer> mList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
             mList.add(i);
         }
         mListView.setAdapter(new BaseAdapter() {
@@ -318,31 +343,67 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                View mItemView=LayoutInflater.from(getActivity()).inflate(R.layout.home_item,null);
+                View mItemView = LayoutInflater.from(getActivity()).inflate(R.layout.home_item, null);
                 return mItemView;
             }
         });
     }
+
     @Override
     protected void lazyLoad() {
 
     }
 
-    public Fragment getInstance(){
+    public Fragment getInstance() {
         return new HomeFragment1();
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.layout_health_files:
-                startIntent(getActivity(),HealthFilesActivity1.class);
-                break;
+        switch (v.getId()) {
+/*            case R.id.layout_health_files:
+                startIntent(getActivity(), HealthFilesActivity1.class);
+                break;*/
             case R.id.llrecord:
-
+                ToastUtils.showMessage(getActivity(), "记录数据");
                 break;
             case R.id.layout_yygh:
-                startIntent(getActivity(),YuYueGuaHaoActivity.class);
+                startIntent(getActivity(), YuYueGuaHaoActivity.class);
+                break;
+            case R.id.layout_free_consultation:
+                startIntent(getActivity(), FreeConsultationActivity.class);
+                break;
+            case R.id.layout_add:
+                ToastUtils.showMessage(getActivity(), "添加家人");
+                break;
+            case R.id.layout_fjyd:
+                startIntent(getActivity(), NearPharmacyActivity.class);
+
+                break;
+            case R.id.layout_srys:
+                ToastUtils.showMessage(getActivity(), "私人医生");
+                startIntent(getActivity(), PMDActivity.class);
+                break;
+            case R.id.layout_jcbg:
+                ToastUtils.showMessage(getActivity(), "检查报告");
+                break;
+            case R.id.layout_tjbg:
+                ToastUtils.showMessage(getActivity(), "体检报告");
+                break;
+            case R.id.layout_xdbg:
+                ToastUtils.showMessage(getActivity(), "心电报告");
+                break;
+            case R.id.layout_gxy:
+                ToastUtils.showMessage(getActivity(), "高血压");
+                break;
+            case R.id.layout_xxg:
+                ToastUtils.showMessage(getActivity(), "心血管");
+                break;
+            case R.id.layout_tnb:
+                ToastUtils.showMessage(getActivity(), "糖尿病");
+                break;
+            case R.id.layout_others:
+                ToastUtils.showMessage(getActivity(), "其他慢病");
                 break;
         }
 
@@ -352,6 +413,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
         Intent intent = new Intent(context, cls);
         startActivity(intent);
     }
+
     private void location() {
         mLocationClient = new LocationClient(getActivity());
         mMyLocationListener = new MyLocationListener();
@@ -370,6 +432,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
         mLocationClient.setLocOption(option);
         mLocationClient.start();
     }
+
     /**
      * 定位SDK监听函数
      */
@@ -381,11 +444,11 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
 
 
 //            ToastUtils.showMessage(getActivity(),location.getCity()+"mmmmm");
-            if(location==null){
-                city="郑州市";
+            if (location == null) {
+                city = "郑州市";
 
-            }else{
-                city=location.getCity();
+            } else {
+                city = location.getCity();
             }
             tvcity.setText(city);
             requestMaker.WeatherInquiry(city, new JsonAsyncTask_Info(getActivity(), true, new JsonAsyncTaskOnComplete() {
@@ -398,17 +461,16 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
                         org.json.JSONArray array = mySO
                                 .getJSONArray("WeatherInquiry");
 
-                        String weather=array.getJSONObject(0).getString("weather");
+                        String weather = array.getJSONObject(0).getString("weather");
                         tvweather.setText(weather);
                         tvpm.setText(array.getJSONObject(0).getString("pm"));
                         tvcurrent.setText(array.getJSONObject(0).getString("currenttemperature"));
-                        if(weather.contains("转")){
+                        if (weather.contains("转")) {
 
-                            set(ivweather,weather.substring(0,weather.indexOf("转")));
-                        }else{
-                            set(ivweather,weather);
+                            set(ivweather, weather.substring(0, weather.indexOf("转")));
+                        } else {
+                            set(ivweather, weather);
                         }
-
 
 
                     } catch (Exception e) {
@@ -430,28 +492,27 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener{
         intent.setData(Uri.parse(PACKAGE_URL_SCHEME + getActivity().getPackageName()));
         startActivity(intent);
     }
-    private void set(ImageView iv,String str){
-        if(str.contains("雨")) {
-            if (str.contains("小雨")||str.contains("阵雨")) {
+
+    private void set(ImageView iv, String str) {
+        if (str.contains("雨")) {
+            if (str.contains("小雨") || str.contains("阵雨")) {
                 iv.setBackgroundResource(R.mipmap.icon_rain_s);
             } else if (str.contains("中雨")) {
                 iv.setBackgroundResource(R.mipmap.icon_rain_m);
             } else {
                 iv.setBackgroundResource(R.mipmap.icon_rain_b);
             }
-        }else if(str.contains("雪")){
+        } else if (str.contains("雪")) {
             iv.setBackgroundResource(R.mipmap.icon_snow);
-        }else if(str.contains("云")){
+        } else if (str.contains("云")) {
             iv.setBackgroundResource(R.mipmap.icon_cloudy);
-        }else if(str.contains("阴")){
+        } else if (str.contains("阴")) {
             iv.setBackgroundResource(R.mipmap.icon_overcast);
-        }else{
+        } else {
             iv.setBackgroundResource(R.mipmap.icon_sunshine);
         }
 
     }
-
-
 
 
 }

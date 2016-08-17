@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+    <FrameLayout
+        android:layout_width="142dp"
+        android:layout_height="142dp"
+        android:background="@drawable/gridview_item_bg"
+        >
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:padding="2dp"
+        >
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/pic_medicine"
+            android:layout_centerInParent="true"
+            />
+
+
+
+        <FrameLayout
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:background="@drawable/icon_label"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+
+            >
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/base_color_text_white"
+                android:text="¥20"
+
+                android:layout_gravity="center" />
+
+
+        </FrameLayout>
+
+        </RelativeLayout>
+
+</FrameLayout>>
+</LinearLayout>

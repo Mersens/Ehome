@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/base_color_text_white"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/layout_toolbar" />
+    <LinearLayout
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#fafafc"
+
+        >
+        <RelativeLayout
+            android:id="@+id/layout_all_yiyuan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+
+                >
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="全部医院"
+                    android:textSize="16sp"
+                    android:textColor="#0f2536"
+                    />
+                <ImageView
+                    android:id="@+id/img_arrow_yy"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/icon_arrow_gray"
+                    />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        <View
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:background="#e1e1e2"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+
+            />
+
+        <RelativeLayout
+            android:id="@+id/layout_all_zhicheng"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+
+                >
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="全部职称"
+                    android:textSize="16sp"
+                    android:textColor="#0f2536"
+                    />
+                <ImageView
+                    android:id="@+id/img_arrow_zc"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/icon_arrow_gray"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <View
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:background="#e1e1e2"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+
+            />
+        <RelativeLayout
+            android:id="@+id/layout_all_manbing"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+
+                >
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="全部慢病"
+                    android:textSize="16sp"
+                    android:textColor="#0f2536"
+                    />
+                <ImageView
+                    android:id="@+id/img_arrow_mb"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/icon_arrow_gray"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e1e1e2"
+        />
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

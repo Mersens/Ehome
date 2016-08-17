@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#88000000" >
+    <FrameLayout
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="147dp"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/base_color_text_white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/layout_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:clickable="true" >
+
+            <TextView
+               android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="16sp"
+                android:text="新增就诊人" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layout_choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true" >
+            <ImageView
+                android:id="@+id/icon_add"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_add2"
+
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_height="52dp"
+        android:layout_below="@+id/layout_content"
+        android:layout_width="match_parent"
+        android:textSize="16sp"
+        android:text="取消"
+        android:gravity="center"
+        android:layout_marginRight="16dp"
+        android:background="#4e5c67"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="40dp"
+
+        android:textColor="#ffffff"
+
+        />
+
+
+</LinearLayout>

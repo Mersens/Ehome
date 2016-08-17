@@ -49,7 +49,12 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
     </style>
+    <style name="Animations" />
 
+    <style name="Animations.GrowFromBottom">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_bottom</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_top</item>
+    </style>
     <style name="TextAppearance.DialogWindowTitle">
         <item name="android:textSize">18sp</item>
     </style>

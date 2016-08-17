@@ -47,7 +47,6 @@ public class StepDetector implements SensorEventListener {
 		Sensor sensor = event.sensor;
 		synchronized (this) {
 			if (sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-
 				float vSum = 0;
 				for (int i = 0; i < 3; i++) {
 					final float v = mYOffset + event.values[i] * mScale[1];
@@ -55,7 +54,6 @@ public class StepDetector implements SensorEventListener {
 				}
 				int k = 0;
 				float v = vSum / 3;
-
 				float direction = (v > mLastValues[k] ? 1
 						: (v < mLastValues[k] ? -1 : 0));
 				if (direction == -mLastDirections[k]) {
@@ -70,12 +68,10 @@ public class StepDetector implements SensorEventListener {
 						boolean isAlmostAsLargeAsPrevious = diff > (mLastDiff[k] * 2 / 3);
 						boolean isPreviousLargeEnough = mLastDiff[k] > (diff / 3);
 						boolean isNotContra = (mLastMatch != 1 - extType);
-
 						if (isAlmostAsLargeAsPrevious && isPreviousLargeEnough
 								&& isNotContra) {
 							end = System.currentTimeMillis();
 							if (end - start > 500) {// 此时判断为走了一步
-
 								CURRENT_SETP++;
 								mLastMatch = extType;
 								start = end;

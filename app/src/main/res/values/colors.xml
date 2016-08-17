@@ -14,6 +14,7 @@
     <color name="bottom_text_color_normal">#c8c8c8</color>
     <color name="colorline">#d9d9d9</color>
     <color name="text_color1">#272031</color>
+    <color name="text_color2">#0f2536</color>
 
     <color name="bottom_tv_color_normal">#8E8F87</color>
     <color name="bottom_tv_color_pressed">#2DC2C9</color>
