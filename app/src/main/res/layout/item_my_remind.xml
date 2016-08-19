@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/base_color_text_white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                >
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="18:00"
+                    android:textColor="@color/actionbar_color"
+                    android:textSize="24sp"
+
+                   />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@+id/tv_time"
+                    android:text="私人医生问诊"
+                    android:textColor="@color/actionbar_color"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="8dp"
+                    android:paddingBottom="2dp"
+
+                    />
+
+                </RelativeLayout>
+            <RelativeLayout
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="每天"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/text_color2"
+                    />
+
+            </RelativeLayout>
+
+            </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            >
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:id="@+id/sbutn_md"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:kswTintColor="@color/actionbar_color"
+                />
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+    <View
+
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="#e1e1e2"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        />
+
+
+</LinearLayout>

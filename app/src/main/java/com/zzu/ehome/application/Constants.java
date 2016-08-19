@@ -116,5 +116,8 @@ public class Constants {
  public static  final String StepCounterInquiry="StepCounterInquiry";
  public static  final String WeatherInquiry="WeatherInquiry";
  public static  final String UserRelationshipInsert="UserRelationshipInsert";
+ public static  final String NewsInquiry="NewsInquiry";
+ public static  final String HospitalInquiryByTopmd="HospitalInquiryByTopmd";
+
 
 }

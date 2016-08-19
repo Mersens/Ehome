@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_color_text_white"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    >
+
+    <include layout="@layout/layout_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/layout_time"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="提醒时间"
+                android:textColor="@color/text_color2"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="19:00"
+                android:textColor="#949395"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/icon_lift_tixing"
+                android:layout_marginRight="8dp"
+                />
+            <ImageView
+                android:id="@+id/icon_lift_tixing"
+                android:layout_width="10dp"
+                android:layout_height="22dp"
+                android:src="@drawable/icon_arrow_r"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e2" />
+
+        <RelativeLayout
+            android:id="@+id/layout_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="重     复"
+                android:textColor="@color/text_color2"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="每天"
+                android:textColor="#949395"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/icon_lift_chongfu"
+                android:layout_marginRight="8dp"
+                />
+            <ImageView
+                android:id="@+id/icon_lift_chongfu"
+                android:layout_width="10dp"
+                android:layout_height="22dp"
+                android:src="@drawable/icon_arrow_r"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e2" />
+
+        <RelativeLayout
+            android:id="@+id/layout_type"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="提醒类型"
+                android:textColor="@color/text_color2"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="私人医生问诊"
+                android:textColor="#949395"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/icon_lift_leixing"
+                android:layout_marginRight="8dp"
+                />
+            <ImageView
+                android:id="@+id/icon_lift_leixing"
+                android:layout_width="10dp"
+                android:layout_height="22dp"
+                android:src="@drawable/icon_arrow_r"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e2" />
+
+
+    </LinearLayout>
+</LinearLayout>

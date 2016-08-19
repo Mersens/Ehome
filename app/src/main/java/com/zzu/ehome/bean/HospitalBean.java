@@ -1,11 +1,16 @@
 package com.zzu.ehome.bean;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by zzu on 2016/4/18.
  */
 public class HospitalBean {
+    @SerializedName("HospitalID")
     private String Hospital_Id;
     private String Hospital_Code;
+    @SerializedName("HospitalName")
+
     private String Hospital_FullName;
     private String Hospital_ShortName;
     private String Hopital_Level;

@@ -16,6 +16,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zzu.ehome.R;
 import com.zzu.ehome.activity.LoginActivity1;
 import com.zzu.ehome.activity.MyHome;
+import com.zzu.ehome.activity.MyRemindActivity1;
 import com.zzu.ehome.bean.RefreshEvent;
 import com.zzu.ehome.bean.User;
 import com.zzu.ehome.db.EHomeDao;
@@ -171,6 +172,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
                 break;
             case R.id.layout_wdtx:
                 //我的提醒
+                startActivity(new Intent(getActivity(), MyRemindActivity1.class));
 
                 break;
             case R.id.layout_wdgz:

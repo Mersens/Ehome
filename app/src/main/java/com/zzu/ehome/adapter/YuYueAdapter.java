@@ -3,6 +3,7 @@ package com.zzu.ehome.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.zzu.ehome.R;
 import com.zzu.ehome.bean.HospitalBean;
@@ -24,6 +25,9 @@ public class YuYueAdapter extends BaseListAdapter<HospitalBean> {
     @Override
     public View getGqView(int position, View convertView, ViewGroup parent) {
         View mView=getInflater().inflate(R.layout.item_yygh,null);
+        TextView name=(TextView) mView.findViewById(R.id.hosptial_name);
+        name.setText(mList.get(position).getHospital_FullName());
+
         return mView;
     }
 }

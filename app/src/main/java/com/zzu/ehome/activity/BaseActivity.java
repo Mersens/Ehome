@@ -13,30 +13,21 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.zzu.ehome.application.CustomApplcation;
 import com.zzu.ehome.R;
+import com.zzu.ehome.application.CustomApplcation;
 import com.zzu.ehome.bean.NetEvent;
-import com.zzu.ehome.bean.User;
 import com.zzu.ehome.utils.NetUtils;
 import com.zzu.ehome.utils.SystemStatusManager;
 import com.zzu.ehome.utils.ToastUtils;
 import com.zzu.ehome.view.CustomProgressDialog;
 import com.zzu.ehome.view.DialogTips;
 import com.zzu.ehome.view.HeadView;
-
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import de.greenrobot.event.EventBus;
 
@@ -118,7 +109,9 @@ public class BaseActivity  extends FragmentActivity{
         }
     }
 
-    public void reload(){}
+    public void reload(){
+
+    }
 
 
     private void setTranslucentStatus() {

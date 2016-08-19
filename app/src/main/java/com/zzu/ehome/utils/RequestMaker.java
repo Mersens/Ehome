@@ -853,4 +853,30 @@ public class RequestMaker {
                 SOAP_URL, paramMap);
 
     }
+    public void NewsInquiry(String Pagesize, String PageIndex, JsonAsyncTask_Info task) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request><PageSize>%s</PageSize><PageIndex>%s</PageIndex></Request>";
+        str = String.format(str, new Object[]
+                {Pagesize, PageIndex});
+        paramMap.put("str", str);
+
+        // 必须是这5个参数，而且得按照顺序
+        task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.NewsInquiry, Constants.NewsInquiry,
+                SOAP_URL, paramMap);
+
+    }
+    public void HospitalInquiryByTopmd(JsonAsyncTask_Info task) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request></Request>";
+
+        paramMap.put("str", str);
+
+
+        task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.HospitalInquiryByTopmd, Constants.HospitalInquiryByTopmd,
+                SOAP_URL, paramMap);
+
+    }
+
+
+
 }

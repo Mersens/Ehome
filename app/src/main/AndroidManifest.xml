@@ -362,6 +362,12 @@
         <activity android:name=".activity.NearPharmacyActivity" />
         <activity android:name=".activity.NearPharmacyMapActivity" />
         <activity android:name=".activity.CooperationPharmacyActivity" />
+        <activity android:name=".activity.MyRemindActivity1" />
+        <activity android:name=".activity.AddRemindActivity" />
+        <activity android:name=".activity.RepeatActivity" />
+        <activity android:name=".activity.RemindTypeActivity" />
+
+
         <service android:name=".service.StepService"/>
         <service android:name=".service.AutoSaveService"/>
         <receiver android:name="com.zzu.ehome.reciver.AutoSaveReceiver">

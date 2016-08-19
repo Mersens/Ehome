@@ -15,11 +15,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -28,13 +28,18 @@ import com.baidu.location.LocationClientOption;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zzu.ehome.R;
 import com.zzu.ehome.activity.FreeConsultationActivity;
+import com.zzu.ehome.activity.MyHome;
 import com.zzu.ehome.activity.NearPharmacyActivity;
 import com.zzu.ehome.activity.PMDActivity;
 import com.zzu.ehome.activity.StaticWebView;
 import com.zzu.ehome.activity.YuYueGuaHaoActivity;
+import com.zzu.ehome.adapter.HomeNewsAdapter;
 import com.zzu.ehome.application.Constants;
+import com.zzu.ehome.bean.News;
+import com.zzu.ehome.bean.NewsDate;
 import com.zzu.ehome.utils.JsonAsyncTaskOnComplete;
 import com.zzu.ehome.utils.JsonAsyncTask_Info;
+import com.zzu.ehome.utils.JsonTools;
 import com.zzu.ehome.utils.PermissionsChecker;
 import com.zzu.ehome.utils.RequestMaker;
 import com.zzu.ehome.utils.ScreenUtils;
@@ -44,6 +49,7 @@ import com.zzu.ehome.view.ImageCycleView;
 import com.zzu.ehome.view.PullToRefreshLayout;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
@@ -69,6 +75,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
     private ListView mListView;
     private PullToRefreshLayout pulltorefreshlayout;
     private RequestMaker requestMaker;
+    private int page=1;
 
     @Override
     public void setTargetFragment(Fragment fragment, int requestCode) {
@@ -93,6 +100,8 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
             layout_add, layout_fjyd, layout_srys, layout_jcbg,
             layout_tjbg, layout_xdbg;
     private LinearLayout layout_gxy, layout_xxg, layout_tnb, layout_others;
+    private HomeNewsAdapter mAadapter;
+    private  List<News> mList = new ArrayList<News>();
 
     @Nullable
     @Override
@@ -107,6 +116,8 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
         requestMaker = RequestMaker.getInstance();
         mPermissionsChecker = new PermissionsChecker(getActivity());
         initViews();
+        mAadapter=new HomeNewsAdapter(getActivity());
+        mListView.setAdapter(mAadapter);
         location();
         initEvent();
         initDatas();
@@ -285,6 +296,8 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
         pulltorefreshlayout.setOnRefreshListener(new PullToRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh(PullToRefreshLayout pullToRefreshLayout) {
+                page=1;
+                newsInqury();
                 // 下拉刷新操作
                 new Handler() {
                     @Override
@@ -296,12 +309,9 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
 
             @Override
             public void onLoadMore(PullToRefreshLayout pullToRefreshLayout) {
-                new Handler() {
-                    @Override
-                    public void handleMessage(Message msg) {
-                        pulltorefreshlayout.loadmoreFinish(PullToRefreshLayout.SUCCEED);
-                    }
-                }.sendEmptyMessageDelayed(0, 3000);
+                page++;
+                newsInqury();
+
             }
         });
 
@@ -321,32 +331,33 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
 //            }
 //        });
         showADs();
-        final List<Integer> mList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            mList.add(i);
-        }
-        mListView.setAdapter(new BaseAdapter() {
-            @Override
-            public int getCount() {
-                return mList.size();
-            }
 
-            @Override
-            public Object getItem(int position) {
-                return mList.get(position);
-            }
-
-            @Override
-            public long getItemId(int position) {
-                return position;
-            }
-
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                View mItemView = LayoutInflater.from(getActivity()).inflate(R.layout.home_item, null);
-                return mItemView;
-            }
-        });
+//        final List<Integer> mList = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            mList.add(i);
+//        }
+//        mListView.setAdapter(new BaseAdapter() {
+//            @Override
+//            public int getCount() {
+//                return mList.size();
+//            }
+//
+//            @Override
+//            public Object getItem(int position) {
+//                return mList.get(position);
+//            }
+//
+//            @Override
+//            public long getItemId(int position) {
+//                return position;
+//            }
+//
+//            @Override
+//            public View getView(int position, View convertView, ViewGroup parent) {
+//                View mItemView = LayoutInflater.from(getActivity()).inflate(R.layout.home_item, null);
+//                return mItemView;
+//            }
+//        });
     }
 
     @Override
@@ -374,7 +385,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
                 startIntent(getActivity(), FreeConsultationActivity.class);
                 break;
             case R.id.layout_add:
-                ToastUtils.showMessage(getActivity(), "添加家人");
+                startIntent(getActivity(), MyHome.class);
                 break;
             case R.id.layout_fjyd:
                 startIntent(getActivity(), NearPharmacyActivity.class);
@@ -512,6 +523,42 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
             iv.setBackgroundResource(R.mipmap.icon_sunshine);
         }
 
+    }
+    private  void newsInqury(){
+        requestMaker.NewsInquiry(10+"",page+"",new JsonAsyncTask_Info(
+                getActivity(), true, new JsonAsyncTaskOnComplete() {
+            @Override
+            public void processJsonObject(Object result) {
+
+                try {
+                    JSONObject mySO = (JSONObject) result;
+                    JSONArray array = mySO
+                            .getJSONArray("NewsInquiry");
+                    if (array.getJSONObject(0).has("MessageCode")) {
+                        Toast.makeText(getActivity(), array.getJSONObject(0).getString("MessageContent").toString(),
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        NewsDate date = JsonTools.getData(result.toString(), NewsDate.class);
+                        List<News> list = date.getData();
+                        for(News n:list){
+                            mList.add(n);
+                        }
+                        mAadapter.setList(mList);
+                        mAadapter.notifyDataSetChanged();
+
+                    }
+                    new Handler() {
+                        @Override
+                        public void handleMessage(Message msg) {
+                            pulltorefreshlayout.loadmoreFinish(PullToRefreshLayout.SUCCEED);
+                        }
+                    }.sendEmptyMessageDelayed(0, 3000);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }));
     }
 
 

@@ -10,10 +10,11 @@
         >
 
     <ImageView
+        android:id="@+id/iv_head"
         android:layout_width="78dp"
         android:layout_height="52dp"
         android:layout_gravity="center"
-        android:src="@drawable/pic_info1"
+
         android:layout_marginLeft="10dp"
         android:layout_marginRight="8dp"
         />
@@ -29,6 +30,7 @@
         >
 
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="冬病夏治避免3大误区"
@@ -41,6 +43,7 @@
             />
 
         <TextView
+            android:id="@+id/tv_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="艾草是什么？教你正确选艾草。"
