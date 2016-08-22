@@ -876,6 +876,44 @@ public class RequestMaker {
                 SOAP_URL, paramMap);
 
     }
+    public void UserRelationshipInquiry(String userid,JsonAsyncTask_Info task) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request><UserID>%s</UserID></Request>";
+        str = String.format(str, new Object[]
+                {userid});
+        paramMap.put("str", str);
+
+
+        task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.UserRelationshipInquiry, Constants.UserRelationshipInquiry,
+                SOAP_URL, paramMap);
+
+    }
+    public void HospitalDepertByTopmd(String HospitalID,String ParentDeprtID,JsonAsyncTask_Info task) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request><HospitalID>%s</HospitalID><ParentDeprtID>%s</ParentDeprtID></Request>";
+        str = String.format(str, new Object[]
+                {HospitalID,ParentDeprtID});
+        paramMap.put("str", str);
+
+
+        task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.HospitalDepertByTopmd, Constants.HospitalDepertByTopmd,
+                SOAP_URL, paramMap);
+
+    }
+    public void DepertDoctorByTopmd(String HospitalID,String DepartmentID,JsonAsyncTask_Info task) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request><HospitalID>%s</HospitalID><DepartmentID>%s</DepartmentID></Request>";
+        str = String.format(str, new Object[]
+                {HospitalID,DepartmentID});
+        paramMap.put("str", str);
+
+
+        task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.DepertDoctorByTopmd, Constants.DepertDoctorByTopmd,
+                SOAP_URL, paramMap);
+
+    }
+
+
 
 
 

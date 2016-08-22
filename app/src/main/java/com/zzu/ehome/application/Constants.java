@@ -118,6 +118,9 @@ public class Constants {
  public static  final String UserRelationshipInsert="UserRelationshipInsert";
  public static  final String NewsInquiry="NewsInquiry";
  public static  final String HospitalInquiryByTopmd="HospitalInquiryByTopmd";
+ public static  final String UserRelationshipInquiry="UserRelationshipInquiry";
+ public static  final String HospitalDepertByTopmd ="HospitalDepertByTopmd";
+ public static  final String DepertDoctorByTopmd ="DepertDoctorByTopmd";
 
 
 }

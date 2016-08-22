@@ -12,11 +12,11 @@
         android:layout_marginLeft="16dp"
         android:background="@color/base_color_text_white"
         >
-        <ImageView
+        <com.zzu.ehome.view.CircleImageView
             android:id="@+id/icon_hosptial"
             android:layout_width="41dp"
             android:layout_height="41dp"
-            android:src="@drawable/icon_doc_touxiang"
+
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             />

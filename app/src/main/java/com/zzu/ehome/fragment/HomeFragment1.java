@@ -27,6 +27,8 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zzu.ehome.R;
+import com.zzu.ehome.activity.ECGActivity1;
+import com.zzu.ehome.activity.ExaminationReportActivity;
 import com.zzu.ehome.activity.FreeConsultationActivity;
 import com.zzu.ehome.activity.MyHome;
 import com.zzu.ehome.activity.NearPharmacyActivity;
@@ -392,17 +394,17 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
 
                 break;
             case R.id.layout_srys:
-                ToastUtils.showMessage(getActivity(), "私人医生");
                 startIntent(getActivity(), PMDActivity.class);
                 break;
             case R.id.layout_jcbg:
                 ToastUtils.showMessage(getActivity(), "检查报告");
+
                 break;
             case R.id.layout_tjbg:
-                ToastUtils.showMessage(getActivity(), "体检报告");
+                startIntent(getActivity(), ExaminationReportActivity.class);
                 break;
             case R.id.layout_xdbg:
-                ToastUtils.showMessage(getActivity(), "心电报告");
+                startIntent(getActivity(), ECGActivity1.class);
                 break;
             case R.id.layout_gxy:
                 ToastUtils.showMessage(getActivity(), "高血压");

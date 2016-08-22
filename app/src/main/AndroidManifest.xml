@@ -366,6 +366,13 @@
         <activity android:name=".activity.AddRemindActivity" />
         <activity android:name=".activity.RepeatActivity" />
         <activity android:name=".activity.RemindTypeActivity" />
+        <activity android:name=".activity.ExaminationReportActivity" />
+        <activity android:name=".activity.AddExaminationReportActivity" />
+        <activity android:name=".activity.ExaminationReportDetailActivity" />
+        <activity android:name=".activity.ECGActivity1" />
+        <activity android:name=".activity.DynamicECGDetialActivity" />
+        <activity android:name=".activity.StaticECGDetailActivity" />
+
 
 
         <service android:name=".service.StepService"/>
