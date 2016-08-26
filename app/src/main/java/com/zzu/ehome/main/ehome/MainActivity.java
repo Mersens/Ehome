@@ -19,12 +19,14 @@ import com.igexin.sdk.PushManager;
 import com.umeng.analytics.MobclickAgent;
 import com.zzu.ehome.R;
 import com.zzu.ehome.activity.BaseSimpleActivity;
+import com.zzu.ehome.activity.PrivateDoctorFragment;
 import com.zzu.ehome.application.CustomApplcation;
 import com.zzu.ehome.bean.RefreshEvent;
 import com.zzu.ehome.bean.StepBean;
 import com.zzu.ehome.db.EHomeDao;
 import com.zzu.ehome.db.EHomeDaoImpl;
 import com.zzu.ehome.fragment.DoctorFragment;
+import com.zzu.ehome.fragment.HealthDataFragment;
 import com.zzu.ehome.fragment.HealthFragment;
 import com.zzu.ehome.fragment.HomeFragment1;
 import com.zzu.ehome.fragment.UserCenterFragment;
@@ -44,22 +46,25 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
     private Fragment[] fragments;
     private int index;
     private int currentTabIndex;
-    private Fragment mHomeFragment, mHealthFragment, mDoctorFragment,mInfoFragment;
+    private Fragment mHomeFragment, mHealthFragment, mDoctorFragment,mInfoFragment,mPrivateDoctorFragment;
 
     private ImageView img_home;
     private ImageView img_health;
     private ImageView img_doctor;
     private ImageView img_info;
+    private ImageView img_private_doctor;
 
     private TextView tv_home;
     private TextView tv_health;
     private TextView tv_doctor;
     private TextView tv_info;
+    private TextView tv_private_doctor;
 
     private RelativeLayout layout_home;
     private RelativeLayout layout_health;
     private RelativeLayout layout_doctor;
     private RelativeLayout layout_info;
+    private RelativeLayout layout_private_doctor;
     private RelativeLayout[] mTabs;
     private EHomeDao dao;
     private String userid;
@@ -196,12 +201,14 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
         for(Fragment ft:fragmentList){
             if(ft instanceof HomeFragment1){
                 mHomeFragment=ft;
-            }else if(ft instanceof HealthFragment){
+            }else if(ft instanceof HealthDataFragment){
                 mHealthFragment=ft;
             }else if(ft instanceof DoctorFragment){
                 mDoctorFragment=ft;
             }else if(ft instanceof UserCenterFragment ){
                 mInfoFragment=ft;
+            }else if(ft instanceof PrivateDoctorFragment){
+                mPrivateDoctorFragment=ft;
             }
         }
         getSupportFragmentManager().beginTransaction()
@@ -209,6 +216,7 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
                 .hide(mHealthFragment)
                 .hide(mDoctorFragment)
                 .hide(mInfoFragment)
+                .hide(mPrivateDoctorFragment)
                 .show(fragments[index])
                 .commit();
     }
@@ -221,29 +229,34 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
         img_health = (ImageView) findViewById(R.id.img_health);
         img_doctor = (ImageView) findViewById(R.id.img_doctor);
         img_info = (ImageView) findViewById(R.id.img_info);
+        img_private_doctor=(ImageView)findViewById(R.id.img_private_doctor);
 
         tv_home=(TextView) findViewById(R.id.tv_home);
         tv_health=(TextView) findViewById(R.id.tv_health);
         tv_doctor=(TextView) findViewById(R.id.tv_doctor);
         tv_info=(TextView) findViewById(R.id.tv_info);
+        tv_private_doctor=(TextView)findViewById(R.id.tv_private_doctor);
 
+        layout_private_doctor=(RelativeLayout)findViewById(R.id.layout_private_doctor);
         layout_home = (RelativeLayout) findViewById(R.id.layout_home);
         layout_health = (RelativeLayout) findViewById(R.id.layout_health);
         layout_doctor = (RelativeLayout) findViewById(R.id.layout_doctor);
         layout_info = (RelativeLayout) findViewById(R.id.layout_info);
 
-        mTabs = new RelativeLayout[4];
+        mTabs = new RelativeLayout[5];
         mTabs[0] = layout_home;
         mTabs[1] = layout_health;
-        mTabs[2] = layout_doctor;
-        mTabs[3] = layout_info;
+        mTabs[2] = layout_private_doctor;
+        mTabs[3] = layout_doctor;
+        mTabs[4] = layout_info;
 
 //       mHomeFragment = HomeFragment.getInstance();
-       mHomeFragment = new HomeFragment1();
-        mHealthFragment = HealthFragment.getInstance();
+        mHomeFragment = new HomeFragment1();
+        mHealthFragment = HealthDataFragment.getInstance();
         mDoctorFragment= DoctorFragment.getInstance();
         mInfoFragment = UserCenterFragment.getInstance();
-        fragments = new Fragment[]{mHomeFragment, mHealthFragment, mDoctorFragment,mInfoFragment};
+        mPrivateDoctorFragment=PrivateDoctorFragment.getInstance();
+        fragments = new Fragment[]{mHomeFragment, mHealthFragment, mPrivateDoctorFragment,mDoctorFragment,mInfoFragment};
     }
 
     public void initEvent() {
@@ -251,12 +264,14 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
         layout_health.setOnClickListener(this);
         layout_doctor.setOnClickListener(this);
         layout_info.setOnClickListener(this);
+        layout_private_doctor.setOnClickListener(this);
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, fragments[0])
                 .add(R.id.fragment_container, fragments[1])
                 .add(R.id.fragment_container, fragments[2])
                 .add(R.id.fragment_container, fragments[3])
-                .hide(fragments[1]) .hide(fragments[2])
+                .add(R.id.fragment_container, fragments[4])
+                .hide(fragments[1]) .hide(fragments[2]).hide(fragments[4])
                 .hide(fragments[3])
                 .show(fragments[0])
                 .commit();
@@ -266,27 +281,30 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.layout_home:
-
                 index = 0;
                 setTab(0);
                 EventBus.getDefault().post(new RefreshEvent(getResources().getInteger(R.integer.refresh_info)));
                 break;
             case R.id.layout_health:
-
                 index = 1;
                 setTab(1);
-
                 break;
-            case R.id.layout_doctor:
 
+            case R.id.layout_private_doctor:
                 index = 2;
                 setTab(2);
+                break;
+
+            case R.id.layout_doctor:
+                index = 3;
+                setTab(3);
 
                 break;
             case R.id.layout_info:
-                index = 3;
-                setTab(3);
+                index = 4;
+                setTab(4);
                 break;
+
         }
         selectItem(index);
     }
@@ -347,10 +365,14 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
                 EventBus.getDefault().post(new RefreshEvent(getResources().getInteger(R.integer.refresh_manager)));
                 break;
             case 2:
+                img_private_doctor.setImageResource(R.mipmap.icon_private_doctor_pressed);
+                tv_private_doctor.setTextColor(selectColor);
+                break;
+            case 3:
                 img_doctor.setImageResource(R.mipmap.icon_msg_pressed);
                 tv_doctor.setTextColor(selectColor);
                 break;
-            case 3:
+            case 4:
                 img_info.setImageResource(R.mipmap.icon_myinfo_pressed);
                 tv_info.setTextColor(selectColor);
                 break;
@@ -362,10 +384,12 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
         tv_health.setTextColor(unSelectColor);
         tv_doctor.setTextColor(unSelectColor);
         tv_info.setTextColor(unSelectColor);
+        tv_private_doctor.setTextColor(unSelectColor);
         img_home.setImageResource(R.mipmap.icon_home_normal);
         img_health.setImageResource(R.mipmap.icon_jiankang_normal);
         img_doctor.setImageResource(R.mipmap.icon_msg_normal);
         img_info.setImageResource(R.mipmap.icon_myinfo_normal);
+        img_private_doctor.setImageResource(R.mipmap.icon_private_doctor_normal);
     }
 
 

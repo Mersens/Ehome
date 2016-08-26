@@ -26,14 +26,14 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:src="@mipmap/icon_xindianbaogao" />
+            android:src="@drawable/icon_none" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:text="暂无心电的报告数据，您可以通过以下方式获得:"
+            android:text="暂无心电的报告数据"
             android:textColor="@color/base_color_text_black"
             android:textSize="@dimen/text_size_normal" />
 

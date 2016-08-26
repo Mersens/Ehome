@@ -54,8 +54,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="115dp"
@@ -489,6 +487,19 @@
                             android:text="周一至周五在线咨询（19:00-21:00）"
                             android:textColor="#0f2536"
                             android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="42dp"
+                            android:layout_height="21dp"
+                            android:gravity="center"
+                            android:background="@drawable/icon_tixing"
+                            android:textSize="14sp"
+                            android:textColor="@color/actionbar_color"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+
+                            android:text="提醒"
+
+                            />
                     </RelativeLayout>
 
                     <RelativeLayout

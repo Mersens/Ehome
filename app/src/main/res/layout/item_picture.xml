@@ -11,7 +11,7 @@
         android:id="@+id/check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/checkbox_selector"
+        android:src="@drawable/checkbox_selector_report"
         android:layout_alignParentRight="true"
         android:padding="@dimen/margin_text" />
 </com.yongchun.library.widget.SquareRelativeLayout>

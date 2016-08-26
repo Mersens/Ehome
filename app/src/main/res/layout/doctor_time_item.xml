@@ -18,16 +18,18 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/tvcontent"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textSize="14sp"
                 android:textColor="#0f2536"
-                android:text="2016-08-04星期四 08:00--09:00"
+                android:text=""
                 android:layout_marginTop="4dp"
                 />
             <TextView
+                android:id="@+id/tvresidue"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"

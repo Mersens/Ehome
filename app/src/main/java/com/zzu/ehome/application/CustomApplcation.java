@@ -7,30 +7,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Environment;
-import android.util.Log;
 
-
-import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
-import com.baidu.location.LocationClient;
-import com.baidu.location.LocationClientOption;
-import com.baidu.mapapi.map.MyLocationConfiguration;
+import com.baidu.mapapi.SDKInitializer;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.zzu.ehome.bean.StepBean;
-import com.zzu.ehome.db.EHomeDao;
-import com.zzu.ehome.db.EHomeDaoImpl;
-import com.zzu.ehome.network.FileDownloader;
 import com.zzu.ehome.reciver.NetReceiver;
-import com.zzu.ehome.service.StepDetector;
-import com.zzu.ehome.service.StepService;
-import com.zzu.ehome.utils.DateUtils;
-import com.zzu.ehome.utils.SharePreferenceUtil;
 
-import com.baidu.mapapi.SDKInitializer;
 import java.io.File;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;

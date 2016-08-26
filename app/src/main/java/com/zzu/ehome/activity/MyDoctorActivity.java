@@ -14,7 +14,6 @@ import com.zzu.ehome.R;
 import com.zzu.ehome.bean.RefreshEvent;
 import com.zzu.ehome.db.EHomeDao;
 import com.zzu.ehome.db.EHomeDaoImpl;
-import com.zzu.ehome.fragment.BaseFragment;
 import com.zzu.ehome.utils.JsonAsyncTaskOnComplete;
 import com.zzu.ehome.utils.JsonAsyncTask_Info;
 import com.zzu.ehome.utils.RequestMaker;
@@ -37,10 +36,10 @@ public class MyDoctorActivity extends BaseActivity implements View.OnClickListen
     private String userid,parentid,doctor_id,department_id,hospitalid;
     private EHomeDao dao;
     private Intent mIntent;
-    private LinearLayout layout_add_hosptial;
-    private LinearLayout layout_add_office;
-    private LinearLayout layout_add_doctor;
-    private LinearLayout layout_add_time;
+    private RelativeLayout layout_add_hosptial;
+    private RelativeLayout layout_add_office;
+    private RelativeLayout layout_add_doctor;
+    private RelativeLayout layout_add_time;
     private TextView tv_hosptial;
     private TextView tv_office;
     private TextView tv_doctor;
@@ -96,10 +95,10 @@ public class MyDoctorActivity extends BaseActivity implements View.OnClickListen
 
             }
         });
-        layout_add_hosptial = (LinearLayout) findViewById(R.id.layout_add_hosptial);
-        layout_add_office = (LinearLayout) findViewById(R.id.layout_add_office);
-        layout_add_doctor = (LinearLayout) findViewById(R.id.layout_add_doctor);
-        layout_add_time = (LinearLayout) findViewById(R.id.layout_add_time);
+        layout_add_hosptial = (RelativeLayout) findViewById(R.id.layout_add_hosptial);
+        layout_add_office = (RelativeLayout) findViewById(R.id.layout_add_office);
+        layout_add_doctor = (RelativeLayout) findViewById(R.id.layout_add_doctor);
+        layout_add_time = (RelativeLayout) findViewById(R.id.layout_add_time);
 
         tv_hosptial = (TextView) findViewById(R.id.tv_hosptial);
         tv_office = (TextView) findViewById(R.id.tv_office);

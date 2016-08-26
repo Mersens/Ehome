@@ -9,8 +9,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zzu.ehome.R;
+import com.zzu.ehome.fragment.DynamicFragment;
 import com.zzu.ehome.fragment.StaticECGFragment;
 import com.zzu.ehome.fragment.DynamicECGFragment;
+import com.zzu.ehome.fragment.StaticFragment;
 import com.zzu.ehome.view.HeadView;
 
 /**
@@ -96,11 +98,13 @@ public class ECGActivity1 extends BaseActivity {
         Fragment fragment = null;
         switch (type) {
             case DYNAMIC:
-                fragment= DynamicECGFragment.getInstance();
+
+                fragment= DynamicFragment.getInstance();
                 break;
 
             case STATIC_STATE:
-                fragment= StaticECGFragment.getInstance();
+
+                fragment= StaticFragment.getInstance();
 
                 break;
         }

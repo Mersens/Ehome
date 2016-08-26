@@ -1,6 +1,7 @@
 package com.zzu.ehome.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zzu.ehome.R;
+import com.zzu.ehome.activity.DoctorListActivity;
+import com.zzu.ehome.activity.OfficeListActivity;
 import com.zzu.ehome.bean.DepartmentPart;
 
 import java.util.List;
@@ -25,11 +28,13 @@ public class OfficeListAdapter extends BaseAdapter {
     final int TYPE_1 = 0;
     final int TYPE_2 = 1;
     private List<DepartmentPart> mList;
+    private String ss;
 
-    public OfficeListAdapter(Context context, List<DepartmentPart> objects) {
+    public OfficeListAdapter(Context context, List<DepartmentPart> objects,String sid) {
 
         this.mList=objects;
         this.mContext=context;
+        this.ss=sid;
     }
 
     @Override
@@ -104,10 +109,32 @@ public class OfficeListAdapter extends BaseAdapter {
 
         switch (type){
             case TYPE_1:
+
                vh1.tvName.setText(mList.get(position).getDepartmentName());
+
+//                if(position>0){
+//                    if(mList.get(position-1).getType()==mList.get(position).getType()){
+//                        convertView.setVisibility(View.GONE);
+//                    }else{
+//                        convertView.setVisibility(View.VISIBLE);
+//                    }
+//                }
                 break;
             case TYPE_2:
                 vh2.tvName.setText(mList.get(position).getDepartmentName());
+                final int p=position;
+                convertView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i=new Intent(mContext,DoctorListActivity.class);
+                        i.putExtra("HospitalID",ss);
+
+                        i.putExtra("DepartmentID",mList.get(p).getDepartmentID());
+                        i.putExtra("DepartmentName",mList.get(p).getDepartmentName());
+                        mContext.startActivity(i);
+                    }
+                });
+//                convertView.setVisibility(View.VISIBLE);
                 break;
         }
 

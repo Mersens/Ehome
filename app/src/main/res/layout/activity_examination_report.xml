@@ -5,8 +5,12 @@
     android:background="@color/base_color_text_white"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-
     <include layout="@layout/layout_toolbar" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,12 +36,14 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/edt_time"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="8dp"
                 android:layout_toLeftOf="@+id/icon_lift_tixing"
-                android:text="请输入体检日期"
+
                 android:textColor="#949395"
                 android:textSize="16sp" />
 
@@ -69,14 +75,17 @@
                 android:textColor="@color/text_color2"
                 android:textSize="16sp" />
 
-            <TextView
+            <EditText
+               android:id="@+id/edt_jzdw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="8dp"
                 android:layout_toLeftOf="@+id/icon_lift_chongfu"
-                android:text="请输入体检机构"
+                android:hint="请输入体检机构"
+                android:gravity="right"
                 android:textColor="#949395"
+                android:background="@null"
                 android:textSize="16sp" />
 
             <ImageView
@@ -107,13 +116,16 @@
                 android:textColor="@color/text_color2"
                 android:textSize="16sp" />
 
-            <TextView
+            <com.zzu.ehome.view.ContainsEmojiEditText
+                android:id="@+id/edt_jzjg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="8dp"
                 android:layout_toLeftOf="@+id/icon_lift_leixing"
-                android:text="请输入体检人姓名"
+                android:background="@null"
+                android:hint="请输入体检人姓名"
+                android:gravity="right"
                 android:textColor="#949395"
                 android:textSize="16sp" />
 
@@ -132,6 +144,7 @@
             android:background="#e1e1e2" />
 
         <RelativeLayout
+            android:id="@+id/rlphoto"
             android:layout_width="match_parent"
             android:layout_height="75dp">
 
@@ -154,10 +167,36 @@
                 android:text="上传体检报告内容（最多9张）" />
 
         </RelativeLayout>
-        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/result_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+
+
 
 
     </LinearLayout>
 
+</ScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/register_btn_bg"
+        android:text="保存"
+        android:textColor="@color/base_color_text_white"
+        android:textSize="20sp" />
 
 </LinearLayout>

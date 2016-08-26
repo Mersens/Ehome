@@ -63,7 +63,7 @@ public class MedicalExaminationDesActivity extends BaseActivity implements View.
         requestMaker=RequestMaker.getInstance();
         userid= SharePreferenceUtil.getInstance(MedicalExaminationDesActivity.this).getUserId();
         mIntent=this.getIntent();
-        title=mIntent.getStringExtra("Title");
+
         id=mIntent.getStringExtra("ID");
         initViews();
         initEnent();
@@ -86,14 +86,14 @@ public class MedicalExaminationDesActivity extends BaseActivity implements View.
                     } else {
                         MedicalDate date = JsonTools.getData(result.toString(), MedicalDate.class);
                         meList = date.getData();
-                        String checktime=DateUtils.StringPattern(meList.get(0).getCheckTime(),"yyyy/MM/dd HH:mm:ss","yyyy年MM月dd日");
+                        String checktime=DateUtils.StringPattern(meList.get(0).getCheckTime(),"yyyy/MM/dd HH:mm:ss","yyyy/M/dd");
                         edt_time.setText(checktime);
                         edt_jzdw.setText(meList.get(0).getInstituteName());
                         tvname.setText(meList.get(0).getUserName());
                         String imgstr=meList.get(0).getReportImage();
 
                         if (imgstr.indexOf(",") >= 0) {
-                            llcheckr.setVisibility(View.VISIBLE);
+
                             String[] strs = imgstr.split("\\,");
                             List<String> images=new ArrayList<String>();
                             for (int m = 0; m < strs.length; m++) {
@@ -105,15 +105,13 @@ public class MedicalExaminationDesActivity extends BaseActivity implements View.
                             resultRecyclerView.setAdapter(mAdapter);
                         }else{
                             if(!TextUtils.isEmpty(imgstr)){
-                                llcheckr.setVisibility(View.VISIBLE);
+//                                llcheckr.setVisibility(View.VISIBLE);
                                 List<String> images2=new ArrayList<String>();
                                 String imgurl2 = Constants.EhomeURL + imgstr.replace("~", "").replace("\\", "/");
                                 images2.add(imgurl2);
                                 mAdapter=new GridAdapter(images2,MedicalExaminationDesActivity.this);
                                 resultRecyclerView.setLayoutManager(new GridLayoutManager(MedicalExaminationDesActivity.this, 3));
                                 resultRecyclerView.setAdapter(mAdapter);
-                            }else{
-                                llcheckr.setVisibility(View.GONE);
                             }
                         }
                     }
@@ -136,7 +134,7 @@ public class MedicalExaminationDesActivity extends BaseActivity implements View.
 
     }
     private void initViews() {
-        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left,title, new HeadView.OnLeftClickListener() {
+        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left,"体检报告", new HeadView.OnLeftClickListener() {
             @Override
             public void onClick() {
                 finishActivity();
@@ -145,7 +143,7 @@ public class MedicalExaminationDesActivity extends BaseActivity implements View.
         edt_time=(TextView) findViewById(R.id.edt_time);
         edt_jzdw=(TextView) findViewById(R.id.edt_jzdw);
         tvname=(TextView) findViewById(R.id.tvname);
-        llcheckr=(LinearLayout)findViewById(R.id.llcheckr);
+//        llcheckr=(LinearLayout)findViewById(R.id.llcheckr);
         resultRecyclerView = (RecyclerView) findViewById(R.id.result_recycler);
 
     }

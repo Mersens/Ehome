@@ -87,7 +87,8 @@ public class DynamicFragment extends BaseFragment {
         String endtime = "";
 
         startProgressDialog();
-//        userid="130521";
+        userid="51223";
+
         requestMaker.HolterPDFInquiry(userid, starttime, endtime, new JsonAsyncTask_ECGInfo(getActivity(), true, new JsonAsyncTaskOnComplete() {
             @Override
             public void processJsonObject(Object result) {

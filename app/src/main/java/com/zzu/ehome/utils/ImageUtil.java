@@ -623,7 +623,7 @@ public class ImageUtil {
 		// 判断sd卡是否存在
 		if(Environment.getExternalStorageState()
 				.equals(Environment.MEDIA_MOUNTED)) {
-			dirPath = Environment.getExternalStorageDirectory().toString() + File.separator + "mmlove" + File.separator + "images"+File.separator;//获取跟目录
+			dirPath = Environment.getExternalStorageDirectory().toString() + File.separator + "ehome2" + File.separator + "images"+File.separator;//获取跟目录
 			File dir = new File(dirPath);
 			if (!dir.exists()) {
 				dir.mkdirs();

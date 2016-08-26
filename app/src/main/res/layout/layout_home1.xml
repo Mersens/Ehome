@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zzu.ehome.view.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/v_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+<com.zzu.ehome.view.PullToRefreshLayout
     android:id="@+id/refresh_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/back_color">
+
     <include layout="@layout/refresh_head" />
+
     <com.zzu.ehome.view.MyScrollView
         android:id="@+id/scrollView4"
         android:layout_width="match_parent"
@@ -703,3 +716,4 @@
 
     <include layout="@layout/load_more" />
 </com.zzu.ehome.view.PullToRefreshLayout>
+</LinearLayout>

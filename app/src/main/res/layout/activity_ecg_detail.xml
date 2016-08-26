@@ -28,14 +28,10 @@
             android:textSize="@dimen/text_size_large"/>
             <TextView
                 android:id="@+id/tv_statu"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_centerVertical="true"
-
                 android:layout_marginLeft="5dp"
-
                 android:textSize="@dimen/text_size_large"/>
 
         </LinearLayout>

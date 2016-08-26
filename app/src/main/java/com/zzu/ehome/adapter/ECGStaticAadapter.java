@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zzu.ehome.R;
+import com.zzu.ehome.activity.StaticECGDetailActivity;
 import com.zzu.ehome.activity.StaticECGDetial;
 import com.zzu.ehome.bean.StaticBean;
 import com.zzu.ehome.utils.DateUtils;
@@ -29,29 +30,27 @@ public class ECGStaticAadapter extends BaseListAdapter<StaticBean> {
     @Override
     public View getGqView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
-
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = getInflater().inflate(R.layout.ecg_item, null);
-            holder.name = (TextView) convertView.findViewById(R.id.tv_name);
+            convertView = getInflater().inflate(R.layout.dynamic_item, null);
+            holder.tvtitle=(TextView)convertView.findViewById(R.id.tv_title);
+            holder.time = (TextView) convertView.findViewById(R.id.tv_time);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-//        String time = mList.get(position).getUpdatedDate().split(" ")[0];
-//        String[] yeartime = time.split("/");
-//
-//
-//        final String title=yeartime[0] + "年" + yeartime[1] + "月" + yeartime[2] + "日" + "心电报告";
-        //    2016/4/28 14:55:11
 
+        holder.tvtitle.setText("静态心电报告");
         final StaticBean item=getItem(position);
-        holder.name.setText(DateUtils.StringPattern(item.getCollectTime(),"yyyy/MM/dd HH:mm:ss","yyyy年M月dd日")+"心电报告");
+        holder.time.setText(item.getCollectTime());
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(mContext, StaticECGDetial.class);
+                Intent i=new Intent(mContext, StaticECGDetailActivity.class);
                 i.putExtra("imurl",item.getImgPath());
+                i.putExtra("Diagnosis",item.getDiagnosis());
+                i.putExtra("PatientName",item.getPatientName());
+                i.putExtra("CollectTime",item.getCollectTime());
                 mContext.startActivity(i);
             }
         });
@@ -59,6 +58,7 @@ public class ECGStaticAadapter extends BaseListAdapter<StaticBean> {
     }
 
     public static class ViewHolder {
-        private TextView name;
+        private TextView tvtitle;
+        private TextView time;
     }
 }

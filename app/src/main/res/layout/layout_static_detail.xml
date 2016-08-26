@@ -37,6 +37,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tvtime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -52,7 +53,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/tv2"
@@ -100,6 +102,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tvname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -135,6 +138,7 @@
 
                     />
                 <TextView
+                    android:id="@+id/tvres"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="测试测试测试测试测试测试测\n试测试测试测试测试测试\n测试测试测试测试测试测试\n测试测试测试测试"

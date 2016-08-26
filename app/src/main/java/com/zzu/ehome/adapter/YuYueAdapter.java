@@ -37,6 +37,7 @@ public class YuYueAdapter extends BaseListAdapter<HospitalBean> {
             public void onClick(View v) {
                 Intent i=new Intent(mContext, OfficeListActivity.class);
                 i.putExtra("id",mList.get(p).getHospital_Id());
+                i.putExtra("hosName",mList.get(p).getHospital_FullName());
                 mContext.startActivity(i);
 
 

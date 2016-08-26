@@ -90,6 +90,42 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/layout_private_doctor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onTabClicked"
+            android:padding="3dp" >
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/img_private_doctor"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/base_color_text_white"
+                    android:focusable="false"
+                    android:layout_marginTop="2dp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/icon_private_doctor_normal" />
+
+                <TextView
+                    android:id="@+id/tv_private_doctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/img_private_doctor"
+                    android:text="私人医生"
+                    android:textColor="@color/bottom_text_color_normal"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/layout_doctor"
             android:layout_width="0dp"
             android:layout_height="match_parent"

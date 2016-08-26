@@ -33,21 +33,24 @@ public class DoctorListActivity extends BaseActivity {
     private ListView listView;
     private DoctorListAdapter adapter;
     private RequestMaker requestMaker;
-    private String hosid,depid;
+    private String hosid,depid,DepartmentName;
+    List<DoctorBeanDes> mList;
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         requestMaker=RequestMaker.getInstance();
         setContentView(R.layout.layout_doctor_list);
-        initViews();
+
         hosid=this.getIntent().getStringExtra("HospitalID");
         depid=this.getIntent().getStringExtra("DepartmentID");
+        DepartmentName=this.getIntent().getStringExtra("DepartmentName");
+        initViews();
         initEvent();
         initDatas();
     }
     public void initViews(){
         listView=(ListView) findViewById(R.id.listView);
-        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, "神经内科", new HeadView.OnLeftClickListener() {
+        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, DepartmentName, new HeadView.OnLeftClickListener() {
             @Override
             public void onClick() {
                 finishActivity();
@@ -56,12 +59,7 @@ public class DoctorListActivity extends BaseActivity {
 
     }
     public void initEvent(){
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(DoctorListActivity.this,DoctorTimeActivity.class));
-            }
-        });
+
     }
     public void initDatas(){
         requestMaker.DepertDoctorByTopmd(hosid,depid,new JsonAsyncTask_Info(
@@ -79,8 +77,8 @@ public class DoctorListActivity extends BaseActivity {
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         DortorlIst date = JsonTools.getData(result.toString(), DortorlIst.class);
-                        List<DoctorBeanDes> mList=date.getData();
-                        adapter=new DoctorListAdapter(DoctorListActivity.this,mList);
+                        mList=date.getData();
+                        adapter=new DoctorListAdapter(DoctorListActivity.this,mList,hosid,depid,DepartmentName);
                            listView.setAdapter(adapter);
                     }
                 } catch (JSONException e) {

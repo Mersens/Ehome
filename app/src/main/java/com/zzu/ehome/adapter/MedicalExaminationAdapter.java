@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.zzu.ehome.R;
 import com.zzu.ehome.activity.ECGDetailsActivity;
+import com.zzu.ehome.activity.ExaminationReportActivity;
+import com.zzu.ehome.activity.ExaminationReportDetailActivity;
 import com.zzu.ehome.activity.MedicalExaminationActivity;
 import com.zzu.ehome.activity.MedicalExaminationDesActivity;
 import com.zzu.ehome.bean.MedicalBean;
@@ -60,33 +62,35 @@ public class MedicalExaminationAdapter extends BaseAdapter {
         MedicalBean itme=(MedicalBean)getItem(position);
         if(convertView==null){
             holder=new ViewHolder();
-            convertView=mInflater.inflate(R.layout.ecg_item,null);
+            convertView=mInflater.inflate(R.layout.examination_report_item,null);
             holder.name=(TextView) convertView.findViewById(R.id.tv_name);
+            holder.tvtime=(TextView)convertView.findViewById(R.id.tv_time);
+
             convertView.setTag(holder);
         }else{
             holder=(ViewHolder)convertView.getTag();
         }
-        String time = itme.getCheckTime().split(" ")[0];
-        String[] yeartime = time.split("/");
 
-
-        final String title=yeartime[0] + "年" + yeartime[1] + "月" + yeartime[2] + "日" + "体检报告";
-        holder.name.setText(title);
+        holder.tvtime.setText(itme.getCheckTime().split(" ")[0]);
+        holder.name.setText(itme.getInstituteName());
         final String id=itme.getID();
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, MedicalExaminationDesActivity.class);
-                i.putExtra("Title",title);
+
                 i.putExtra("ID", id);
                 mContext.startActivity(i);
+//                mContext.startActivity(new Intent(mContext,ExaminationReportDetailActivity.class));
             }
         });
         return convertView;
     }
 
     public static  class ViewHolder{
-        private TextView name;
+         TextView name;
+        TextView tvtime;
+
     }
 
 

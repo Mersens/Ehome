@@ -3,14 +3,10 @@ package com.zzu.ehome.activity;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -34,22 +30,17 @@ import com.zzu.ehome.R;
 import com.zzu.ehome.application.Constants;
 import com.zzu.ehome.bean.Images;
 import com.zzu.ehome.bean.RefreshEvent;
-import com.zzu.ehome.bean.TreatmentInquirywWithPage;
-import com.zzu.ehome.bean.TreatmentInquirywWithPageDate;
 import com.zzu.ehome.utils.CommonUtils;
 import com.zzu.ehome.utils.ImageUtil;
 import com.zzu.ehome.utils.JsonAsyncTaskOnComplete;
 import com.zzu.ehome.utils.JsonAsyncTask_Info;
-import com.zzu.ehome.utils.JsonTools;
 import com.zzu.ehome.utils.PermissionsChecker;
 import com.zzu.ehome.utils.RequestMaker;
 import com.zzu.ehome.utils.SharePreferenceUtil;
 import com.zzu.ehome.utils.ToastUtils;
 import com.zzu.ehome.view.ContainsEmojiEditText;
-import com.zzu.ehome.view.DialogTips;
 import com.zzu.ehome.view.GridViewForScrollView;
 import com.zzu.ehome.view.HeadView;
-import com.zzu.ehome.view.XCRoundRectImageView;
 
 import org.json.JSONObject;
 
@@ -72,7 +63,7 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
     public static final int ADD_TIMES = 0x35;
 
     private TextView edt_time;
-    private TextView edt_jzdw;
+    private EditText edt_jzdw;
 
 
 
@@ -89,7 +80,7 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
     private PopupWindow pop = null;
     private LinearLayout ll_popup;
     public static Bitmap bimap ;
-    private LinearLayout lljzhen;
+//    private LinearLayout lljzhen;
     private RequestMaker requestMaker;
     private String userid,jzyy,zdjg;
     public static final String EXTRA_IMAGES = "extraImages";
@@ -107,13 +98,14 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
 
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
+    private RelativeLayout rlphoto;
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         requestMaker=RequestMaker.getInstance();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        setContentView(R.layout.layout_create_report);
+        setContentView(R.layout.activity_examination_report);
 
         initViews();
 
@@ -121,11 +113,13 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
         path=ImageUtil.saveResTolocal(CreateReportActivity.this.getResources(),R.mipmap.icon_add_xd,"add_xd");
         images.add(path);
         mAdapter=new GridAdapter(images,CreateReportActivity.this);
+        resultRecyclerView = (RecyclerView) findViewById(R.id.result_recycler);
         resultRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         resultRecyclerView.setAdapter(mAdapter);
         userid= SharePreferenceUtil.getInstance(CreateReportActivity.this).getUserId();
 
-        resultRecyclerView = (RecyclerView) findViewById(R.id.result_recycler);
+
+        rlphoto=(RelativeLayout)findViewById(R.id.rlphoto);
         initEvent();
 
     }
@@ -133,7 +127,7 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
 
     public void initViews() {
         edt_time = (TextView) findViewById(R.id.edt_time);
-        edt_jzdw = (TextView) findViewById(R.id.edt_jzdw);
+        edt_jzdw = (EditText) findViewById(R.id.edt_jzdw);
 
         edt_jzjg = (ContainsEmojiEditText) findViewById(R.id.edt_jzjg);
 
@@ -142,9 +136,9 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
 
 
         btn_save = (Button) findViewById(R.id.btn_save);
-        lljzhen=(LinearLayout) findViewById(R.id.lljzhen);
+//        lljzhen=(LinearLayout) findViewById(R.id.lljzhen);
 
-        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, "拍报告", new HeadView.OnLeftClickListener() {
+        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, "添加报告", new HeadView.OnLeftClickListener() {
             @Override
             public void onClick() {
                 finishActivity();
@@ -173,10 +167,14 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
         edt_time.setText(df.format(new Date()));
-        lljzhen.setOnClickListener(this);
-        edt_jzdw.setOnClickListener(this);
+        edt_time.setOnClickListener(this);
+//        lljzhen.setOnClickListener(this);
+//        edt_jzdw.setOnClickListener(this);
         btn_save.setOnClickListener(this);
-
+        rlphoto.setOnClickListener(this);
+        rlphoto.setVisibility(View.VISIBLE);
+        btn_save.setOnClickListener(this);
+        resultRecyclerView.setVisibility(View.INVISIBLE);
     }
 
 
@@ -243,6 +241,11 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
             holder.imageClose.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if(position==1){
+                        rlphoto.setVisibility(View.VISIBLE);
+                        resultRecyclerView.setVisibility(View.INVISIBLE);
+
+                    }
 
                         mList.remove(position);
 //                        images.remove(position);
@@ -252,9 +255,8 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
                         setmList(images);
                     }
 
+
                         notifyDataSetChanged();
-
-
 
                 }
             });
@@ -288,14 +290,11 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
                 ImageSelectorActivity.start(CreateReportActivity.this, 9, ImageSelectorActivity.MODE_MULTIPLE, true,false,false,images.size());
 
                 break;
-            case R.id.lljzhen:
+            case R.id.edt_time:
                 Intent intenttime = new Intent(CreateReportActivity.this, SelectDateAct.class);
                 startActivityForResult(intenttime, Constants.ADDTTIME);
                 break;
-            case R.id.edt_jzdw:
-                Intent intenttimes = new Intent(this, HosListActivity.class);
-                startActivityForResult(intenttimes, ADD_TIMES);
-                break;
+
             case R.id.btn_save:
                 //保存按钮
                 if(CommonUtils.isFastClick())
@@ -309,7 +308,7 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
                     ToastUtils.showMessage(CreateReportActivity.this,"请选择体检日期!");
                     return;
                 }else if(jzyy.equals("")){
-                    ToastUtils.showMessage(CreateReportActivity.this,"请选择体检机构!");
+                    ToastUtils.showMessage(CreateReportActivity.this,"请输入体检机构!");
                     return;
                 }else if(zdjg.equals("")){
                     ToastUtils.showMessage(CreateReportActivity.this,"请填写体检人姓名!");
@@ -379,6 +378,9 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
 
 
                 break;
+            case R.id.rlphoto:
+                ImageSelectorActivity.start(CreateReportActivity.this, 9, ImageSelectorActivity.MODE_MULTIPLE, true, false, false, images.size() - 1);
+                break;
 
         }
     }
@@ -400,6 +402,8 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case ImageSelectorActivity.REQUEST_IMAGE:
+                resultRecyclerView.setVisibility(View.VISIBLE);
+                rlphoto.setVisibility(View.GONE);
                 if(data!=null) {
                     ArrayList<String> images1 = (ArrayList<String>) data.getSerializableExtra(ImageSelectorActivity.REQUEST_OUTPUT);
                     if (images1 != null) {
@@ -428,17 +432,7 @@ public class CreateReportActivity extends BaseActivity implements View.OnClickLi
                     }
                 }
                 break;
-            case ADD_TIMES:
-                if ( data != null) {
-                    String times = data.getStringExtra("times");
-                    if (!TextUtils.isEmpty(times)) {
-                        edt_jzdw.setText(times);
 
-                    }
-
-                }
-
-                break;
 
         }
     }

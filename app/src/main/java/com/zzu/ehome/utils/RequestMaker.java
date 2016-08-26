@@ -912,6 +912,19 @@ public class RequestMaker {
                 SOAP_URL, paramMap);
 
     }
+    public void DoctorSchemaByTopmd(String HospitalID,String DepartmentID,String DoctorID,JsonAsyncTask_Info task) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request><HospitalID>%s</HospitalID><DepartmentID>%s</DepartmentID><DoctorID>%s</DoctorID></Request>";
+        str = String.format(str, new Object[]
+                {HospitalID,DepartmentID,DoctorID});
+        paramMap.put("str", str);
+
+
+        task.execute(SOAP_NAMESPACE, SOAP_NAMESPACE + Constants.DoctorSchemaByTopmd, Constants.DoctorSchemaByTopmd,
+                SOAP_URL, paramMap);
+
+    }
+
 
 
 

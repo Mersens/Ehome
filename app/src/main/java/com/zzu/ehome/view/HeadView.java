@@ -288,7 +288,7 @@ public class  HeadView extends LinearLayout {
             left_button.setBackgroundResource(leftsrcid);
 
         if (rightsrcid != 0)
-            right_button.setBackgroundResource(rightsrcid);
+            right_button.setImageResource(rightsrcid);
 
         setOnLeftClickListener(onleftclicklistener);
         setOnRightClickListener(onrightclicklistener);

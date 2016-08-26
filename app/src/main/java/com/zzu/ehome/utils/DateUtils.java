@@ -199,7 +199,7 @@ public class DateUtils {
 
         Calendar now=Calendar.getInstance();
         int year=now.get(Calendar.YEAR);
-        int month=now.get(Calendar.MONTH)+1;//?为什么要加1
+        int month=now.get(Calendar.MONTH)+1;
 return year+"-"+month+"-"+"01";
     }
     /**

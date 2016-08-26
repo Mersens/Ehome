@@ -372,6 +372,8 @@
         <activity android:name=".activity.ECGActivity1" />
         <activity android:name=".activity.DynamicECGDetialActivity" />
         <activity android:name=".activity.StaticECGDetailActivity" />
+        <activity android:name=".activity.InspectionReportActivity" />
+        <activity android:name=".activity.InspectionReportDetailActivity" />
 
 
 

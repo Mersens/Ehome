@@ -91,6 +91,7 @@ public class StaticFragment extends BaseFragment {
         String starttime = "";
         String endtime = "";
         startProgressDialog();
+        userid="92";
         requestMaker.BJResultInquiry(userid, starttime, endtime, new JsonAsyncTask_ECGInfo(getActivity(), true, new JsonAsyncTaskOnComplete() {
             @Override
             public void processJsonObject(Object result) {

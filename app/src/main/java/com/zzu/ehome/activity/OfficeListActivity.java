@@ -37,7 +37,7 @@ public class OfficeListActivity extends BaseActivity {
     private ListView listView;
     private OfficeListAdapter adapter;
     private RequestMaker requestMaker;
-    private String sid="";
+    private String sid="",title;
 
    private List <DepTempBean> depNOlist=new ArrayList<DepTempBean>();
     private List <DepTempBean> depPartList=new ArrayList<DepTempBean>();
@@ -48,15 +48,17 @@ public class OfficeListActivity extends BaseActivity {
         super.onCreate(arg0);
         setContentView(R.layout.layout_office_list);
         requestMaker=RequestMaker.getInstance();
+        title=this.getIntent().getStringExtra("hosName");
         initViews();
         sid=this.getIntent().getStringExtra("id");
+
         initEvent();
         initDatas();
     }
 
     public void initViews(){
         listView=(ListView) findViewById(R.id.listView);
-        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, "郑州大学第一附属医院", new HeadView.OnLeftClickListener() {
+        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, title, new HeadView.OnLeftClickListener() {
             @Override
             public void onClick() {
                 finishActivity();
@@ -65,15 +67,7 @@ public class OfficeListActivity extends BaseActivity {
 
     }
     public void initEvent(){
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i=new Intent(OfficeListActivity.this,DoctorListActivity.class);
-                i.putExtra("HospitalID",sid);
-                i.putExtra("DepartmentID",depAllList.get(position).getDepartmentID());
-                startActivity(i);
-            }
-        });
+
     }
 
     private void getSub(String id){
@@ -106,6 +100,8 @@ public class OfficeListActivity extends BaseActivity {
                             dp.setDepartmentName(depNOlist.get(m).getDepartmentName());
                             dp.setType(0);
                             depAllList.add(dp);
+                            Boolean isHas=false;
+
                            for(int n=0;n<depPartList.size();n++){
 
                                if(depNOlist.get(m).getDepartmentID().equals(depPartList.get(n).getParentDeprtID())){
@@ -113,11 +109,15 @@ public class OfficeListActivity extends BaseActivity {
                                    dpsub.setDepartmentID(depPartList.get(n).getDepartmentID());
                                    dpsub.setDepartmentName(depPartList.get(n).getDepartmentName());
                                    dpsub.setType(1);
+                                   isHas=true;
                                    depAllList.add(dpsub);
-                               }
 
+                               }else if(depNOlist.get(m).getParentDeprtID().equals("0")){
+                                   if((n==depPartList.size()-1)&&(!isHas))
+                                       depAllList.remove(depAllList.size()-1);
+                               }
                            }
-                            adapter=new OfficeListAdapter(OfficeListActivity.this,depAllList);
+                            adapter=new OfficeListAdapter(OfficeListActivity.this,depAllList,sid);
                             listView.setAdapter(adapter);
                         }
 

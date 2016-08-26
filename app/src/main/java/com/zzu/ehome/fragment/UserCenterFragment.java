@@ -1,6 +1,7 @@
 package com.zzu.ehome.fragment;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,7 @@ import com.zzu.ehome.bean.RefreshEvent;
 import com.zzu.ehome.bean.User;
 import com.zzu.ehome.db.EHomeDao;
 import com.zzu.ehome.db.EHomeDaoImpl;
+import com.zzu.ehome.utils.CommonUtils;
 import com.zzu.ehome.utils.SharePreferenceUtil;
 
 import de.greenrobot.event.EventBus;
@@ -39,7 +41,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
             layout_yjfk, layout_about, layout_setting;
     private EHomeDao dao;
     private TextView tv_msg;
-
+private View vTop;
 
 
     @Nullable
@@ -84,6 +86,17 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
         tvGoMyFaimily = (TextView) mView.findViewById(R.id.tvGoMyFaimily);
         icon_user = (ImageView) mView.findViewById(R.id.icon_user);
         tv_msg=(TextView) mView.findViewById(R.id.tv_msg);
+        vTop=mView.findViewById(R.id.v_top);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            int h= CommonUtils.getStatusHeight(getActivity());
+            ViewGroup.LayoutParams params=vTop.getLayoutParams();
+            params.height=h;
+            params.width= ViewGroup.LayoutParams.FILL_PARENT;
+            vTop.setLayoutParams(params);
+            vTop.setBackgroundResource(R.color.actionbar_color);
+        }else{
+            vTop.setVisibility(View.GONE);
+        }
 
     }
 

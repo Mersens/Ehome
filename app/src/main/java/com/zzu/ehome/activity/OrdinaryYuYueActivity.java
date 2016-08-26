@@ -32,6 +32,7 @@ public class OrdinaryYuYueActivity extends BaseActivity {
     private YuYueAdapter adapter;
     private ListView listView;
     private RequestMaker requestMaker;
+    private List<HospitalBean> mList;
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
@@ -53,12 +54,7 @@ public class OrdinaryYuYueActivity extends BaseActivity {
 
     }
     public void initEvent(){
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-             startActivity(new Intent(OrdinaryYuYueActivity.this,OfficeListActivity.class));
-            }
-        });
+
 
     }
 
@@ -77,7 +73,7 @@ public class OrdinaryYuYueActivity extends BaseActivity {
                                         Toast.LENGTH_SHORT).show();
                             } else {
                                 HospitalInquiryByTopmd date = JsonTools.getData(result.toString(), HospitalInquiryByTopmd.class);
-                                List<HospitalBean> mList=date.getDate();
+                                mList=date.getDate();
                                 adapter=new YuYueAdapter(OrdinaryYuYueActivity.this,mList);
                                 listView.setAdapter(adapter);
                             }

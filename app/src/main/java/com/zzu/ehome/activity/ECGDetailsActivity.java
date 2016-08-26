@@ -16,10 +16,15 @@ import android.widget.TextView;
 import com.dinuscxj.progressbar.CircleProgressBar;
 import com.zzu.ehome.R;
 import com.zzu.ehome.application.Constants;
+import com.zzu.ehome.bean.User;
+import com.zzu.ehome.db.EHomeDao;
+import com.zzu.ehome.db.EHomeDaoImpl;
 import com.zzu.ehome.network.DownloadProgressListener;
 import com.zzu.ehome.network.FileDownloader;
 import com.zzu.ehome.utils.CommonUtils;
+import com.zzu.ehome.utils.DateUtils;
 import com.zzu.ehome.utils.PermissionsChecker;
+import com.zzu.ehome.utils.SharePreferenceUtil;
 import com.zzu.ehome.utils.ToastUtils;
 import com.zzu.ehome.view.HeadView;
 import java.io.File;
@@ -30,8 +35,8 @@ import java.io.File;
 public class ECGDetailsActivity extends BaseActivity  {
 
     private Intent mIntent;
-    private String title,filename,filemd5;
-    private TextView tvresult,tv_statu;
+    private String filename,filemd5;
+    private TextView tvresult,tv_statu,tvtime,tvname;
     private String url="",status;
     long filesize;
     int result;
@@ -39,6 +44,8 @@ public class ECGDetailsActivity extends BaseActivity  {
     private TextView tvcontent;
     private Boolean isExists=false;
     private RelativeLayout rl_check;
+    private User user;
+    private EHomeDao dao;
     private PermissionsChecker mPermissionsChecker; // 权限检测器
     // 所需的全部权限
     static final String[] PERMISSIONS = new String[]{
@@ -76,14 +83,13 @@ public class ECGDetailsActivity extends BaseActivity  {
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
-        setContentView(R.layout.activity_ecg_detail);
+        setContentView(R.layout.layout_dynamic_detail);
+        dao = new EHomeDaoImpl(this);
         mIntent=this.getIntent();
-        title=mIntent.getStringExtra("Title");
+
         filemd5=mIntent.getStringExtra("FileMD5");
         status=mIntent.getStringExtra("ReportType");
-//        if(title.length()>10){
-//            title=title.substring(0,9)+"...";
-//        }
+       user=dao.findUserInfoById(SharePreferenceUtil.getInstance(ECGDetailsActivity.this).getUserId());
 
         url= (Constants.Download+mIntent.getStringExtra("Download")).replace("\\", "/");
 
@@ -93,12 +99,14 @@ public class ECGDetailsActivity extends BaseActivity  {
         }
         initViews();
         tv_statu.setText(status);
+        tvtime.setText(mIntent.getStringExtra("time"));
+        tvname.setText(user.getUsername());
         if(status.contains("低")){
-            tv_statu.setTextColor(Color.parseColor("#2ec2cc"));
+            tv_statu.setTextColor(Color.parseColor("#00c07d"));
         }else if(status.contains("中")){
-            tv_statu.setTextColor(Color.parseColor("#ffa302"));
+            tv_statu.setTextColor(Color.parseColor("#fb9c2e"));
         }else if(status.contains("高")){
-            tv_statu.setTextColor(Color.parseColor("#f85201"));
+            tv_statu.setTextColor(Color.parseColor("#f95935"));
         }
         circleProgressBar.setVisibility(View.GONE);
         File file=new File(DOWM_FOLDER+filename);
@@ -117,7 +125,7 @@ public class ECGDetailsActivity extends BaseActivity  {
     }
     public void  initViews(){
 
-        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, title, new HeadView.OnLeftClickListener() {
+        setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, "动态心电报告", new HeadView.OnLeftClickListener() {
             @Override
             public void onClick() {
                 finishActivity();
@@ -129,6 +137,11 @@ public class ECGDetailsActivity extends BaseActivity  {
         circleProgressBar=(CircleProgressBar)findViewById(R.id.line_progress);
         tvcontent=(TextView)findViewById(R.id.tvcontent);
         tv_statu=(TextView)findViewById(R.id.tv_statu);
+        tvname=(TextView)findViewById(R.id.tvname);
+        tvtime=(TextView)findViewById(R.id.tvtime);
+
+
+
 
         rl_check.setOnClickListener(new View.OnClickListener() {
             @Override

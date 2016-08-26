@@ -48,6 +48,7 @@ import de.greenrobot.event.EventBus;
 
 
 /**
+ * 体检报告
  * Created by Administrator on 2016/6/17.
  */
 public class MedicalExaminationActivity extends BaseActivity implements View.OnClickListener{

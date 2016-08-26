@@ -9,12 +9,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -22,33 +19,21 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import com.zzu.ehome.R;
-
-import com.zzu.ehome.activity.DataChatActivity;
 import com.zzu.ehome.activity.JibuDataActivity;
 import com.zzu.ehome.activity.TiwenDataActivity;
-import com.zzu.ehome.activity.TizhongActivity;
 import com.zzu.ehome.activity.TizhongDataActivity;
 import com.zzu.ehome.activity.XuetangDataActivity;
 import com.zzu.ehome.activity.XueyaDataActivity;
 import com.zzu.ehome.activity.YYJLDataActivity;
 import com.zzu.ehome.bean.HealthBean;
-import com.zzu.ehome.bean.HealthData;
-import com.zzu.ehome.bean.HealthDataRes;
 import com.zzu.ehome.bean.HealthDataSearchByDate;
-
 import com.zzu.ehome.bean.RefreshEvent;
-import com.zzu.ehome.bean.StepBean;
 import com.zzu.ehome.bean.StepCounterBean;
 import com.zzu.ehome.bean.StepCounterDate;
 import com.zzu.ehome.bean.User;
@@ -62,9 +47,7 @@ import com.zzu.ehome.utils.JsonTools;
 import com.zzu.ehome.utils.PermissionsChecker;
 import com.zzu.ehome.utils.RequestMaker;
 import com.zzu.ehome.utils.SharePreferenceUtil;
-import com.zzu.ehome.utils.ToastUtils;
 import com.zzu.ehome.view.DialogTips;
-
 
 import org.json.JSONObject;
 
@@ -73,15 +56,12 @@ import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import de.greenrobot.event.EventBus;
-import android.Manifest;
 
 /**
  * Created by zzu on 2016/4/9.
@@ -105,6 +85,7 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
     User dbUser;
     private EHomeDao dao;
     private RequestMaker requestmaker;
+    private View vTop;
 
     private BroadcastReceiver mRefrushBroadcastReceiver=new BroadcastReceiver() {
         @Override
@@ -140,6 +121,7 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
 
     public void initView() {
 
+        setOnlyTileViewMethod(view,"健康数据");
         tz_num = (TextView) view.findViewById(R.id.tz_num);
         tvbmi = (TextView) view.findViewById(R.id.tv_bim);
         tw_num = (TextView) view.findViewById(R.id.tw_num);
@@ -182,6 +164,17 @@ public class HealthDataFragment extends BaseFragment implements View.OnClickList
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         date = sdf.format(CommonUtils.changeDate(-1).getTime() + 60 * 60 * 24 * 1000);
         tvdate.setText(DateUtils.getDateDetail(date)+DateUtils.StringPattern(date,"yyyy-MM-dd","MM月dd日"));
+        vTop=view.findViewById(R.id.v_top);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            int h= CommonUtils.getStatusHeight(getActivity());
+            ViewGroup.LayoutParams params=vTop.getLayoutParams();
+            params.height=h;
+            params.width= ViewGroup.LayoutParams.FILL_PARENT;
+            vTop.setLayoutParams(params);
+            vTop.setBackgroundResource(R.color.actionbar_color);
+        }else{
+            vTop.setVisibility(View.GONE);
+        }
     }
 
     public void initEvent(){

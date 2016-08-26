@@ -45,8 +45,6 @@ public class DynamicECGFragment extends BaseFragment {
         layout_none=(LinearLayout)mView.findViewById(R.id.layout_none);
         layout_none.setVisibility(View.GONE);
         listView=(ListView)mView.findViewById(R.id.listView);
-
-
     }
 
     public void initEvent(){
@@ -56,7 +54,6 @@ public class DynamicECGFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(), DynamicECGDetialActivity.class));
             }
         });
-
     }
 
     public void initDatas(){

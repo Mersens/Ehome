@@ -12,6 +12,7 @@ import android.os.Message;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,8 @@ import com.zzu.ehome.R;
 import com.zzu.ehome.activity.ECGActivity1;
 import com.zzu.ehome.activity.ExaminationReportActivity;
 import com.zzu.ehome.activity.FreeConsultationActivity;
-import com.zzu.ehome.activity.MyHome;
+import com.zzu.ehome.activity.InspectionReportActivity;
+import com.zzu.ehome.activity.LoginActivity1;
 import com.zzu.ehome.activity.NearPharmacyActivity;
 import com.zzu.ehome.activity.PMDActivity;
 import com.zzu.ehome.activity.StaticWebView;
@@ -39,12 +41,14 @@ import com.zzu.ehome.adapter.HomeNewsAdapter;
 import com.zzu.ehome.application.Constants;
 import com.zzu.ehome.bean.News;
 import com.zzu.ehome.bean.NewsDate;
+import com.zzu.ehome.utils.CommonUtils;
 import com.zzu.ehome.utils.JsonAsyncTaskOnComplete;
 import com.zzu.ehome.utils.JsonAsyncTask_Info;
 import com.zzu.ehome.utils.JsonTools;
 import com.zzu.ehome.utils.PermissionsChecker;
 import com.zzu.ehome.utils.RequestMaker;
 import com.zzu.ehome.utils.ScreenUtils;
+import com.zzu.ehome.utils.SharePreferenceUtil;
 import com.zzu.ehome.utils.ToastUtils;
 import com.zzu.ehome.view.DialogTips;
 import com.zzu.ehome.view.ImageCycleView;
@@ -78,6 +82,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
     private PullToRefreshLayout pulltorefreshlayout;
     private RequestMaker requestMaker;
     private int page=1;
+    private View vTop;
 
     @Override
     public void setTargetFragment(Fragment fragment, int requestCode) {
@@ -150,7 +155,18 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
         layout_xxg = (LinearLayout) mView.findViewById(R.id.layout_xxg);
         layout_tnb = (LinearLayout) mView.findViewById(R.id.layout_tnb);
         layout_others = (LinearLayout) mView.findViewById(R.id.layout_others);
+        vTop=mView.findViewById(R.id.v_top);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            int h= CommonUtils.getStatusHeight(getActivity());
+            ViewGroup.LayoutParams params=vTop.getLayoutParams();
+            params.height=h;
+            params.width= ViewGroup.LayoutParams.FILL_PARENT;
+            vTop.setLayoutParams(params);
+            vTop.setBackgroundResource(R.drawable.bg_header_lead);
+        }else{
+            vTop.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -387,7 +403,14 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
                 startIntent(getActivity(), FreeConsultationActivity.class);
                 break;
             case R.id.layout_add:
-                startIntent(getActivity(), MyHome.class);
+                String userid= SharePreferenceUtil.getInstance(getActivity()).getUserId();
+                if(!TextUtils.isEmpty(userid)) {
+                    Intent i = new Intent(getActivity(), LoginActivity1.class);
+                    i.putExtra("relation", "rela");
+                    getActivity().startActivity(i);
+                }else{
+                    startActivity(new Intent(getActivity(), LoginActivity1.class));
+                }
                 break;
             case R.id.layout_fjyd:
                 startIntent(getActivity(), NearPharmacyActivity.class);
@@ -397,11 +420,15 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
                 startIntent(getActivity(), PMDActivity.class);
                 break;
             case R.id.layout_jcbg:
-                ToastUtils.showMessage(getActivity(), "检查报告");
-
+                startIntent(getActivity(), InspectionReportActivity.class);
                 break;
             case R.id.layout_tjbg:
-                startIntent(getActivity(), ExaminationReportActivity.class);
+
+                if(TextUtils.isEmpty( SharePreferenceUtil.getInstance(getActivity()).getUserId())){
+                    startActivity(new Intent(getActivity(), LoginActivity1.class));
+                }else {
+                    startIntent(getActivity(), ExaminationReportActivity.class);
+                }
                 break;
             case R.id.layout_xdbg:
                 startIntent(getActivity(), ECGActivity1.class);

@@ -33,7 +33,7 @@ public class MonthDateView extends View {
     private Context mContext;
     private int mDayColor = Color.parseColor("#000000");
     private int mSelectDayColor = Color.parseColor("#ffffff");
-    private int mSelectBGColor = Color.parseColor("#2ec2cc");
+    private int mSelectBGColor = Color.parseColor("#00c07d");
     private int mCurrentColor = Color.parseColor("#ff0000");
     private int mCurrYear;
     private int mCurrMonth;
@@ -181,12 +181,12 @@ public class MonthDateView extends View {
             canvas.drawText(dayString, startX, startY, mPaint);
             if(tv_date != null){
                 tv_date.setText(mSelYear + "年" + (mSelMonth + 1) + "月");
-                tv_date.setTextColor(Color.parseColor("#2ec2cc"));
+                tv_date.setTextColor(Color.parseColor("#00c07d"));
             }
 
             if(tv_week != null){
                 tv_week.setText("第" + weekRow  +"周");
-                tv_week.setTextColor(Color.parseColor("#2ec2cc"));
+                tv_week.setTextColor(Color.parseColor("#00c07d"));
             }
         }
     }

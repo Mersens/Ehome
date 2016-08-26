@@ -121,6 +121,8 @@ public class Constants {
  public static  final String UserRelationshipInquiry="UserRelationshipInquiry";
  public static  final String HospitalDepertByTopmd ="HospitalDepertByTopmd";
  public static  final String DepertDoctorByTopmd ="DepertDoctorByTopmd";
+ public static  final String DoctorSchemaByTopmd ="DoctorSchemaByTopmd";
+
 
 
 }

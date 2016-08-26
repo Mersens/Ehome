@@ -54,6 +54,8 @@ dependencies {
     compile files('libs/MobTools-2016.0707.1708.jar')
     compile files('libs/MobCommons-2016.0707.1708.jar')
     compile files('libs/BaiduLBS_Android.jar')
+    compile 'com.github.devlight:infinitecycleviewpager:1.0.0'
+    compile 'com.android.support:cardview-v7:23.2.1'
 }
 
 
