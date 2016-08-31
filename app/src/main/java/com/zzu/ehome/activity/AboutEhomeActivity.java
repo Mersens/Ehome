@@ -1,13 +1,10 @@
 package com.zzu.ehome.activity;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.umeng.analytics.MobclickAgent;
@@ -32,7 +29,7 @@ import java.util.Map;
 public class AboutEhomeActivity extends BaseActivity {
     private final String mPageName = "AboutEhomeActivity";
     private String versionlog;
-    private RelativeLayout layout_version_update,layout_xietong;
+/*    private RelativeLayout layout_version_update,layout_xietong;*/
     private RequestMaker requestMaker;
     private int oldCode;
     private int newCode;
@@ -131,8 +128,7 @@ public class AboutEhomeActivity extends BaseActivity {
 
     }
     public void initViews() {
-        layout_version_update=(RelativeLayout) findViewById(R.id.layout_version_update);
-        layout_xietong=(RelativeLayout)findViewById(R.id.layout_xietong);
+
         setLeftWithTitleViewMethod(R.mipmap.icon_arrow_left, "关于健康E家", new HeadView.OnLeftClickListener() {
             @Override
             public void onClick() {
@@ -144,17 +140,6 @@ public class AboutEhomeActivity extends BaseActivity {
     }
 
     public void initEvents() {
-        layout_version_update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                versioninquiry();
-            }
-        });
-        layout_xietong.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AboutEhomeActivity.this,IntroduceActivity.class));
-            }
-        });
+
     }
 }

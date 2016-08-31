@@ -40,7 +40,6 @@ public class DoctorListActivity extends BaseActivity {
         super.onCreate(arg0);
         requestMaker=RequestMaker.getInstance();
         setContentView(R.layout.layout_doctor_list);
-
         hosid=this.getIntent().getStringExtra("HospitalID");
         depid=this.getIntent().getStringExtra("DepartmentID");
         DepartmentName=this.getIntent().getStringExtra("DepartmentName");
@@ -86,14 +85,6 @@ public class DoctorListActivity extends BaseActivity {
                 }
             }
         }));
-//        List<String> mList=new ArrayList<>();
-//        mList.add("白蓉");
-//        mList.add("刘洪波");
-//        mList.add("卢宏");
-//        mList.add("孙石磊");
-//        mList.add("陈晨");
-//        adapter=new DoctorListAdapter(this,mList);
-//        listView.setAdapter(adapter);
 
     }
 

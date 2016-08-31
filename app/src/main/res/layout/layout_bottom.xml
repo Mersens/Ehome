@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <!-- 普通底部导航 -->
 
@@ -13,7 +13,7 @@
         android:layout_height="@dimen/bottom_hight"
         android:background="@color/base_color_text_white"
         android:gravity="center_vertical"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:id="@+id/layout_home"
@@ -21,22 +21,22 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onTabClicked"
-            android:padding="3dp" >
+            >
 
             <RelativeLayout
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/image_home"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_centerHorizontal="true"
+
                     android:background="@color/base_color_text_white"
                     android:focusable="false"
-                    android:layout_marginTop="2dp"
                     android:scaleType="centerInside"
                     android:src="@mipmap/icon_home_pressed" />
 
@@ -44,8 +44,8 @@
                     android:id="@+id/tv_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@+id/image_home"
+                    android:layout_centerHorizontal="true"
                     android:text="@string/tv_home"
                     android:textColor="@color/bottom_text_color_pressed"
                     android:textSize="12sp" />
@@ -58,13 +58,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onTabClicked"
-            android:padding="3dp" >
+            >
 
             <RelativeLayout
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/img_health"
@@ -73,7 +73,6 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/base_color_text_white"
                     android:focusable="false"
-                    android:layout_marginTop="2dp"
                     android:scaleType="centerInside"
                     android:src="@mipmap/icon_jiankang_normal" />
 
@@ -81,8 +80,8 @@
                     android:id="@+id/tv_health"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_health"
                     android:layout_centerHorizontal="true"
-                   android:layout_below="@+id/img_health"
                     android:text="@string/tv_health"
                     android:textColor="@color/bottom_text_color_normal"
                     android:textSize="12sp" />
@@ -95,13 +94,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onTabClicked"
-            android:padding="3dp" >
+            >
 
             <RelativeLayout
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/img_private_doctor"
@@ -110,7 +109,6 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/base_color_text_white"
                     android:focusable="false"
-                    android:layout_marginTop="2dp"
                     android:scaleType="centerInside"
                     android:src="@mipmap/icon_private_doctor_normal" />
 
@@ -118,26 +116,27 @@
                     android:id="@+id/tv_private_doctor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@+id/img_private_doctor"
+                    android:layout_centerHorizontal="true"
                     android:text="私人医生"
                     android:textColor="@color/bottom_text_color_normal"
                     android:textSize="12sp" />
             </RelativeLayout>
         </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/layout_doctor"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onTabClicked"
-            android:padding="3dp" >
+            >
 
             <RelativeLayout
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/img_doctor"
@@ -146,7 +145,6 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/base_color_text_white"
                     android:focusable="false"
-                    android:layout_marginTop="2dp"
                     android:scaleType="centerInside"
                     android:src="@mipmap/icon_msg_normal" />
 
@@ -154,8 +152,8 @@
                     android:id="@+id/tv_doctor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@+id/img_doctor"
+                    android:layout_centerHorizontal="true"
                     android:text="@string/tv_msg"
                     android:textColor="@color/bottom_text_color_normal"
                     android:textSize="12sp" />
@@ -168,13 +166,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onTabClicked"
-            android:padding="3dp" >
+            >
 
             <RelativeLayout
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/img_info"
@@ -183,7 +181,6 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/base_color_text_white"
                     android:focusable="false"
-                    android:layout_marginTop="2dp"
                     android:scaleType="centerInside"
                     android:src="@mipmap/icon_myinfo_normal" />
 
@@ -191,13 +188,12 @@
                     android:id="@+id/tv_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_info"
                     android:layout_centerHorizontal="true"
-                   android:layout_below="@+id/img_info"
                     android:text="@string/tv_info"
                     android:textColor="@color/bottom_text_color_normal"
                     android:textSize="12sp" />
             </RelativeLayout>
         </RelativeLayout>
     </LinearLayout>
-
 </LinearLayout>

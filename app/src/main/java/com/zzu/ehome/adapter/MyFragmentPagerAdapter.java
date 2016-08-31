@@ -4,6 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.zzu.ehome.fragment.HypertensionFragment;
+import com.zzu.ehome.fragment.HypertensionWithWebFragment;
+
 import java.util.List;
 
 /**
@@ -21,7 +24,12 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     }
     @Override
     public Fragment getItem(int position) {
-        return fragmentList.get(position);
+        if(position==0){
+            return HypertensionWithWebFragment.getInstance("https://www.baidu.com/");
+        }else{
+            return HypertensionFragment.getInstance("http://cn.bing.com/");
+        }
+
     }
 
     @Override

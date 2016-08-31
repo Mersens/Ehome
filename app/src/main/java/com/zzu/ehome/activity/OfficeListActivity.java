@@ -121,9 +121,6 @@ public class OfficeListActivity extends BaseActivity {
                             listView.setAdapter(adapter);
                         }
 
-
-
-
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

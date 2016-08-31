@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#ffffff"
+
         android:orientation="vertical" >
 
 
@@ -43,6 +43,8 @@
             <Button
                 android:id="@+id/item_popupwindows_Photo"
                 android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_height="55dp"
                 android:background="@drawable/bt_nobgd"
                 android:textColor="#585858"

@@ -25,18 +25,26 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_margin="8dp"
-                android:text="请输入您的反馈意见内容："
+                android:text="意见反馈"
                 android:textColor="#0f2536"
                 android:textSize="@dimen/text_size_normal" />
         </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e2"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+
+            />
 
         <com.zzu.ehome.view.ContainsEmojiEditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/editbox_background_normal"
             android:textSize="@dimen/text_size_normal"
             android:layout_margin="8dp"
+            android:background="@null"
             android:gravity="top"
             android:maxLines="10" />
     </LinearLayout>
@@ -44,17 +52,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+>
 
         <Button
             android:id="@+id/btn_ok"
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionBarHeight"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/actionBarHeight"
             android:background="@drawable/register_btn_bg"
-            android:text="确定"
+            android:text="提交"
             android:textColor="@color/base_color_text_white"
             android:textSize="@dimen/button_size" />
     </RelativeLayout>

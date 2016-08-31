@@ -25,10 +25,10 @@ import com.zzu.ehome.bean.RefreshEvent;
 import com.zzu.ehome.bean.StepBean;
 import com.zzu.ehome.db.EHomeDao;
 import com.zzu.ehome.db.EHomeDaoImpl;
-import com.zzu.ehome.fragment.DoctorFragment;
 import com.zzu.ehome.fragment.HealthDataFragment;
 import com.zzu.ehome.fragment.HealthFragment;
 import com.zzu.ehome.fragment.HomeFragment1;
+import com.zzu.ehome.fragment.MessageFragment;
 import com.zzu.ehome.fragment.UserCenterFragment;
 import com.zzu.ehome.service.StepDetector;
 import com.zzu.ehome.service.StepService;
@@ -203,7 +203,7 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
                 mHomeFragment=ft;
             }else if(ft instanceof HealthDataFragment){
                 mHealthFragment=ft;
-            }else if(ft instanceof DoctorFragment){
+            }else if(ft instanceof MessageFragment){
                 mDoctorFragment=ft;
             }else if(ft instanceof UserCenterFragment ){
                 mInfoFragment=ft;
@@ -253,7 +253,7 @@ public class MainActivity extends BaseSimpleActivity implements View.OnClickList
 //       mHomeFragment = HomeFragment.getInstance();
         mHomeFragment = new HomeFragment1();
         mHealthFragment = HealthDataFragment.getInstance();
-        mDoctorFragment= DoctorFragment.getInstance();
+        mDoctorFragment= MessageFragment.getInstance();
         mInfoFragment = UserCenterFragment.getInstance();
         mPrivateDoctorFragment=PrivateDoctorFragment.getInstance();
         fragments = new Fragment[]{mHomeFragment, mHealthFragment, mPrivateDoctorFragment,mDoctorFragment,mInfoFragment};

@@ -924,8 +924,15 @@ public class RequestMaker {
                 SOAP_URL, paramMap);
 
     }
-
-
+    public void UserContactorInsert(String userid, String UserName , String UserNO, String UserAge,String UserSex,String UserMobile,String UserEmail,JsonAsyncTask_ECGInfo task){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        String str = "<Request><UserID>%s</UserID><UserName>%s</UserName><UserNO>%s</UserNO><UserAge>%s</UserAge><UserSex>%s</UserSex><UserMobile>%s</UserMobile><UserEmail>%s</UserEmail></Request>";
+        str = String.format(str, new Object[]
+                {userid,UserName,UserNO,UserAge,UserSex,UserMobile,UserEmail});
+        paramMap.put("str", str);
+        task.execute(Constants.AddPatient, Constants.AddPatient +"/"+ Constants.UserContactorInsert, Constants.UserContactorInsert,
+                Constants.URL003, paramMap);
+    }
 
 
 

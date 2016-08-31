@@ -39,7 +39,7 @@
     <string name="loading">正在加载...</string>
     <string name="tv_info">我的</string>
     <string name="tv_add_head">添加头像</string>
-    <string name="tv_update_ok">确定修改</string>
+    <string name="tv_update_ok">确定</string>
     <string name="tv_complate">完成</string>
     <string name="tv_tips">Android是一种基于Linux的自由及开放源代码的操作系统，主要使用于移动设备，如智能手机和平板电脑，由Google公司和开放手机联盟领导及开发。尚未有统一中文名称，中国大陆地区较多人使用“安卓”或“安致”。Android操作系统最初由Andy Rubin开发，主要支持手机。2005年8月由Google收购注资。2007年11月，Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良Android系统。</string>
     <string name="pullup_to_load">上拉加载更多</string>

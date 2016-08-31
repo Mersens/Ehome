@@ -4,7 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="title_size">20sp</dimen>
     <dimen name="actionBarHeight">48dp</dimen>
-    <dimen name="bottom_hight">52dp</dimen>
+    <dimen name="bottom_hight">54dp</dimen>
     <dimen name="bottom_tv_size">14sp</dimen>
     <dimen name="crop__bar_height">40dp</dimen>
     <dimen name="text_size_tiny">10sp</dimen>

@@ -8,10 +8,10 @@
                 android:endColor="#d1d1d1" 
                 android:startColor="#d1d1d1" />
 
-            <corners android:bottomLeftRadius="0dip" 
-                android:bottomRightRadius="0dip" 
-                android:topLeftRadius="0dip" 
-                android:topRightRadius="0dip" />
+            <corners android:bottomLeftRadius="5dip"
+                android:bottomRightRadius="5dip"
+                android:topLeftRadius="5dip"
+                android:topRightRadius="5dip" />
         </shape></item>
 
     <!-- focus -->
@@ -20,19 +20,19 @@
                 android:endColor="#d1d1d1" 
                 android:startColor="#d1d1d1" />
 
-            <corners android:bottomLeftRadius="0dip" 
-                android:bottomRightRadius="0dip" 
-                android:topLeftRadius="0dip" 
-                android:topRightRadius="0dip" />
+            <corners android:bottomLeftRadius="5dip"
+                android:bottomRightRadius="5dip"
+                android:topLeftRadius="5dip"
+                android:topRightRadius="5dip" />
         </shape></item>
         
     <item><shape android:shape="rectangle">
             <solid android:color="#00000000" />
 
-             <corners android:bottomLeftRadius="0dip" 
-                android:bottomRightRadius="0dip" 
-                android:topLeftRadius="0dip" 
-                android:topRightRadius="0dip" />
+             <corners android:bottomLeftRadius="5dip"
+                android:bottomRightRadius="5dip"
+                android:topLeftRadius="5dip"
+                android:topRightRadius="5dip" />
         </shape></item>
 
 </selector>

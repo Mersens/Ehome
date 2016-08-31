@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 
 import com.umeng.analytics.MobclickAgent;
@@ -14,8 +13,6 @@ import com.zzu.ehome.adapter.MyFragmentPagerAdapter;
 import com.zzu.ehome.application.CustomApplcation;
 import com.zzu.ehome.fragment.BloodPressureFragment;
 import com.zzu.ehome.fragment.BloodSugarFragment;
-import com.zzu.ehome.fragment.BooldFatFragment;
-import com.zzu.ehome.fragment.ElectrocarDiogramFragment;
 import com.zzu.ehome.fragment.TempFragment;
 import com.zzu.ehome.fragment.WeightFragment;
 import com.zzu.ehome.utils.OnSelectItemListener;

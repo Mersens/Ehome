@@ -110,14 +110,12 @@ public abstract class DialogBase extends Dialog {
 			params.width = LayoutParams.MATCH_PARENT;
 			params.height = LayoutParams.MATCH_PARENT;
 		}
-		
-		if(isCancel){
+
+
 			setCanceledOnTouchOutside(true);
 			setCancelable(true);
-		}else{
-			setCanceledOnTouchOutside(false);
-			setCancelable(false);
-		}
+
+
 	    getWindow().setAttributes(params);  
 		this.setOnDismissListener(GetOnDismissListener());
 		this.getWindow().setSoftInputMode(LayoutParams.SOFT_INPUT_ADJUST_RESIZE);

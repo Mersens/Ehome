@@ -2,10 +2,7 @@ package com.zzu.ehome.view;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
 import com.zzu.ehome.R;
-import com.zzu.ehome.activity.PersonalCenterInfo;
-import com.zzu.ehome.bean.RefreshEvent;
-import com.zzu.ehome.fragment.DoctorFragment;
-
-import java.io.File;
-
-import de.greenrobot.event.EventBus;
 
 /**
  * Created by Administrator on 2016/5/21.
@@ -30,15 +20,29 @@ public class SexPopupWindows extends PopupWindow implements View.OnClickListener
 
     private Activity activity;
     private Context context;
-    PersonalCenterInfo personalCenterInfo;
+
+    public OnGetData getmOnGetData() {
+        return mOnGetData;
+    }
+
+    public void setmOnGetData(OnGetData mOnGetData) {
+        this.mOnGetData = mOnGetData;
+    }
+
+    private OnGetData mOnGetData;
+
+    public interface OnGetData {
+         void onDataCallBack(String sex);
+    }
+
 
 
     public SexPopupWindows(Context mContext, View parent, Activity activity) {
 
         super(mContext);
-        personalCenterInfo=(PersonalCenterInfo)mContext;
+
         View view = View
-                .inflate(mContext, R.layout.item_sex_pop, null);
+                .inflate(mContext, R.layout.popview, null);
         view.startAnimation(AnimationUtils.loadAnimation(mContext,
                 R.anim.fade_ins));
         LinearLayout ll_popup = (LinearLayout) view
@@ -47,6 +51,7 @@ public class SexPopupWindows extends PopupWindow implements View.OnClickListener
                 R.anim.push_bottom_in_2));
         this.activity=activity;
         this.context=mContext;
+
 
         setWidth(ViewGroup.LayoutParams.FILL_PARENT);
         setHeight(ViewGroup.LayoutParams.FILL_PARENT);
@@ -75,13 +80,17 @@ public class SexPopupWindows extends PopupWindow implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.item_popupwindows_camera:
-                personalCenterInfo.eventbus.post(new RefreshEvent(context.getResources().getInteger(R.integer.change_sex1)));
-
+//                Intent intent=new Intent();
+//                intent.putExtra("sex","01");
+//                activity.setResult(Constants.REQUEST_CODE_SEX,intent);
+                mOnGetData.onDataCallBack("01");
                 dismiss();
                 break;
             case R.id.item_popupwindows_Photo:
-                personalCenterInfo.eventbus.post(new RefreshEvent(context.getResources().getInteger(R.integer.change_sex2)));
-
+//                Intent i2=new Intent();
+//                i2.putExtra("sex","02");
+//                activity.setResult(Constants.REQUEST_CODE_SEX,i2);
+                mOnGetData.onDataCallBack("02");
                 dismiss();
                 break;
             case R.id.item_popupwindows_cancel:

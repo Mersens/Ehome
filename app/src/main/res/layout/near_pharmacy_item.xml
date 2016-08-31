@@ -18,26 +18,30 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
+            android:layout_gravity="center"
+            android:layout_marginRight="4dp"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="福郎中大药房（兴华北街）"
                 android:textColor="@color/text_color2"
-                android:textSize="16sp" />
+                android:singleLine="true"
+                android:layout_marginTop="8dp"
+                android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tv_address"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="兴华北街与广场南路交叉口东北50米"
                 android:textColor="@color/text_color2"
 
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -137,6 +141,7 @@
                     >
 
                     <TextView
+                        android:id="@+id/tv_distance"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="500m"

@@ -8,6 +8,7 @@ public class Constants {
  //相机常量
  public static final String ACCOUNT_DIR = Environment.getExternalStorageDirectory().getPath();
  public static final int REQUEST_CODE_CAPTURE_CAMEIA = 1458;
+
  public static final int SHOW_ALL_PICTURE = 0x14;
  public static final int REQUEST_CALENDAR = 1460;
  public static final int ADDTTIME = 0x16;
@@ -17,10 +18,17 @@ public class Constants {
 
  public static final String IMAGE_FILE_NAME = "faceImage.jpeg";
  public  static final String TMP_IMAGE_FILE_NAME = "tmp_faceImage.jpeg";
+ //性别
+ public static final int REQUEST_CODE_SEX = 1460;
 
  //服务器地址
  public static String EhomeURL = "http://ehome.staging.topmd.cn";
  public static final String	URLIMAGE	= EhomeURL+"/WebServices/News.aspx?id=";
+ //名医网地址
+
+ public static String TopmdURL = "http://staging.topmd.cn";
+ //添加就诊人
+ public static String AddPatient=TopmdURL+"/topmdweixin.asmx";
 
 
  //https校验用户名和密码
@@ -122,6 +130,7 @@ public class Constants {
  public static  final String HospitalDepertByTopmd ="HospitalDepertByTopmd";
  public static  final String DepertDoctorByTopmd ="DepertDoctorByTopmd";
  public static  final String DoctorSchemaByTopmd ="DoctorSchemaByTopmd";
+ public static  final String UserContactorInsert ="UserContactorInsert";
 
 
 

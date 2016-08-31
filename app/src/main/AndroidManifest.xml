@@ -96,6 +96,12 @@
         <activity android:name=".activity.XueyaDataActivity" />
         <activity android:name=".activity.HealthFilesActivity" />
         <activity android:name=".activity.HealthFilesActivity1" />
+        <activity android:name=".activity.AppointmentActivity1" />
+        <activity android:name=".activity.MyReportActivity" />
+        <activity android:name=".activity.HypertensionActivity"
+            android:theme="@style/AppTheme"
+            />
+
         <activity android:name=".activity.YYJLActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".activity.YYJLDataActivity" />
@@ -387,7 +393,7 @@
         </receiver>
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="iM3WSOgMEqZBKTcQKlNKFYcI9sRh8h0g" />
+            android:value="qG2E53tPqY2wMA7yDqwgKCos0KWE5iUG" />
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

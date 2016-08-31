@@ -79,19 +79,14 @@ public class OfficeListAdapter extends BaseAdapter {
                     vh1 = new ViewHolder1();
                     vh1.tvName=(TextView) convertView
                             .findViewById(R.id.tvname);
-
-
                     convertView.setTag(vh1);
-
                     break;
                 case TYPE_2:
                     convertView = LayoutInflater.from(mContext).inflate(
                             R.layout.office_list_item, parent, false);
-
                     vh2= new ViewHolder2();
                     vh2.tvName=(TextView) convertView
-                            .findViewById(R.id.tv_name);;
-
+                            .findViewById(R.id.tv_name);
                     convertView.setTag(vh2);
                     break;
 
@@ -111,14 +106,6 @@ public class OfficeListAdapter extends BaseAdapter {
             case TYPE_1:
 
                vh1.tvName.setText(mList.get(position).getDepartmentName());
-
-//                if(position>0){
-//                    if(mList.get(position-1).getType()==mList.get(position).getType()){
-//                        convertView.setVisibility(View.GONE);
-//                    }else{
-//                        convertView.setVisibility(View.VISIBLE);
-//                    }
-//                }
                 break;
             case TYPE_2:
                 vh2.tvName.setText(mList.get(position).getDepartmentName());
@@ -128,13 +115,12 @@ public class OfficeListAdapter extends BaseAdapter {
                     public void onClick(View v) {
                         Intent i=new Intent(mContext,DoctorListActivity.class);
                         i.putExtra("HospitalID",ss);
-
                         i.putExtra("DepartmentID",mList.get(p).getDepartmentID());
                         i.putExtra("DepartmentName",mList.get(p).getDepartmentName());
                         mContext.startActivity(i);
                     }
                 });
-//                convertView.setVisibility(View.VISIBLE);
+
                 break;
         }
 

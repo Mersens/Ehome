@@ -49,11 +49,9 @@ public class DoctorTimeActivity extends BaseActivity {
         DepartmentName=this.getIntent().getStringExtra("DepartName");
         picUrl=this.getIntent().getStringExtra("picUrl");
         name=this.getIntent().getStringExtra("doctorName");
-
         mImageLoader=ImageLoader.getInstance();
         initViews();
         initEvent();
-
         initDatas();
     }
 

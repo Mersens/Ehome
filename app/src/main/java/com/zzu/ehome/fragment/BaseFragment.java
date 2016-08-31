@@ -5,22 +5,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.zzu.ehome.R;
 import com.zzu.ehome.application.CustomApplcation;
 import com.zzu.ehome.bean.NetEvent;
-import com.zzu.ehome.main.ehome.MainActivity;
 import com.zzu.ehome.utils.NetUtils;
-import com.zzu.ehome.utils.SystemStatusManager;
 import com.zzu.ehome.utils.ToastUtils;
 import com.zzu.ehome.view.CustomProgressDialog;
 import com.zzu.ehome.view.DialogTips;
@@ -46,7 +41,7 @@ public abstract class BaseFragment extends Fragment {
         }
     };
 
-/*    @Override
+    @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
 
@@ -57,7 +52,7 @@ public abstract class BaseFragment extends Fragment {
             isVisible = false;
             onInvisible();
         }
-    }*/
+    }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

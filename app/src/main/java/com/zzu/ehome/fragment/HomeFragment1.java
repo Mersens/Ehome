@@ -31,6 +31,7 @@ import com.zzu.ehome.R;
 import com.zzu.ehome.activity.ECGActivity1;
 import com.zzu.ehome.activity.ExaminationReportActivity;
 import com.zzu.ehome.activity.FreeConsultationActivity;
+import com.zzu.ehome.activity.HypertensionActivity;
 import com.zzu.ehome.activity.InspectionReportActivity;
 import com.zzu.ehome.activity.LoginActivity1;
 import com.zzu.ehome.activity.NearPharmacyActivity;
@@ -434,7 +435,7 @@ public class HomeFragment1 extends BaseFragment implements View.OnClickListener 
                 startIntent(getActivity(), ECGActivity1.class);
                 break;
             case R.id.layout_gxy:
-                ToastUtils.showMessage(getActivity(), "高血压");
+                startIntent(getActivity(), HypertensionActivity.class);
                 break;
             case R.id.layout_xxg:
                 ToastUtils.showMessage(getActivity(), "心血管");

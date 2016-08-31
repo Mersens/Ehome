@@ -78,7 +78,7 @@ public class OrdinaryYuYueActivity extends BaseActivity {
                                 listView.setAdapter(adapter);
                             }
 
-//                        ToastUtils.showMessage(getActivity(),result.toString());
+
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

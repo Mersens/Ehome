@@ -160,7 +160,7 @@ public class PullableListView extends ListView implements Pullable
 		case NO_MORE_DATA:
 			mLoadAnim.stop();
 			mLoadingView.setVisibility(View.INVISIBLE);
-			mStateTextView.setText("û�и����������");
+			mStateTextView.setText("没有更多数据");
 			break;
 		}
 	}

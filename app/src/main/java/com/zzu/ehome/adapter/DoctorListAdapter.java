@@ -54,7 +54,6 @@ public class DoctorListAdapter extends BaseListAdapter<DoctorBeanDes> {
                 i.putExtra("DepartName",DepartmentName);
                 i.putExtra("picUrl",picUrl);
                 i.putExtra("doctorName",item.getDoctorName());
-
                 context.startActivity(i);
             }
         });

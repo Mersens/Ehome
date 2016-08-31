@@ -61,8 +61,6 @@ public class DoctorTimeAdapter extends BaseListAdapter<DoctorSchemaByTopmdBean> 
                 "确定");
         dialog.SetOnSuccessListener(new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int userId) {
-
-
             }
         });
 

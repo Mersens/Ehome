@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        >
+    <ImageView
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="17dp"
+        android:background="@mipmap/icon_siren_touxiang"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_normal"
+            android:textColor="#0f2536"
+            android:layout_marginTop="17dp"
+
+            android:text="李刘霞"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="#0f2536"
+
+            android:text="郑州大学第一附属医院 神经内科"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="#e1e1e2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="预约时间：2016/8/22 星期一 15:00-18:00"
+            android:textSize="@dimen/text_size_small"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#00C070"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
